@@ -1,0 +1,2 @@
+Folder to store code for data processing. 
+Feel free to split folder into pre-processing, analysis ect.
