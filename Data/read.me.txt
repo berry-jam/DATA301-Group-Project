@@ -1,0 +1,17 @@
+Readme
+
+Victimisation by police boundary by year.csv
+(Containing informtation each city police district
+how many victimisation reported from 2014 to 2020)
+
+
+Age and Sex_data.csv
+(Containing Agegroup how many victimisation and YearMonth of occured,
+Enthinicty and Sex)
+
+Type of Service Demand and Location(relative with Covid-19)
+(Containing how many demand police got during different Alter level and
+we can devided how many of them are relative with crime demand)
+
+But the dataset are too big and contained quite a lot of information that we not interested
+so keep try to find better dataset.
