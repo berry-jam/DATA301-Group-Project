@@ -1,9 +1,9 @@
 <map version="freeplane 1.8.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="Question" FOLDED="false" ID="ID_1988881031" CREATED="1596680226151" MODIFIED="1596680236590" STYLE="oval">
+<node TEXT="Crime and type of area" FOLDED="false" ID="ID_1988881031" CREATED="1596680226151" MODIFIED="1596947915970" STYLE="oval">
 <font SIZE="18"/>
-<hook NAME="MapStyle" zoom="1.331">
-    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false"/>
+<hook NAME="MapStyle" zoom="1.771">
+    <properties fit_to_viewport="false" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -63,7 +63,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="5" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="6" RULE="ON_BRANCH_CREATION"/>
 <node TEXT="Why?" POSITION="right" ID="ID_193752305" CREATED="1596680237222" MODIFIED="1596680240034">
 <edge COLOR="#ff0000"/>
 <node TEXT="LiteratureReview" ID="ID_471761801" CREATED="1596680276413" MODIFIED="1596680281310"/>
@@ -105,6 +105,9 @@
 </node>
 <node TEXT="How?" POSITION="right" ID="ID_582485592" CREATED="1596680257417" MODIFIED="1596680376639">
 <edge COLOR="#00ffff"/>
+</node>
+<node TEXT="Sub Pattern of Wealth of area" POSITION="left" ID="ID_917630945" CREATED="1596948008857" MODIFIED="1596948043843">
+<edge COLOR="#7c0000"/>
 </node>
 </node>
 </map>

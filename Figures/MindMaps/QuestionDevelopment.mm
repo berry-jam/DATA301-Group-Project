@@ -3,7 +3,7 @@
 <node TEXT="Patterns" FOLDED="false" ID="ID_346595010" CREATED="1596679713509" MODIFIED="1596683412873" STYLE="oval">
 <font SIZE="18"/>
 <hook NAME="MapStyle" zoom="1.331">
-    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false"/>
+    <properties fit_to_viewport="false" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -63,7 +63,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="9" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="10" RULE="ON_BRANCH_CREATION"/>
 <node TEXT="Dangerous Neighbourhoods" POSITION="right" ID="ID_1569418113" CREATED="1596679962594" MODIFIED="1596682366892" HGAP_QUANTITY="56.74999872595075 pt" VSHIFT_QUANTITY="-34.499998971819906 pt">
 <edge COLOR="#ff0000"/>
 <node TEXT="Difficult ethically to categorise" ID="ID_879584036" CREATED="1596681928853" MODIFIED="1596681965161"/>
@@ -83,10 +83,18 @@
 <node TEXT="Something a bit different to just regional breakdown" ID="ID_1928924476" CREATED="1596682567579" MODIFIED="1596682581230"/>
 <node TEXT="Could focus in on a region and then look at the area type within this e.g Auckland or Wellington" ID="ID_1892242519" CREATED="1596682601856" MODIFIED="1596682666434"/>
 <node TEXT="Would need enough variation to maintain data quality" ID="ID_1845634253" CREATED="1596682620698" MODIFIED="1596682697581"/>
+<node TEXT="Party areas/ areas where people are consuming alcohol" FOLDED="true" ID="ID_820489781" CREATED="1596947345088" MODIFIED="1596947367818">
+<node TEXT="Time specific, Fridays and Saturdays would have higher crime rate" FOLDED="true" ID="ID_172152838" CREATED="1596947364567" MODIFIED="1596947392308">
+<node TEXT="" ID="ID_862273544" CREATED="1596947392314" MODIFIED="1596947392314"/>
+</node>
+<node TEXT="Type of crime would also differ" ID="ID_1565737172" CREATED="1596947396911" MODIFIED="1596947406916"/>
+</node>
+<node TEXT="Wealth of city in relation to crime." ID="ID_467402864" CREATED="1596947705462" MODIFIED="1596947886323"/>
 </node>
 <node TEXT="crime and age demographic of the community" POSITION="right" ID="ID_724190731" CREATED="1596680092356" MODIFIED="1596682361509" HGAP_QUANTITY="48.499998971819906 pt" VSHIFT_QUANTITY="23.249999307096026 pt">
 <edge COLOR="#00ffff"/>
 <node TEXT="Is there alot of information about this?" ID="ID_167561536" CREATED="1596682586807" MODIFIED="1596682706099"/>
+<node TEXT="" ID="ID_1695186274" CREATED="1596947702967" MODIFIED="1596947702967"/>
 <node TEXT="Would be intesting paired with somethin like size of community or type of area." ID="ID_3347619" CREATED="1596682706463" MODIFIED="1596682796407">
 <node TEXT="" ID="ID_120228026" CREATED="1596682764925" MODIFIED="1596682764925"/>
 <node TEXT="Is the demographic linked to the types of crime" ID="ID_470953177" CREATED="1596682796409" MODIFIED="1596682813285"/>
@@ -94,9 +102,14 @@
 <node TEXT="Age could be difficult to find" ID="ID_454647566" CREATED="1596682751710" MODIFIED="1596682871004">
 <node TEXT="Census? voting?" ID="ID_318793437" CREATED="1596682871005" MODIFIED="1596682911297"/>
 <node TEXT="Age is listed in some of the crime datasets." ID="ID_1003541115" CREATED="1596682911622" MODIFIED="1596682937381"/>
-<node TEXT="The age demographic of the community may not be the same as the demographic of the criminals in the area." ID="ID_1032212567" CREATED="1596682937577" MODIFIED="1596682964869"/>
+<node TEXT="The age demographic of the community may not be the same as the demographic of the criminals in the area." ID="ID_1032212567" CREATED="1596682937577" MODIFIED="1596682964869">
+<node TEXT="" ID="ID_242518876" CREATED="1596947412605" MODIFIED="1596947412605"/>
 </node>
-<node TEXT="Would we only have good info on people over 18?" ID="ID_680379513" CREATED="1596682965770" MODIFIED="1596683001689"/>
+</node>
+<node TEXT="Would we only have good info on people over 18?" ID="ID_680379513" CREATED="1596682965770" MODIFIED="1596683001689">
+<node TEXT="There are youth statistics but not linked to region" ID="ID_1911623656" CREATED="1596947415176" MODIFIED="1596947448745"/>
+<node TEXT="data kept is very broad" ID="ID_390047955" CREATED="1596947449101" MODIFIED="1596947483044"/>
+</node>
 </node>
 <node TEXT="crimes with distance to public services" POSITION="right" ID="ID_1966045978" CREATED="1596680036745" MODIFIED="1596682285550" HGAP_QUANTITY="39.4999992400408 pt" VSHIFT_QUANTITY="16.499999508261695 pt">
 <edge COLOR="#00ff00"/>
@@ -105,6 +118,10 @@
 <node TEXT="Need specificity to draw good conclusions" ID="ID_697475512" CREATED="1596683105868" MODIFIED="1596683122575"/>
 </node>
 <node TEXT="Need to have a look at whats avalible." ID="ID_1872943647" CREATED="1596683126898" MODIFIED="1596683219396"/>
+<node TEXT="Might be easier to look at density of public services instead of distance" ID="ID_1000476806" CREATED="1596947594316" MODIFIED="1596947610638">
+<node TEXT="Havent come across any data for distance" ID="ID_26160856" CREATED="1596947610641" MODIFIED="1596947618615"/>
+<node TEXT="Also where would the distance be measured from." ID="ID_542795868" CREATED="1596947618970" MODIFIED="1596947701992"/>
+</node>
 </node>
 <node TEXT="Covid-19 pandemic and crime rates" POSITION="right" ID="ID_1856624143" CREATED="1596682270931" MODIFIED="1596682287818" HGAP_QUANTITY="28.24999957531692 pt" VSHIFT_QUANTITY="17.99999946355821 pt">
 <edge COLOR="#007c00"/>
