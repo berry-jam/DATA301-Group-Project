@@ -2,7 +2,7 @@
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
 <node TEXT="Patterns" FOLDED="false" ID="ID_346595010" CREATED="1596679713509" MODIFIED="1596683412873" STYLE="oval">
 <font SIZE="18"/>
-<hook NAME="MapStyle" zoom="1.331">
+<hook NAME="MapStyle" zoom="2.143">
     <properties fit_to_viewport="false" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff"/>
 
 <map_styles>
@@ -70,7 +70,10 @@
 <node TEXT="Possibly done before" ID="ID_1982010972" CREATED="1596681966307" MODIFIED="1596681974586"/>
 <node TEXT="Heard about it before" ID="ID_1633621279" CREATED="1596682030071" MODIFIED="1596682036381"/>
 <node TEXT="Alot of data around this." ID="ID_248201830" CREATED="1596682261796" MODIFIED="1596682455111"/>
-<node TEXT="Comes up alot in the nz police website" ID="ID_1501060776" CREATED="1596682082031" MODIFIED="1596682134626"/>
+<node TEXT="Comes up alot in the nz police website" ID="ID_1501060776" CREATED="1596682082031" MODIFIED="1596682134626">
+<node TEXT="" ID="ID_499268409" CREATED="1597097284222" MODIFIED="1597097284222"/>
+</node>
+<node TEXT="List interesting variables that are important in a relevant study" ID="ID_1307076021" CREATED="1597097288004" MODIFIED="1597110428132"/>
 </node>
 <node TEXT="crimes with the size of the community" POSITION="right" ID="ID_147965774" CREATED="1596682143538" MODIFIED="1596682522034" HGAP_QUANTITY="52.249998860061204 pt" VSHIFT_QUANTITY="9.749999709427366 pt">
 <edge COLOR="#00007c"/>
