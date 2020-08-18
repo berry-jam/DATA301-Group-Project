@@ -1,0 +1,77 @@
+---
+title: "DATA301 - Group Project Report"
+author: "Abbey Bremner"
+date: "18/08/2020"
+output: html_document
+---
+## Police data group project 
+
+### Team members 
+Abbey Bremner - 300436003
+Shaun
+Kieryn
+Josh 
+
+---
+# Investigating the impacts of COVID-19 on domestic violence in New Zealand
+---
+
+## 1 Background and Data 
+
+As the pandemic has unfolded around the world many studies have emerged looking at how the changes in social systems have effected crime. ** Insert relevant stats ** We are interested to look at whether the same patterns are present in New Zealand.
+
+#### 1.2 Datasets
+
+Spatial data
+Crime data
+
+#### 1.2.1 Inside the data
+
+Data types
+
+Data structure
+
+Missing values 
+
+---
+
+## 2 Ethics, Privacy and Security
+
+#### 2.1 Ethical considerations
+
+Domestic violence is a sensitive topic and care must be taken when drawing conclusions and reasoning around this.
+
+#### 2.2 Privacy concerns 
+
+Data is already anonymised when it is published onto the police nz website so there isnt alot of concern around privacy. 
+
+Identifying areas may cause privacy concerns if the areas are too specific.
+
+#### 2.3 Secure project management
+
+Private github repository to store data ensuring that only those with an access invitation may access the files.
+
+---
+
+## 3 Exploratory data analysis
+
+---
+
+## 4 Individual contributions
+
+#### Abbey 
+
+Repository manager
+
+#### Shaun
+
+Data manager
+
+#### Kieryn
+
+Biblio manager
+
+#### Josh
+
+
+
