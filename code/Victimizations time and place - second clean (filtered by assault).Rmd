@@ -27,7 +27,7 @@ nrow(assault)
 assault$X <- NULL
 head(assault)
 
-write.csv(victims, "/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Victimisations_time_and_place (cleaned).csv")
+write.csv(assault, "/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Victimisations_time_and_place (cleaned).csv")
 ```
 
 ```{r}
