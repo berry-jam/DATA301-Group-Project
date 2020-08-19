@@ -1,0 +1,57 @@
+---
+title: "work"
+author: "Keiryn Hart, 300428418"
+date: "20/08/2020"
+output: html_document
+---
+
+```{r}
+victims <- read.csv("Victimizations_time_and_place (partly filtered).csv", header = TRUE)
+head(victims)
+```
+
+
+```{r}
+library(tidyverse)
+library(lubridate)
+
+victims <- victims %>% unite(date,c("day","month","year"),sep="/")
+
+assault <- victims %>% filter(ANZSOC.Group == c("Serious Assault Not Resulting in Injury", "Non-Aggravated Sexual Assault", "Serious Assault Resulting in Injury", "Common Assault", "Aggravated Sexual Assault"))
+
+unique(assault$ANZSOC.Group)
+sort(unique(assault$date))
+sum(is.na(assault))
+nrow(assault)
+
+assault$X <- NULL
+head(assault)
+
+write.csv(victims, "/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Victimisations_time_and_place (cleaned).csv")
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+```{r}
+
+```

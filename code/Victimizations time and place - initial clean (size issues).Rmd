@@ -1,0 +1,33 @@
+---
+title: "groom"
+author: "Keiryn Hart, 300428418"
+date: "19/08/2020"
+output: html_document
+---
+
+```{r}
+library(dplyr)
+library(tidyverse)
+victim <- read.csv("crime_city.csv", header = TRUE)
+head(victim)
+```
+
+
+
+```{r}
+victim1 <- separate(victim, "X.Month.Year", c("day", "month", "year"))
+head(victim1)
+victim18 <- victim1 %>% filter(year == c(17,18, 19))
+unique(victim18$ANZSOC.Group)
+assault <- victim18 %>% filter(ANZSOC.Group == c("Serious Assault Not Resulting in Injury", "Non-Aggravated Sexual Assault", "Serious Assault Resulting in Injury", "Common Assault", "Aggravated Sexual Assault"))
+
+write.csv(victim18, "/Users/keirynhart/Documents/victims_filtered.csv")
+```
+
+
+
+```{r}
+
+```
+
+
