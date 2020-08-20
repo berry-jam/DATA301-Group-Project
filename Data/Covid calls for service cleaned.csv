@@ -1,0 +1,314 @@
+"","District","Alert.Level","Calls.for.Service.and.Prevention","Crime.and.NonCrime.Demand","Event.Category","Event.Type","No"
+"1","Auckland City",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"2","Auckland City",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"3","Auckland City",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",6
+"4","Auckland City",2,"Demand","Crime","Violence","Assault not further defined",23
+"5","Auckland City",2,"Demand","Crime","Violence","Assault not further defined",1
+"6","Auckland City",2,"Demand","Crime","Violence","Common Assault",5
+"7","Auckland City",2,"Demand","Crime","Violence","Assault not further defined",1
+"8","Auckland City",2,"Demand","Crime","Violence","Common Assault",5
+"9","Bay Of Plenty",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"10","Bay Of Plenty",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"11","Bay Of Plenty",2,"Demand","Crime","Violence","Assault not further defined",2
+"12","Bay Of Plenty",2,"Demand","Crime","Violence","Assault not further defined",8
+"13","Bay Of Plenty",2,"Demand","Crime","Violence","Common Assault",2
+"14","Bay Of Plenty",2,"Demand","Crime","Violence","Assault not further defined",4
+"15","Bay Of Plenty",2,"Demand","Crime","Violence","Assault not further defined",7
+"16","Bay Of Plenty",2,"Demand","Crime","Violence","Common Assault",4
+"17","Bay Of Plenty",2,"Demand","Crime","Violence","Assault not further defined",13
+"18","Bay Of Plenty",2,"Demand","Crime","Violence","Common Assault",6
+"19","Canterbury",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"20","Canterbury",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",2
+"21","Canterbury",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"22","Canterbury",2,"Demand","Crime","Violence","Assault not further defined",1
+"23","Canterbury",2,"Demand","Crime","Violence","Assault not further defined",2
+"24","Canterbury",2,"Demand","Crime","Violence","Common Assault",42
+"25","Canterbury",2,"Demand","Crime","Violence","Common Assault",6
+"26","Canterbury",2,"Demand","Crime","Violence","Assault not further defined",1
+"27","Canterbury",2,"Demand","Crime","Violence","Assault not further defined",1
+"28","Canterbury",2,"Demand","Crime","Violence","Common Assault",5
+"29","Canterbury",2,"Demand","Crime","Violence","Assault not further defined",2
+"30","Central",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",2
+"31","Central",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"32","Central",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"33","Central",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"34","Central",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"35","Central",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"36","Central",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",2
+"37","Central",2,"Demand","Crime","Violence","Assault not further defined",2
+"38","Central",2,"Demand","Crime","Violence","Assault not further defined",1
+"39","Central",2,"Demand","Crime","Violence","Assault not further defined",2
+"40","Central",2,"Demand","Crime","Violence","Assault not further defined",13
+"41","Central",2,"Demand","Crime","Violence","Common Assault",7
+"42","Central",2,"Demand","Crime","Violence","Common Assault",1
+"43","Central",2,"Demand","Crime","Violence","Assault not further defined",1
+"44","Central",2,"Demand","Crime","Violence","Assault not further defined",2
+"45","Central",2,"Demand","Crime","Violence","Assault not further defined",10
+"46","Central",2,"Demand","Crime","Violence","Common Assault",2
+"47","Central",2,"Demand","Crime","Violence","Common Assault",1
+"48","Central",2,"Demand","Crime","Violence","Common Assault",5
+"49","Central",2,"Demand","Crime","Violence","Assault not further defined",1
+"50","Central",2,"Demand","Crime","Violence","Assault not further defined",4
+"51","Counties/Manukau",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",2
+"52","Counties/Manukau",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",2
+"53","Counties/Manukau",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"54","Counties/Manukau",2,"Demand","Crime","Violence","Assault not further defined",16
+"55","Counties/Manukau",2,"Demand","Crime","Violence","Assault not further defined",3
+"56","Counties/Manukau",2,"Demand","Crime","Violence","Common Assault",17
+"57","Counties/Manukau",2,"Demand","Crime","Violence","Assault not further defined",15
+"58","Counties/Manukau",2,"Demand","Crime","Violence","Common Assault",15
+"59","Eastern",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"60","Eastern",2,"Demand","Crime","Violence","Assault not further defined",8
+"61","Eastern",2,"Demand","Crime","Violence","Assault not further defined",3
+"62","Eastern",2,"Demand","Crime","Violence","Common Assault",1
+"63","Eastern",2,"Demand","Crime","Violence","Assault not further defined",2
+"64","Eastern",2,"Demand","Crime","Violence","Assault not further defined",7
+"65","Eastern",2,"Demand","Crime","Violence","Common Assault",12
+"66","Northland",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"67","Northland",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"68","Northland",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",4
+"69","Northland",2,"Demand","Crime","Violence","Assault not further defined",1
+"70","Northland",2,"Demand","Crime","Violence","Assault not further defined",1
+"71","Northland",2,"Demand","Crime","Violence","Assault not further defined",1
+"72","Northland",2,"Demand","Crime","Violence","Common Assault",5
+"73","Northland",2,"Demand","Crime","Violence","Assault not further defined",2
+"74","Northland",2,"Demand","Crime","Violence","Common Assault",1
+"75","Southern",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"76","Southern",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"77","Southern",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",2
+"78","Southern",2,"Demand","Crime","Violence","Assault not further defined",7
+"79","Southern",2,"Demand","Crime","Violence","Assault not further defined",1
+"80","Southern",2,"Demand","Crime","Violence","Common Assault",4
+"81","Southern",2,"Demand","Crime","Violence","Assault not further defined",2
+"82","Southern",2,"Demand","Crime","Violence","Common Assault",3
+"83","Southern",2,"Demand","Crime","Violence","Assault not further defined",3
+"84","Southern",2,"Demand","Crime","Violence","Assault not further defined",1
+"85","Tasman",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"86","Tasman",2,"Demand","Crime","Violence","Assault not further defined",6
+"87","Tasman",2,"Demand","Crime","Violence","Common Assault",6
+"88","Tasman",2,"Demand","Crime","Violence","Assault not further defined",4
+"89","Waikato",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",2
+"90","Waikato",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",2
+"91","Waikato",2,"Demand","Crime","Violence","Assault not further defined",23
+"92","Waikato",2,"Demand","Crime","Violence","Common Assault",3
+"93","Waikato",2,"Demand","Crime","Violence","Assault not further defined",1
+"94","Waikato",2,"Demand","Crime","Violence","Assault not further defined",1
+"95","Waikato",2,"Demand","Crime","Violence","Common Assault",1
+"96","Waikato",2,"Demand","Crime","Violence","Common Assault",4
+"97","Waikato",2,"Demand","Crime","Violence","Assault not further defined",1
+"98","Waikato",2,"Demand","Crime","Violence","Assault not further defined",1
+"99","Waikato",2,"Demand","Crime","Violence","Common Assault",1
+"100","Waitemata",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"101","Waitemata",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"102","Waitemata",2,"Demand","Crime","Violence","Assault not further defined",2
+"103","Waitemata",2,"Demand","Crime","Violence","Common Assault",2
+"104","Waitemata",2,"Demand","Crime","Violence","Assault not further defined",8
+"105","Waitemata",2,"Demand","Crime","Violence","Assault not further defined",5
+"106","Waitemata",2,"Demand","Crime","Violence","Common Assault",4
+"107","Waitemata",2,"Demand","Crime","Violence","Common Assault",4
+"108","Waitemata",2,"Demand","Crime","Violence","Assault not further defined",3
+"109","Waitemata",2,"Demand","Crime","Violence","Common Assault",3
+"110","Waitemata",2,"Demand","Crime","Violence","Assault not further defined",10
+"111","Waitemata",2,"Demand","Crime","Violence","Common Assault",3
+"112","Wellington",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",2
+"113","Wellington",2,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"114","Wellington",2,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"115","Wellington",2,"Demand","Crime","Violence","Assault not further defined",1
+"116","Wellington",2,"Demand","Crime","Violence","Assault not further defined",2
+"117","Wellington",2,"Demand","Crime","Violence","Common Assault",3
+"118","Wellington",2,"Demand","Crime","Violence","Assault not further defined",2
+"119","Wellington",2,"Demand","Crime","Violence","Assault not further defined",1
+"120","Wellington",2,"Demand","Crime","Violence","Assault not further defined",3
+"121","Wellington",2,"Demand","Crime","Violence","Common Assault",3
+"122","Auckland City",3,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",4
+"123","Auckland City",3,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",4
+"124","Auckland City",3,"Demand","Crime","Violence","Assault not further defined",7
+"125","Auckland City",3,"Demand","Crime","Violence","Assault not further defined",1
+"126","Auckland City",3,"Demand","Crime","Violence","Assault not further defined",7
+"127","Auckland City",3,"Demand","Crime","Violence","Assault not further defined",1
+"128","Auckland City",3,"Demand","Crime","Violence","Common Assault",5
+"129","Bay Of Plenty",3,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"130","Bay Of Plenty",3,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"131","Bay Of Plenty",3,"Demand","Crime","Violence","Assault not further defined",5
+"132","Bay Of Plenty",3,"Demand","Crime","Violence","Assault not further defined",1
+"133","Bay Of Plenty",3,"Demand","Crime","Violence","Common Assault",1
+"134","Bay Of Plenty",3,"Demand","Crime","Violence","Common Assault",1
+"135","Bay Of Plenty",3,"Demand","Crime","Violence","Assault not further defined",1
+"136","Bay Of Plenty",3,"Demand","Crime","Violence","Assault not further defined",3
+"137","Bay Of Plenty",3,"Demand","Crime","Violence","Common Assault",1
+"138","Bay Of Plenty",3,"Demand","Crime","Violence","Common Assault",5
+"139","Canterbury",3,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"140","Canterbury",3,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",2
+"141","Canterbury",3,"Demand","Crime","Violence","Assault not further defined",8
+"142","Canterbury",3,"Demand","Crime","Violence","Common Assault",5
+"143","Canterbury",3,"Demand","Crime","Violence","Common Assault",1
+"144","Canterbury",3,"Demand","Crime","Violence","Assault not further defined",1
+"145","Central",3,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"146","Central",3,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"147","Central",3,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"148","Central",3,"Demand","Crime","Violence","Assault not further defined",7
+"149","Central",3,"Demand","Crime","Violence","Assault not further defined",2
+"150","Central",3,"Demand","Crime","Violence","Common Assault",1
+"151","Central",3,"Demand","Crime","Violence","Assault not further defined",1
+"152","Central",3,"Demand","Crime","Violence","Common Assault",2
+"153","Central",3,"Demand","Crime","Violence","Assault not further defined",4
+"154","Counties/Manukau",3,"Demand","Crime","Violence","Assault not further defined",1
+"155","Counties/Manukau",3,"Demand","Crime","Violence","Assault not further defined",5
+"156","Counties/Manukau",3,"Demand","Crime","Violence","Common Assault",1
+"157","Counties/Manukau",3,"Demand","Crime","Violence","Assault not further defined",9
+"158","Counties/Manukau",3,"Demand","Crime","Violence","Assault not further defined",6
+"159","Counties/Manukau",3,"Demand","Crime","Violence","Common Assault",1
+"160","Eastern",3,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"161","Eastern",3,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"162","Eastern",3,"Demand","Crime","Violence","Assault not further defined",2
+"163","Eastern",3,"Demand","Crime","Violence","Assault not further defined",2
+"164","Eastern",3,"Demand","Crime","Violence","Common Assault",4
+"165","Eastern",3,"Demand","Crime","Violence","Common Assault",2
+"166","Eastern",3,"Demand","Crime","Violence","Assault not further defined",1
+"167","Northland",3,"Demand","Crime","Violence","Assault not further defined",1
+"168","Northland",3,"Demand","Crime","Violence","Assault not further defined",1
+"169","Northland",3,"Demand","Crime","Violence","Common Assault",1
+"170","Northland",3,"Demand","Crime","Violence","Assault not further defined",1
+"171","Southern",3,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"172","Southern",3,"Demand","Crime","Violence","Assault not further defined",1
+"173","Southern",3,"Demand","Crime","Violence","Assault not further defined",1
+"174","Southern",3,"Demand","Crime","Violence","Common Assault",1
+"175","Southern",3,"Demand","Crime","Violence","Common Assault",1
+"176","Tasman",3,"Demand","Crime","Violence","Assault not further defined",1
+"177","Tasman",3,"Demand","Crime","Violence","Assault not further defined",2
+"178","Tasman",3,"Demand","Crime","Violence","Common Assault",1
+"179","Waikato",3,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"180","Waikato",3,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"181","Waikato",3,"Demand","Crime","Violence","Assault not further defined",2
+"182","Waikato",3,"Demand","Crime","Violence","Assault not further defined",1
+"183","Waikato",3,"Demand","Crime","Violence","Common Assault",2
+"184","Waikato",3,"Demand","Crime","Violence","Assault not further defined",1
+"185","Waikato",3,"Demand","Crime","Violence","Common Assault",1
+"186","Waikato",3,"Demand","Crime","Violence","Assault not further defined",5
+"187","Waikato",3,"Demand","Crime","Violence","Assault not further defined",1
+"188","Waikato",3,"Demand","Crime","Violence","Common Assault",2
+"189","Waikato",3,"Demand","Crime","Violence","Common Assault",1
+"190","Waitemata",3,"Demand","Crime","Violence","Assault not further defined",1
+"191","Waitemata",3,"Demand","Crime","Violence","Common Assault",5
+"192","Waitemata",3,"Demand","Crime","Violence","Assault not further defined",3
+"193","Waitemata",3,"Demand","Crime","Violence","Common Assault",2
+"194","Wellington",3,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"195","Wellington",3,"Demand","Crime","Violence","Assault not further defined",1
+"196","Wellington",3,"Demand","Crime","Violence","Assault not further defined",2
+"197","Wellington",3,"Demand","Crime","Violence","Common Assault",1
+"198","Wellington",3,"Demand","Crime","Violence","Common Assault",1
+"199","Wellington",3,"Demand","Crime","Violence","Assault not further defined",1
+"200","Wellington",3,"Demand","Crime","Violence","Common Assault",3
+"201","Wellington",3,"Demand","Crime","Violence","Assault not further defined",4
+"202","Wellington",3,"Demand","Crime","Violence","Common Assault",1
+"203","Wellington",3,"Demand","Crime","Violence","Assault not further defined",1
+"204","Wellington",3,"Demand","Crime","Violence","Common Assault",1
+"205","Auckland City",4,"Demand","Crime","Sexual","Aggravated Sexual Assault",2
+"206","Auckland City",4,"Demand","Crime","Violence","Assault not further defined",5
+"207","Auckland City",4,"Demand","Crime","Violence","Common Assault",1
+"208","Auckland City",4,"Demand","Crime","Violence","Common Assault",9
+"209","Bay Of Plenty",4,"Demand","Crime","Violence","Assault not further defined",3
+"210","Bay Of Plenty",4,"Demand","Crime","Violence","Common Assault",1
+"211","Bay Of Plenty",4,"Demand","Crime","Violence","Assault not further defined",9
+"212","Bay Of Plenty",4,"Demand","Crime","Violence","Common Assault",4
+"213","Bay Of Plenty",4,"Demand","Crime","Violence","Assault not further defined",4
+"214","Bay Of Plenty",4,"Demand","Crime","Violence","Common Assault",2
+"215","Bay Of Plenty",4,"Demand","Crime","Violence","Common Assault",3
+"216","Canterbury",4,"Demand","Crime","Sexual","Aggravated Sexual Assault",3
+"217","Canterbury",4,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"218","Canterbury",4,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",4
+"219","Canterbury",4,"Demand","Crime","Violence","Assault not further defined",17
+"220","Canterbury",4,"Demand","Crime","Violence","Assault not further defined",22
+"221","Canterbury",4,"Demand","Crime","Violence","Common Assault",4
+"222","Canterbury",4,"Demand","Crime","Violence","Assault not further defined",2
+"223","Canterbury",4,"Demand","Crime","Violence","Common Assault",2
+"224","Canterbury",4,"Demand","Crime","Violence","Assault not further defined",1
+"225","Canterbury",4,"Demand","Crime","Violence","Common Assault",1
+"226","Central",4,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"227","Central",4,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"228","Central",4,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"229","Central",4,"Demand","Crime","Violence","Assault not further defined",2
+"230","Central",4,"Demand","Crime","Violence","Assault not further defined",1
+"231","Central",4,"Demand","Crime","Violence","Assault not further defined",4
+"232","Central",4,"Demand","Crime","Violence","Assault not further defined",4
+"233","Central",4,"Demand","Crime","Violence","Common Assault",3
+"234","Central",4,"Demand","Crime","Violence","Common Assault",2
+"235","Central",4,"Demand","Crime","Violence","Common Assault",3
+"236","Central",4,"Demand","Crime","Violence","Assault not further defined",6
+"237","Central",4,"Demand","Crime","Violence","Assault not further defined",8
+"238","Central",4,"Demand","Crime","Violence","Common Assault",3
+"239","Central",4,"Demand","Crime","Violence","Assault not further defined",2
+"240","Central",4,"Demand","Crime","Violence","Common Assault",1
+"241","Counties/Manukau",4,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"242","Counties/Manukau",4,"Demand","Crime","Sexual","Aggravated Sexual Assault",2
+"243","Counties/Manukau",4,"Demand","Crime","Violence","Assault not further defined",33
+"244","Counties/Manukau",4,"Demand","Crime","Violence","Common Assault",16
+"245","Counties/Manukau",4,"Demand","Crime","Violence","Assault not further defined",1
+"246","Counties/Manukau",4,"Demand","Crime","Violence","Assault not further defined",10
+"247","Counties/Manukau",4,"Demand","Crime","Violence","Common Assault",3
+"248","Counties/Manukau",4,"Demand","Crime","Violence","Assault not further defined",22
+"249","Counties/Manukau",4,"Demand","Crime","Violence","Common Assault",9
+"250","Eastern",4,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"251","Eastern",4,"Demand","Crime","Violence","Assault not further defined",2
+"252","Eastern",4,"Demand","Crime","Violence","Assault not further defined",17
+"253","Eastern",4,"Demand","Crime","Violence","Common Assault",8
+"254","Eastern",4,"Demand","Crime","Violence","Common Assault",1
+"255","Eastern",4,"Demand","Crime","Violence","Assault not further defined",1
+"256","Eastern",4,"Demand","Crime","Violence","Assault not further defined",3
+"257","Eastern",4,"Demand","Crime","Violence","Common Assault",7
+"258","Northland",4,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"259","Northland",4,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"260","Northland",4,"Demand","Crime","Violence","Assault not further defined",7
+"261","Northland",4,"Demand","Crime","Violence","Assault not further defined",3
+"262","Northland",4,"Demand","Crime","Violence","Common Assault",1
+"263","Northland",4,"Demand","Crime","Violence","Assault not further defined",2
+"264","Northland",4,"Demand","Crime","Violence","Assault not further defined",1
+"265","Northland",4,"Demand","Crime","Violence","Common Assault",6
+"266","Southern",4,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"267","Southern",4,"Demand","Crime","Violence","Assault not further defined",2
+"268","Southern",4,"Demand","Crime","Violence","Assault not further defined",1
+"269","Southern",4,"Demand","Crime","Violence","Common Assault",10
+"270","Southern",4,"Demand","Crime","Violence","Common Assault",1
+"271","Southern",4,"Demand","Crime","Violence","Assault not further defined",4
+"272","Southern",4,"Demand","Crime","Violence","Assault not further defined",8
+"273","Southern",4,"Demand","Crime","Violence","Common Assault",2
+"274","Tasman",4,"Demand","Crime","Violence","Assault not further defined",1
+"275","Tasman",4,"Demand","Crime","Violence","Common Assault",1
+"276","Tasman",4,"Demand","Crime","Violence","Assault not further defined",3
+"277","Tasman",4,"Demand","Crime","Violence","Assault not further defined",2
+"278","Tasman",4,"Demand","Crime","Violence","Common Assault",3
+"279","Tasman",4,"Demand","Crime","Violence","Assault not further defined",4
+"280","Unspecified",4,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"281","Waikato",4,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"282","Waikato",4,"Demand","Crime","Sexual","Aggravated Sexual Assault",1
+"283","Waikato",4,"Demand","Crime","Violence","Assault not further defined",11
+"284","Waikato",4,"Demand","Crime","Violence","Common Assault",5
+"285","Waikato",4,"Demand","Crime","Violence","Assault not further defined",2
+"286","Waikato",4,"Demand","Crime","Violence","Assault not further defined",1
+"287","Waikato",4,"Demand","Crime","Violence","Common Assault",1
+"288","Waikato",4,"Demand","Crime","Violence","Assault not further defined",2
+"289","Waikato",4,"Demand","Crime","Violence","Assault not further defined",1
+"290","Waikato",4,"Demand","Crime","Violence","Assault not further defined",4
+"291","Waikato",4,"Demand","Crime","Violence","Common Assault",4
+"292","Waikato",4,"Demand","Crime","Violence","Common Assault",1
+"293","Waitemata",4,"Demand","Crime","Violence","Common Assault",1
+"294","Waitemata",4,"Demand","Crime","Violence","Assault not further defined",7
+"295","Waitemata",4,"Demand","Crime","Violence","Common Assault",3
+"296","Waitemata",4,"Demand","Crime","Violence","Assault not further defined",4
+"297","Waitemata",4,"Demand","Crime","Violence","Assault not further defined",1
+"298","Waitemata",4,"Demand","Crime","Violence","Common Assault",1
+"299","Waitemata",4,"Demand","Crime","Violence","Common Assault",1
+"300","Waitemata",4,"Demand","Crime","Violence","Assault not further defined",2
+"301","Waitemata",4,"Demand","Crime","Violence","Assault not further defined",1
+"302","Wellington",4,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",2
+"303","Wellington",4,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"304","Wellington",4,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",1
+"305","Wellington",4,"Demand","Crime","Sexual","Non-Aggravated Sexual Assault",3
+"306","Wellington",4,"Demand","Crime","Violence","Assault not further defined",2
+"307","Wellington",4,"Demand","Crime","Violence","Assault not further defined",2
+"308","Wellington",4,"Demand","Crime","Violence","Common Assault",4
+"309","Wellington",4,"Demand","Crime","Violence","Assault not further defined",9
+"310","Wellington",4,"Demand","Crime","Violence","Common Assault",7
+"311","Wellington",4,"Demand","Crime","Violence","Assault not further defined",2
+"312","Wellington",4,"Demand","Crime","Violence","Assault not further defined",18
+"313","Wellington",4,"Demand","Crime","Violence","Common Assault",5
