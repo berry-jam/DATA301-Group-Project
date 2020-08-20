@@ -1,0 +1,94 @@
+---
+title: "Merge datasets"
+author: "Wonsang Yu 300463616"
+date : "14/08/2020"
+output: pdf_document
+---
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+victims <- read.csv("Victimisations_time_and_place (cleaned).csv", header = TRUE)
+head(victims)
+
+library(dplyr)
+library(tidyr)
+library(knitr)
+
+
+covid <-  read.csv("Covid calls for service cleaned.csv", header = TRUE)
+head(covid)
+
+original <- read.csv("Victimisation_timeAndPlace.csv", header = TRUE)
+
+head(original)
+
+crime <- read.csv("crime_city_2017-2020.csv", header = TRUE)
+head(crime)
+
+unique(covid$Event.Type)
+```
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(tidyverse)
+
+victim_c <- read.csv("Victimisation_clean.csv")
+#The covid dataset from keriyn grooming
+covid <-  read.csv("Covid calls for service cleaned.csv", header = TRUE)
+
+#Changed Event-type to ANZSOC.Group
+names(covid)[7] <- "ANZSOC.Group"
+colnames(covid)
+head(crime_city)
+
+head(covid)
+#unique(victim_c$ANZSOC.Group)
+#unique(covid$Event.Type)
+
+#nrow(tlqkf)
+#nrow(covid)
+merged_two <- merge(victim_c,covid,all=TRUE)
+merged_two
+#merge <- left_join(covid,victim_c,by=c("Alert.Level","ANZSOC.Group"))
+#merge
+write.csv(merged_two,"/Users/ykha3/Desktop/VicUni/Data301/MergedTwoDataset.csv")
+```
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(tidyverse)
+
+#I added and changed little thing
+victim <- read.csv("crime_city_2017-2020.csv", header = TRUE)
+victim1 <- separate(victim, "Month.Year", c("day", "month", "year"))
+
+#Filtered by 3 different years 
+year_list <- c(2017,2018,2019)
+victim1 <- filter(victim1,year %in% year_list)
+
+#unique(victim$ANZSOC.Group)
+
+#I think it`s better to have assault that matchig with Covid dataset
+assault <- victim1 %>% filter(ANZSOC.Group == c("Non-Aggravated Sexual Assault","Common Assault", "Aggravated Sexual Assault"))
+
+#Filtered by March(which corresponding lvl4) , April , May
+month_list <- c("03","04","05")
+assault <- filter(assault,month %in% month_list)
+#This one is unnecessary but I tried to add Alter.Level Column to make same column with Covid
+assault$Alert.Level <- ifelse(assault$month =="03", 4,
+                       ifelse(assault$month =="04", 3, 2))
+
+
+assault <- assault %>% unite(date,c("day","month","year"),sep="/")
+
+sort(unique(assault$date))
+assault$X <- NULL
+#head(assault)
+#colnames(assault)
+assault
+unique(assault$ANZSOC.Group)
+write.csv(assault,"/Users/ykha3/Desktop/VicUni/Data301/Victimisation_clean.csv")
+```
