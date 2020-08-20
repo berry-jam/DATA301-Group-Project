@@ -1,0 +1,45 @@
+---
+title: "covid clean"
+author: "Keiryn Hart, 300428418"
+date: "20/08/2020"
+output: html_document
+---
+
+
+
+```{r}
+covid <- read.csv("Covid_calls for service.csv", header = TRUE)
+head(covid)
+```
+
+```{r}
+
+unique(covid$Event.Type[grep("Assault", covid$Event.Type)])
+
+covid_assault <- covid %>% filter(Event.Type == c("Aggravated Sexual Assault","Non-Aggravated Sexual Assault","Assault not further defined","Common Assault"))
+
+write.csv(covid_assault, "/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Covid calls for service cleaned.csv")
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+```{r}
+
+```
+
+
+```{r}
+
+```
+
