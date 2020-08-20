@@ -5,6 +5,7 @@ date: "19/08/2020"
 output: html_document
 ---
 
+# code will not run as the "crime_city.csv" dataset was the original dataset that was too large to be put into the git
 ```{r}
 library(dplyr)
 library(tidyverse)
