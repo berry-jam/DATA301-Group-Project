@@ -1,0 +1,145 @@
+---
+title: "viewing"
+author: "Keiryn Hart, 300428418"
+date: "21/08/2020"
+output: html_document
+---
+
+
+```{r}
+victims <- read.csv("Victimisations_time_and_place (cleaned).csv", header = TRUE)
+covid <- read.csv("Covid calls for service cleaned.csv", header = TRUE)
+
+
+victim1 <- separate(victims, "date", c("day", "month", "year"))           
+
+months <- c(3,4,5,6,7)
+victims <- subset(victim1, month %in% months)
+
+
+victims[, "theoretical_alert_level"] <- NA
+
+for(i in 1:nrow(victims)){
+  if(victims$month[i] == 3){
+    victims$theoretical_alert_level[i] <- 4
+  }
+  else if(victims$month[i] == 4){
+    victims$theoretical_alert_level[i] <- 3
+  }
+  else if(victims$month[i] == 5){
+    victims$theoretical_alert_level[i] <- 2
+  }
+  else{victims$theoretical_alert_level[i] <- 1}
+}
+
+
+```
+
+```{r}
+unique(covid$District)
+```
+
+```{r}
+covid[, "Location"] <- NA
+
+for(i in 1:nrow(covid)){
+  if(covid$District[i] == "Auckland City" | covid$District[i] == "Counties/Manukau" | covid$District[i] == "Waitemata"){
+    covid$Location[i] <- "Auckland"
+  }
+  else if(covid$District[i] == "Bay Of Plenty"){
+    covid$Location[i] <- "Bay Of Plenty"
+  }
+  else if(covid$District[i] == "Waikato"){
+    covid$Location[i] <- "Waikato"
+  }
+  else if(covid$District[i] == "Eastern"){
+    covid$Location[i] <- "Hawkes Bay/ Gisborne"
+  }
+  else if(covid$District[i] == "Central"){
+    covid$Location[i] <- "West Coast/ Upper-Central North"
+  }
+  else if(covid$District[i] == "Wellington"){
+    covid$Location[i] <- "Wellington/ Lower-Central North"
+  }
+  else if(covid$District[i] == "Tasman"){
+    covid$Location[i] <- "Tasman/ South-West Coast"
+  }
+  else if(covid$District[i] == "Northland"){
+    covid$Location[i] <- "Northland"
+  }
+  else if(covid$District[i] == "Southern"){
+    covid$Location[i] <- "Southland/ Otago"
+  }
+  else if(covid$District[i] == "Canterbury"){
+    covid$Location[i] <- "Cantebury"
+  }
+  else{covid$Location[i] <- "Other"}
+}
+
+head(covid)
+```
+
+```{r}
+unique(victims$Territorial.Authority)
+```
+
+```{r}
+victims[, "Location"] <- NA
+
+for(i in 1:nrow(victims)){
+  if(victims$Territorial.Authority[i] == "Auckland."){
+    victims$Location[i] <- "Auckland"
+  }
+  else if(victims$Territorial.Authority[i] == "Far North District." | victims$Territorial.Authority[i] == "Whangarei District." | victims$Territorial.Authority[i] == "Kaipara District."){
+    victims$Location[i] <- "Northland"
+  }
+  else if(victims$Territorial.Authority[i] == "Waipa District." | victims$Territorial.Authority[i] == "Hamilton City." | victims$Territorial.Authority[i] == "Taupo District." | victims$Territorial.Authority[i] == "Hauraki District." | victims$Territorial.Authority[i] == "Otorohanga District." | victims$Territorial.Authority[i] == "South Waikato District." | victims$Territorial.Authority[i] == "Thames-Coromandel District." | victims$Territorial.Authority[i] == "Waitomo District." | victims$Territorial.Authority[i] == "Waikato District." | victims$Territorial.Authority[i] == "Matamata-Piako District."){
+    victims$Location[i] <- "Waikato"
+  }
+  else if(victims$Territorial.Authority[i] == "Whakatane District." | victims$Territorial.Authority[i] == "Opotiki District." | victims$Territorial.Authority[i] == "Kawerau District." | victims$Territorial.Authority[i] == "Tauranga City." | victims$Territorial.Authority[i] == "Rotorua District." | victims$Territorial.Authority[i] == "Western Bay of Plenty District."){
+    victims$Location[i] <- "Bay Of Plenty"
+  }
+  else if(victims$Territorial.Authority[i] == "Napier City." | victims$Territorial.Authority[i] == "Central Hawke's Bay District." | victims$Territorial.Authority[i] == "Hastings District." | victims$Territorial.Authority[i] == "Gisborne District." | victims$Territorial.Authority[i] == "Wairoa District."){
+    victims$Location[i] <- "Hawkes Bay/ Gisborne"
+  }
+  else if(victims$Territorial.Authority[i] == "South Taranaki District." | victims$Territorial.Authority[i] == "Stratford District." | victims$Territorial.Authority[i] == "Ruapehu District." | victims$Territorial.Authority[i] == "Rangitikei District." | victims$Territorial.Authority[i] == "New Plymouth District." | victims$Territorial.Authority[i] == "Manawatu District." | victims$Territorial.Authority[i] == "Wanganui District." | victims$Territorial.Authority[i] == "Palmerston North City."){
+    victims$Location[i] <- "West Coast/ Upper-Central North"
+  }
+  else if(victims$Territorial.Authority[i] == "Masterton District." | victims$Territorial.Authority[i] == "South Wairarapa District." | victims$Territorial.Authority[i] == "Lower Hutt City." | victims$Territorial.Authority[i] == "Porirua City." | victims$Territorial.Authority[i] == "Kapiti Coast District." | victims$Territorial.Authority[i] == "Horowhenua District." | victims$Territorial.Authority[i] == "Wellington City."  | victims$Territorial.Authority[i] == "Tararua District." | victims$Territorial.Authority[i] == "Carterton District." | victims$Territorial.Authority[i] == "Upper Hutt City."){
+    victims$Location[i] <- "Wellington/ Lower-Central North"
+  }
+  else if(victims$Territorial.Authority[i] == "Grey District." | victims$Territorial.Authority[i] == "Buller District." | victims$Territorial.Authority[i] == "Tasman District." | victims$Territorial.Authority[i] == "Marlborough District." | victims$Territorial.Authority[i] == "Westland District." | victims$Territorial.Authority[i] == "Nelson City."){
+    victims$Location[i] <- "Tasman/ South-West Coast"
+  }
+  else if(victims$Territorial.Authority[i] == "Invercargill City." | victims$Territorial.Authority[i] == "Queenstown-Lakes District." | victims$Territorial.Authority[i] == "Southland District." | victims$Territorial.Authority[i] == "Central Otago District." | victims$Territorial.Authority[i] == "Gore District." | victims$Territorial.Authority[i] == "Clutha District." | victims$Territorial.Authority[i] == "Dunedin City."){
+    victims$Location[i] <- "Southland/ Otago"
+  }
+  else{victims$Location[i] <- "Canterbury"}
+}
+```
+
+```{r}
+victims[, c("X", "X.1", "day")] <- NULL 
+covid[,c("X", "Calls.for.Service.and.Prevention", "Crime.and.NonCrime.Demand", "Event.Category", "District")] <- NULL
+
+covid[, "year"] <- 20
+
+library(dplyr)
+
+covid <- covid %>% rename(Event = Event.Type)
+
+victims <- victims %>% rename(Event = ANZSOC.Group, Alert.Level = theoretical_alert_level)
+
+colnames(covid)
+colnames(victims)
+
+covid[, c("month", "Area.Unit", "Meshblock", "Territorial.Authority")] <- NA
+victims[, "No"] <- NA
+
+```
+
+```{r}
+total <- rbind(victims, covid)
+
+write.csv(total,"/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/merged data.csv")
+```
