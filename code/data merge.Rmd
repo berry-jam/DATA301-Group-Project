@@ -7,13 +7,13 @@ output: html_document
 
 
 ```{r}
-victims <- read.csv("Victimisations_time_and_place (cleaned).csv", header = TRUE)
-covid <- read.csv("Covid calls for service cleaned.csv", header = TRUE)
+victims <- read.csv("/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Victimisations_time_and_place (cleaned).csv", header = TRUE)
+covid <- read.csv("/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Covid calls for service cleaned.csv", header = TRUE)
 
 
 victim1 <- separate(victims, "date", c("day", "month", "year"))           
 
-months <- c(3,4,5,6,7)
+months <- c(3,4,5)
 victims <- subset(victim1, month %in% months)
 
 
@@ -29,7 +29,6 @@ for(i in 1:nrow(victims)){
   else if(victims$month[i] == 5){
     victims$theoretical_alert_level[i] <- 2
   }
-  else{victims$theoretical_alert_level[i] <- 1}
 }
 
 
@@ -37,6 +36,9 @@ for(i in 1:nrow(victims)){
 
 ```{r}
 unique(covid$District)
+covid
+victims
+sum(victims$Territorial.Authority == "Hamilton City.")
 ```
 
 ```{r}
@@ -133,13 +135,18 @@ victims <- victims %>% rename(Event = ANZSOC.Group, Alert.Level = theoretical_al
 colnames(covid)
 colnames(victims)
 
-covid[, c("month", "Area.Unit", "Meshblock", "Territorial.Authority")] <- NA
-victims[, "No"] <- NA
+victims[,c("Territorial.Authority", "Area.Unit", "month")] <- NULL
+
+covid[, "Meshblock"] <- NA
+victims[, "number_of_victimizations"] <- NA
 
 ```
 
 ```{r}
+covid <- covid %>% rename(number_of_victimizations = No)
+
 total <- rbind(victims, covid)
 
-write.csv(total,"/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/merged data.csv")
+
+write.csv(total,"/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/merged data (round 2).csv")
 ```
