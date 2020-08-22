@@ -1,0 +1,94 @@
+---
+title: "Victum cleaned"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(tidyverse)
+library(stringr)
+library(ggplot2)
+```
+
+```{r}
+df <- read.csv(file="Victimisations_time_and_place(cleaned).csv", header = TRUE)
+head(df)
+```
+
+
+```{r}
+names(df)[names(df) == "X.1"] <- "Number of victims"
+head(df)
+
+```
+
+```{r}
+victims <- subset(df, select=c("Territorial.Authority", "date", "ANZSOC.Group","Number of victims"))
+victims
+
+```
+```{r}
+df2 <- read.csv(file="Covid calls for service(cleaned).csv", header = TRUE)
+names(df2)[names(df2) == "No"] <- "Number of victims"
+names(df2)[names(df2) == "Alert.Level"] <- "date"
+head(df2)
+```
+
+```{r}
+covid <- subset(df2, select = c("District", "date", "Event.Type", "Number of victims"))
+head(covid)
+```
+
+```{r}
+str(covid)
+```
+
+```{r}
+str(victims)
+```
+```{r}
+for(i in 1:nrow(covid)){
+  if(covid$date[i] == 3){
+    covid$Alert_level[i] <- "April/2020"
+  }
+  else if(covid$date[i] == 4){
+    covid$Alert_level[i] <- "May/2020"
+  }
+  else if(covid$date[i] == 2){
+    covid$Alert_level[i] <- "March/2020"
+  }
+}
+```
+
+
+```{r}
+covid <- subset(covid, select = c("District", "Alert_level", "Event.Type", "Number of victims"))
+names(covid)[names(covid) == "Alert_level"] <- "date"
+head(covid)
+```
+```{r}
+str(covid)
+```
+
+```{r}
+str(victims)
+
+```
+
+```{r}
+merge <- full_join(covid, victims, all = TRUE)
+merge
+```
+```{r}
+
+write.csv(merge, "H:/New folder/merge/merge_data2.csv")
+
+```
+
+
+
