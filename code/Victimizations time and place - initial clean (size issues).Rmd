@@ -5,7 +5,7 @@ date: "19/08/2020"
 output: html_document
 ---
 
-# code will not run as the "crime_city.csv" dataset was the original dataset that was too large to be put into the git
+# code will not run as the "crime_city.csv" dataset was the original dataset that was too large to be put into the git. Team members have access to this on thier personal computers and all columns are the same as the output file from this script, the purpose of this script is simply to filter the neccasery years and crime type (Assault) so the file is small enough to save. Further data preparation is completed in Vicitimizations time and place - second clean.Rmd.
 ```{r}
 library(dplyr)
 library(tidyverse)
@@ -14,21 +14,18 @@ head(victim)
 ```
 
 
-
 ```{r}
+# Seperation to allow filtering on the year, this is united into a data again in the second clean.
 victim1 <- separate(victim, "X.Month.Year", c("day", "month", "year"))
 head(victim1)
-victim18 <- victim1 %>% filter(year == c(17,18, 19))
-unique(victim18$ANZSOC.Group)
-assault <- victim18 %>% filter(ANZSOC.Group == c("Serious Assault Not Resulting in Injury", "Non-Aggravated Sexual Assault", "Serious Assault Resulting in Injury", "Common Assault", "Aggravated Sexual Assault"))
 
-write.csv(victim18, "/Users/keirynhart/Documents/victims_filtered.csv")
-```
+victim_17_18_19 <- victim1 %>% filter(year == c(17,18, 19))
 
+#unique(victim18$ANZSOC.Group)
 
+assault <- victim_17_18_19 %>% filter(ANZSOC.Group == c("Serious Assault Not Resulting in Injury", "Non-Aggravated Sexual Assault", "Serious Assault Resulting in Injury", "Common Assault", "Aggravated Sexual Assault"))
 
-```{r}
-
+write.csv(victim_17_18_19, "/Users/keirynhart/Documents/victims_filtered.csv")
 ```
 
 
