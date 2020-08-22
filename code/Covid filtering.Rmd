@@ -6,40 +6,28 @@ output: html_document
 ---
 
 
-
 ```{r}
+#covid <- read.csv("/Users/abbey/OneDrive/UniWork_2020/DATA301/New folder/DATA301-Group-Project/Data/Covid_calls for service.csv")
+
 covid <- read.csv("Covid_calls for service.csv", header = TRUE)
 head(covid)
 ```
 
 ```{r}
-
 unique(covid$Event.Type[grep("Assault", covid$Event.Type)])
 
 covid_assault <- covid %>% filter(Event.Type == c("Aggravated Sexual Assault","Non-Aggravated Sexual Assault","Assault not further defined","Common Assault"))
 
-write.csv(covid_assault, "/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Covid calls for service cleaned.csv")
+names(covid_assault)[names(covid_assault) == 'ï..District'] <- 'District'
 ```
 
-```{r}
-
+```{R}
+sum(is.na(covid_assault)) # No missing values.
 ```
 
-```{r}
+```{R}
+#write.csv(covid_assault, "/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Covid calls for service cleaned.csv")
 
-```
-
-```{r}
-
-```
-
-
-```{r}
-
-```
-
-
-```{r}
-
+write.csv(covid_assault, "/Users/abbey/OneDrive/UniWork_2020/DATA301/New folder/DATA301-Group-Project/Data/Covid calls for service cleaned.csv")
 ```
 
