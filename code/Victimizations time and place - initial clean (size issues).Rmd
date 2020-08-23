@@ -9,7 +9,7 @@ output: html_document
 ```{r}
 library(dplyr)
 library(tidyverse)
-victim <- read.csv("crime_city.csv", header = TRUE)
+victim <- read.csv("/Users/keirynhart/Documents/Uni/crime_city.csv", header = TRUE)
 head(victim)
 ```
 
@@ -23,11 +23,10 @@ victim_17_18_19 <- victim1 %>% filter(year == c(17,18, 19))
 
 #unique(victim18$ANZSOC.Group)
 
-assault <- victim_17_18_19 %>% filter(ANZSOC.Group == c("Serious Assault Not Resulting in Injury", "Non-Aggravated Sexual Assault", "Serious Assault Resulting in Injury", "Common Assault", "Aggravated Sexual Assault"))
+#assault <- victim_17_18_19 %>% filter(ANZSOC.Group == c("Serious Assault Not Resulting in Injury", "Non-Aggravated Sexual Assault", "Serious Assault Resulting in Injury", "Common Assault", "Aggravated Sexual Assault"))
 
-#write.csv(victim_17_18_19, "/Users/keirynhart/Documents/victims_filtered.csv") #This file is not the one being used in the second groom? 
 
-#write.csv(victims_17_18_19, "/Users/abbey/OneDrive/UniWork_2020/DATA301/New folder/DATA301-Group-Project/Data/Victimizations_time_and_place (filtered years).csv")
+write.csv(victim_17_18_19, "/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Victimizations_time_and_place (partly filtered).csv")
 ```
 
 

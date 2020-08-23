@@ -7,15 +7,10 @@ output: html_document
 
 # Does this not just do exactly the same thing as the initial clean - Sort the years and filter to be assault, if we use the file outputted from there this almost becomes obselete besides the NA checking and sorting??
 
-```{R}
-
-```
 
 ```{r}
-#victims <- read.csv("/Users/abbey/OneDrive/UniWork_2020/DATA301/New folder/DATA301-Group-Project/Data/Victimizations_time_and_place (partly filtered).csv", header = TRUE)
+victims <- read.csv("/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Victimizations_time_and_place (partly filtered).csv", header = TRUE)
 
-victims <- read.csv("Victimizations_time_and_place (partly filtered).csv", header = TRUE)
-head(victims)
 ```
 
 
@@ -25,12 +20,10 @@ library(lubridate)
 
 victims <- victims %>% unite(date,c("day","month","year"),sep="/")
 
-#assault <- victims %>% filter(ANZSOC.Group == c("Serious Assault Not Resulting in Injury", "Non-Aggravated Sexual Assault", "Serious Assault Resulting in Injury", "Common Assault", "Aggravated Sexual Assault"))
+assault <- victims %>% filter(ANZSOC.Group == c("Serious Assault Not Resulting in Injury", "Non-Aggravated Sexual Assault", "Serious Assault Resulting in Injury", "Common Assault", "Aggravated Sexual Assault"))
 
-assault <- victims$ANZSOC.Group # This was filtered to just be assault in the initial clean already
 
 unique(victims$ANZSOC.Group)
-sort(unique(assault$date))
 sum(is.na(assault))
 nrow(assault)
 
