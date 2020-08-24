@@ -5,16 +5,18 @@ date: "21/08/2020"
 output: html_document
 ---
 
-
+reading the datasets into r, separating the victims dataset by day,month and year again so I can subset the new victims dataset by specific months. from this I have given the victims dataset theoretical alert levels for comparison purposes with the covid dataset.
 ```{r}
+
+library(tidyr)
 victims <- read.csv("/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Victimisations_time_and_place (cleaned).csv", header = TRUE)
 covid <- read.csv("/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Covid calls for service cleaned.csv", header = TRUE)
 
 
-victim1 <- separate(victims, "date", c("day", "month", "year"))           
+victims <- separate(victims, "date", c("day", "month", "year"))           
 
 months <- c(3,4,5)
-victims <- subset(victim1, month %in% months)
+victims <- subset(victims, month %in% months)
 
 
 victims[, "theoretical_alert_level"] <- NA
@@ -34,13 +36,8 @@ for(i in 1:nrow(victims)){
 
 ```
 
-```{r}
-unique(covid$District)
-covid
-victims
-sum(victims$Territorial.Authority == "Hamilton City.")
-```
 
+Here I am averaging the Locations from the covid dataset into regions that can be matched to the victims dataset for merging.
 ```{r}
 covid[, "Location"] <- NA
 
@@ -81,10 +78,7 @@ for(i in 1:nrow(covid)){
 head(covid)
 ```
 
-```{r}
-unique(victims$Territorial.Authority)
-```
-
+Again averaging the Locations in the victims dataset now to have a consistent match between the two for comparison.
 ```{r}
 victims[, "Location"] <- NA
 
@@ -120,6 +114,8 @@ for(i in 1:nrow(victims)){
 }
 ```
 
+
+removing unneccessary columns and preparing for merge.
 ```{r}
 victims[, c("X", "X.1", "day")] <- NULL 
 covid[,c("X", "Calls.for.Service.and.Prevention", "Crime.and.NonCrime.Demand", "Event.Category", "District")] <- NULL
@@ -127,26 +123,43 @@ covid[,c("X", "Calls.for.Service.and.Prevention", "Crime.and.NonCrime.Demand", "
 covid[, "year"] <- 20
 
 library(dplyr)
+library(plyr)
+covid <- covid %>% dplyr::rename(Event = Event.Type)
 
-covid <- covid %>% rename(Event = Event.Type)
-
-victims <- victims %>% rename(Event = ANZSOC.Group, Alert.Level = theoretical_alert_level)
+victims <- victims %>% dplyr::rename(Event = ANZSOC.Group, Alert.Level = theoretical_alert_level)
 
 colnames(covid)
 colnames(victims)
 
 victims[,c("Territorial.Authority", "Area.Unit", "month")] <- NULL
 
-covid[, "Meshblock"] <- NA
+covid[, "Meshblock"] <- NULL
 victims[, "number_of_victimizations"] <- NA
+
+victims[, c("Meshblock", "number_of_victimizations")] <- NULL
 
 ```
 
+creating matching sums for total events in both datasets for the merge.
 ```{r}
-covid <- covid %>% rename(number_of_victimizations = No)
 
-total <- rbind(victims, covid)
+VictimsSum <- dplyr::count(victims, Event, year, Alert.Level, Location) %>% ungroup()
+
+CovidSum <- aggregate(. ~  Event + year + Alert.Level + Location, covid, sum)
 
 
-write.csv(total,"/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/merged data (round 2).csv")
+VictimsSum <- rename(VictimsSum, c("n" = "Number of Victimizations"))
+CovidSum <- rename(CovidSum, c("No" = "Number of Victimizations"))
+
+
+
+```
+
+merge.
+```{r}
+
+total <- rbind(VictimsSum, CovidSum)
+
+
+write.csv(total,"/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/merged data (Final).csv")
 ```

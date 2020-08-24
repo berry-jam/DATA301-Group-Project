@@ -1,0 +1,418 @@
+"","Event","year","Alert.Level","Location","Number of Victimizations"
+"1","Aggravated Sexual Assault","17",2,"Auckland",2
+"2","Aggravated Sexual Assault","17",2,"Canterbury",1
+"3","Aggravated Sexual Assault","17",2,"Hawkes Bay/ Gisborne",1
+"4","Aggravated Sexual Assault","17",2,"Tasman/ South-West Coast",3
+"5","Aggravated Sexual Assault","17",2,"Waikato",1
+"6","Aggravated Sexual Assault","17",2,"Wellington/ Lower-Central North",1
+"7","Aggravated Sexual Assault","17",2,"West Coast/ Upper-Central North",2
+"8","Aggravated Sexual Assault","17",3,"Auckland",4
+"9","Aggravated Sexual Assault","17",3,"Canterbury",1
+"10","Aggravated Sexual Assault","17",3,"Hawkes Bay/ Gisborne",1
+"11","Aggravated Sexual Assault","17",3,"Wellington/ Lower-Central North",3
+"12","Aggravated Sexual Assault","17",3,"West Coast/ Upper-Central North",1
+"13","Aggravated Sexual Assault","17",4,"Auckland",4
+"14","Aggravated Sexual Assault","17",4,"Bay Of Plenty",2
+"15","Aggravated Sexual Assault","17",4,"Northland",1
+"16","Aggravated Sexual Assault","17",4,"Tasman/ South-West Coast",1
+"17","Aggravated Sexual Assault","17",4,"Waikato",1
+"18","Aggravated Sexual Assault","17",4,"Wellington/ Lower-Central North",1
+"19","Aggravated Sexual Assault","17",4,"West Coast/ Upper-Central North",4
+"20","Aggravated Sexual Assault","18",2,"Auckland",1
+"21","Aggravated Sexual Assault","18",2,"Bay Of Plenty",1
+"22","Aggravated Sexual Assault","18",2,"Canterbury",3
+"23","Aggravated Sexual Assault","18",2,"Northland",1
+"24","Aggravated Sexual Assault","18",2,"Waikato",1
+"25","Aggravated Sexual Assault","18",3,"Auckland",3
+"26","Aggravated Sexual Assault","18",3,"Bay Of Plenty",2
+"27","Aggravated Sexual Assault","18",3,"Northland",1
+"28","Aggravated Sexual Assault","18",3,"Southland/ Otago",1
+"29","Aggravated Sexual Assault","18",3,"Waikato",1
+"30","Aggravated Sexual Assault","18",3,"Wellington/ Lower-Central North",2
+"31","Aggravated Sexual Assault","18",4,"Auckland",3
+"32","Aggravated Sexual Assault","18",4,"Canterbury",2
+"33","Aggravated Sexual Assault","18",4,"Hawkes Bay/ Gisborne",2
+"34","Aggravated Sexual Assault","18",4,"Southland/ Otago",2
+"35","Aggravated Sexual Assault","18",4,"Tasman/ South-West Coast",1
+"36","Aggravated Sexual Assault","18",4,"Waikato",1
+"37","Aggravated Sexual Assault","18",4,"Wellington/ Lower-Central North",1
+"38","Aggravated Sexual Assault","18",4,"West Coast/ Upper-Central North",1
+"39","Aggravated Sexual Assault","19",2,"Auckland",6
+"40","Aggravated Sexual Assault","19",2,"Hawkes Bay/ Gisborne",1
+"41","Aggravated Sexual Assault","19",2,"Tasman/ South-West Coast",1
+"42","Aggravated Sexual Assault","19",2,"Waikato",1
+"43","Aggravated Sexual Assault","19",3,"Canterbury",1
+"44","Aggravated Sexual Assault","19",3,"Hawkes Bay/ Gisborne",3
+"45","Aggravated Sexual Assault","19",3,"Southland/ Otago",2
+"46","Aggravated Sexual Assault","19",3,"Tasman/ South-West Coast",1
+"47","Aggravated Sexual Assault","19",3,"Waikato",1
+"48","Aggravated Sexual Assault","19",3,"Wellington/ Lower-Central North",1
+"49","Aggravated Sexual Assault","19",3,"West Coast/ Upper-Central North",1
+"50","Aggravated Sexual Assault","19",4,"Auckland",1
+"51","Aggravated Sexual Assault","19",4,"Bay Of Plenty",1
+"52","Aggravated Sexual Assault","19",4,"Canterbury",1
+"53","Aggravated Sexual Assault","19",4,"Northland",2
+"54","Aggravated Sexual Assault","19",4,"Waikato",3
+"55","Aggravated Sexual Assault","19",4,"Wellington/ Lower-Central North",2
+"56","Common Assault","17",2,"Auckland",18
+"57","Common Assault","17",2,"Bay Of Plenty",3
+"58","Common Assault","17",2,"Canterbury",11
+"59","Common Assault","17",2,"Hawkes Bay/ Gisborne",6
+"60","Common Assault","17",2,"Northland",5
+"61","Common Assault","17",2,"Southland/ Otago",5
+"62","Common Assault","17",2,"Tasman/ South-West Coast",3
+"63","Common Assault","17",2,"Waikato",3
+"64","Common Assault","17",2,"Wellington/ Lower-Central North",3
+"65","Common Assault","17",2,"West Coast/ Upper-Central North",6
+"66","Common Assault","17",3,"Auckland",21
+"67","Common Assault","17",3,"Bay Of Plenty",2
+"68","Common Assault","17",3,"Canterbury",8
+"69","Common Assault","17",3,"Hawkes Bay/ Gisborne",5
+"70","Common Assault","17",3,"Northland",2
+"71","Common Assault","17",3,"Southland/ Otago",3
+"72","Common Assault","17",3,"Tasman/ South-West Coast",5
+"73","Common Assault","17",3,"Waikato",3
+"74","Common Assault","17",3,"Wellington/ Lower-Central North",6
+"75","Common Assault","17",3,"West Coast/ Upper-Central North",3
+"76","Common Assault","17",4,"Auckland",23
+"77","Common Assault","17",4,"Bay Of Plenty",5
+"78","Common Assault","17",4,"Canterbury",10
+"79","Common Assault","17",4,"Hawkes Bay/ Gisborne",4
+"80","Common Assault","17",4,"Northland",2
+"81","Common Assault","17",4,"Southland/ Otago",6
+"82","Common Assault","17",4,"Tasman/ South-West Coast",3
+"83","Common Assault","17",4,"Waikato",4
+"84","Common Assault","17",4,"Wellington/ Lower-Central North",12
+"85","Common Assault","17",4,"West Coast/ Upper-Central North",4
+"86","Common Assault","18",2,"Auckland",14
+"87","Common Assault","18",2,"Bay Of Plenty",6
+"88","Common Assault","18",2,"Canterbury",4
+"89","Common Assault","18",2,"Hawkes Bay/ Gisborne",7
+"90","Common Assault","18",2,"Northland",4
+"91","Common Assault","18",2,"Southland/ Otago",3
+"92","Common Assault","18",2,"Tasman/ South-West Coast",1
+"93","Common Assault","18",2,"Waikato",8
+"94","Common Assault","18",2,"Wellington/ Lower-Central North",10
+"95","Common Assault","18",2,"West Coast/ Upper-Central North",7
+"96","Common Assault","18",3,"Auckland",20
+"97","Common Assault","18",3,"Bay Of Plenty",5
+"98","Common Assault","18",3,"Canterbury",9
+"99","Common Assault","18",3,"Hawkes Bay/ Gisborne",4
+"100","Common Assault","18",3,"Northland",1
+"101","Common Assault","18",3,"Southland/ Otago",1
+"102","Common Assault","18",3,"Tasman/ South-West Coast",1
+"103","Common Assault","18",3,"Waikato",4
+"104","Common Assault","18",3,"Wellington/ Lower-Central North",6
+"105","Common Assault","18",3,"West Coast/ Upper-Central North",5
+"106","Common Assault","18",4,"Auckland",25
+"107","Common Assault","18",4,"Bay Of Plenty",4
+"108","Common Assault","18",4,"Canterbury",11
+"109","Common Assault","18",4,"Hawkes Bay/ Gisborne",3
+"110","Common Assault","18",4,"Northland",2
+"111","Common Assault","18",4,"Southland/ Otago",3
+"112","Common Assault","18",4,"Tasman/ South-West Coast",1
+"113","Common Assault","18",4,"Waikato",9
+"114","Common Assault","18",4,"Wellington/ Lower-Central North",14
+"115","Common Assault","18",4,"West Coast/ Upper-Central North",5
+"116","Common Assault","19",2,"Auckland",18
+"117","Common Assault","19",2,"Bay Of Plenty",2
+"118","Common Assault","19",2,"Canterbury",3
+"119","Common Assault","19",2,"Hawkes Bay/ Gisborne",5
+"120","Common Assault","19",2,"Northland",4
+"121","Common Assault","19",2,"Southland/ Otago",2
+"122","Common Assault","19",2,"Tasman/ South-West Coast",4
+"123","Common Assault","19",2,"Waikato",6
+"124","Common Assault","19",2,"Wellington/ Lower-Central North",12
+"125","Common Assault","19",2,"West Coast/ Upper-Central North",6
+"126","Common Assault","19",3,"Auckland",17
+"127","Common Assault","19",3,"Bay Of Plenty",1
+"128","Common Assault","19",3,"Canterbury",8
+"129","Common Assault","19",3,"Hawkes Bay/ Gisborne",1
+"130","Common Assault","19",3,"Northland",1
+"131","Common Assault","19",3,"Southland/ Otago",4
+"132","Common Assault","19",3,"Tasman/ South-West Coast",2
+"133","Common Assault","19",3,"Waikato",8
+"134","Common Assault","19",3,"Wellington/ Lower-Central North",7
+"135","Common Assault","19",3,"West Coast/ Upper-Central North",5
+"136","Common Assault","19",4,"Auckland",22
+"137","Common Assault","19",4,"Bay Of Plenty",6
+"138","Common Assault","19",4,"Canterbury",7
+"139","Common Assault","19",4,"Hawkes Bay/ Gisborne",4
+"140","Common Assault","19",4,"Northland",4
+"141","Common Assault","19",4,"Southland/ Otago",4
+"142","Common Assault","19",4,"Tasman/ South-West Coast",1
+"143","Common Assault","19",4,"Waikato",10
+"144","Common Assault","19",4,"Wellington/ Lower-Central North",10
+"145","Common Assault","19",4,"West Coast/ Upper-Central North",6
+"146","Non-Aggravated Sexual Assault","17",2,"Auckland",1
+"147","Non-Aggravated Sexual Assault","17",2,"Wellington/ Lower-Central North",1
+"148","Non-Aggravated Sexual Assault","17",3,"Bay Of Plenty",1
+"149","Non-Aggravated Sexual Assault","17",3,"Waikato",1
+"150","Non-Aggravated Sexual Assault","17",4,"Auckland",1
+"151","Non-Aggravated Sexual Assault","17",4,"Canterbury",1
+"152","Non-Aggravated Sexual Assault","17",4,"Southland/ Otago",1
+"153","Non-Aggravated Sexual Assault","18",2,"Auckland",1
+"154","Non-Aggravated Sexual Assault","18",2,"Waikato",2
+"155","Non-Aggravated Sexual Assault","18",3,"Auckland",1
+"156","Non-Aggravated Sexual Assault","18",3,"Hawkes Bay/ Gisborne",1
+"157","Non-Aggravated Sexual Assault","18",3,"Waikato",1
+"158","Non-Aggravated Sexual Assault","18",3,"Wellington/ Lower-Central North",1
+"159","Non-Aggravated Sexual Assault","18",4,"Canterbury",1
+"160","Non-Aggravated Sexual Assault","18",4,"Wellington/ Lower-Central North",2
+"161","Non-Aggravated Sexual Assault","19",3,"Canterbury",2
+"162","Non-Aggravated Sexual Assault","19",3,"Hawkes Bay/ Gisborne",1
+"163","Non-Aggravated Sexual Assault","19",3,"West Coast/ Upper-Central North",1
+"164","Non-Aggravated Sexual Assault","19",4,"Bay Of Plenty",1
+"165","Non-Aggravated Sexual Assault","19",4,"Waikato",1
+"166","Non-Aggravated Sexual Assault","19",4,"Wellington/ Lower-Central North",1
+"167","Non-Aggravated Sexual Assault","19",4,"West Coast/ Upper-Central North",1
+"168","Serious Assault Not Resulting in Injury","17",2,"Auckland",7
+"169","Serious Assault Not Resulting in Injury","17",2,"Bay Of Plenty",6
+"170","Serious Assault Not Resulting in Injury","17",2,"Canterbury",2
+"171","Serious Assault Not Resulting in Injury","17",2,"Northland",2
+"172","Serious Assault Not Resulting in Injury","17",2,"Southland/ Otago",2
+"173","Serious Assault Not Resulting in Injury","17",2,"Tasman/ South-West Coast",1
+"174","Serious Assault Not Resulting in Injury","17",2,"Waikato",5
+"175","Serious Assault Not Resulting in Injury","17",2,"Wellington/ Lower-Central North",3
+"176","Serious Assault Not Resulting in Injury","17",2,"West Coast/ Upper-Central North",5
+"177","Serious Assault Not Resulting in Injury","17",3,"Auckland",10
+"178","Serious Assault Not Resulting in Injury","17",3,"Bay Of Plenty",2
+"179","Serious Assault Not Resulting in Injury","17",3,"Canterbury",3
+"180","Serious Assault Not Resulting in Injury","17",3,"Hawkes Bay/ Gisborne",4
+"181","Serious Assault Not Resulting in Injury","17",3,"Northland",1
+"182","Serious Assault Not Resulting in Injury","17",3,"Southland/ Otago",1
+"183","Serious Assault Not Resulting in Injury","17",3,"Tasman/ South-West Coast",3
+"184","Serious Assault Not Resulting in Injury","17",3,"Waikato",1
+"185","Serious Assault Not Resulting in Injury","17",3,"Wellington/ Lower-Central North",3
+"186","Serious Assault Not Resulting in Injury","17",3,"West Coast/ Upper-Central North",3
+"187","Serious Assault Not Resulting in Injury","17",4,"Auckland",10
+"188","Serious Assault Not Resulting in Injury","17",4,"Bay Of Plenty",2
+"189","Serious Assault Not Resulting in Injury","17",4,"Canterbury",5
+"190","Serious Assault Not Resulting in Injury","17",4,"Hawkes Bay/ Gisborne",3
+"191","Serious Assault Not Resulting in Injury","17",4,"Northland",2
+"192","Serious Assault Not Resulting in Injury","17",4,"Southland/ Otago",2
+"193","Serious Assault Not Resulting in Injury","17",4,"Tasman/ South-West Coast",1
+"194","Serious Assault Not Resulting in Injury","17",4,"Waikato",4
+"195","Serious Assault Not Resulting in Injury","17",4,"Wellington/ Lower-Central North",2
+"196","Serious Assault Not Resulting in Injury","17",4,"West Coast/ Upper-Central North",4
+"197","Serious Assault Not Resulting in Injury","18",2,"Auckland",11
+"198","Serious Assault Not Resulting in Injury","18",2,"Bay Of Plenty",4
+"199","Serious Assault Not Resulting in Injury","18",2,"Hawkes Bay/ Gisborne",4
+"200","Serious Assault Not Resulting in Injury","18",2,"Southland/ Otago",2
+"201","Serious Assault Not Resulting in Injury","18",2,"Waikato",1
+"202","Serious Assault Not Resulting in Injury","18",2,"Wellington/ Lower-Central North",4
+"203","Serious Assault Not Resulting in Injury","18",2,"West Coast/ Upper-Central North",1
+"204","Serious Assault Not Resulting in Injury","18",3,"Auckland",3
+"205","Serious Assault Not Resulting in Injury","18",3,"Bay Of Plenty",2
+"206","Serious Assault Not Resulting in Injury","18",3,"Canterbury",3
+"207","Serious Assault Not Resulting in Injury","18",3,"Hawkes Bay/ Gisborne",2
+"208","Serious Assault Not Resulting in Injury","18",3,"Northland",1
+"209","Serious Assault Not Resulting in Injury","18",3,"Waikato",2
+"210","Serious Assault Not Resulting in Injury","18",3,"Wellington/ Lower-Central North",8
+"211","Serious Assault Not Resulting in Injury","18",3,"West Coast/ Upper-Central North",3
+"212","Serious Assault Not Resulting in Injury","18",4,"Auckland",8
+"213","Serious Assault Not Resulting in Injury","18",4,"Bay Of Plenty",4
+"214","Serious Assault Not Resulting in Injury","18",4,"Canterbury",3
+"215","Serious Assault Not Resulting in Injury","18",4,"Hawkes Bay/ Gisborne",4
+"216","Serious Assault Not Resulting in Injury","18",4,"Northland",2
+"217","Serious Assault Not Resulting in Injury","18",4,"Southland/ Otago",1
+"218","Serious Assault Not Resulting in Injury","18",4,"Waikato",3
+"219","Serious Assault Not Resulting in Injury","18",4,"Wellington/ Lower-Central North",4
+"220","Serious Assault Not Resulting in Injury","18",4,"West Coast/ Upper-Central North",3
+"221","Serious Assault Not Resulting in Injury","19",2,"Auckland",7
+"222","Serious Assault Not Resulting in Injury","19",2,"Bay Of Plenty",8
+"223","Serious Assault Not Resulting in Injury","19",2,"Hawkes Bay/ Gisborne",2
+"224","Serious Assault Not Resulting in Injury","19",2,"Northland",1
+"225","Serious Assault Not Resulting in Injury","19",2,"Southland/ Otago",2
+"226","Serious Assault Not Resulting in Injury","19",2,"Tasman/ South-West Coast",1
+"227","Serious Assault Not Resulting in Injury","19",2,"Waikato",3
+"228","Serious Assault Not Resulting in Injury","19",2,"Wellington/ Lower-Central North",2
+"229","Serious Assault Not Resulting in Injury","19",2,"West Coast/ Upper-Central North",2
+"230","Serious Assault Not Resulting in Injury","19",3,"Auckland",12
+"231","Serious Assault Not Resulting in Injury","19",3,"Bay Of Plenty",4
+"232","Serious Assault Not Resulting in Injury","19",3,"Canterbury",1
+"233","Serious Assault Not Resulting in Injury","19",3,"Hawkes Bay/ Gisborne",1
+"234","Serious Assault Not Resulting in Injury","19",3,"Southland/ Otago",1
+"235","Serious Assault Not Resulting in Injury","19",3,"Tasman/ South-West Coast",1
+"236","Serious Assault Not Resulting in Injury","19",3,"Waikato",3
+"237","Serious Assault Not Resulting in Injury","19",3,"Wellington/ Lower-Central North",5
+"238","Serious Assault Not Resulting in Injury","19",3,"West Coast/ Upper-Central North",2
+"239","Serious Assault Not Resulting in Injury","19",4,"Auckland",11
+"240","Serious Assault Not Resulting in Injury","19",4,"Bay Of Plenty",1
+"241","Serious Assault Not Resulting in Injury","19",4,"Canterbury",4
+"242","Serious Assault Not Resulting in Injury","19",4,"Hawkes Bay/ Gisborne",5
+"243","Serious Assault Not Resulting in Injury","19",4,"Northland",1
+"244","Serious Assault Not Resulting in Injury","19",4,"Southland/ Otago",1
+"245","Serious Assault Not Resulting in Injury","19",4,"Waikato",2
+"246","Serious Assault Not Resulting in Injury","19",4,"Wellington/ Lower-Central North",4
+"247","Serious Assault Not Resulting in Injury","19",4,"West Coast/ Upper-Central North",2
+"248","Serious Assault Resulting in Injury","17",2,"Auckland",6
+"249","Serious Assault Resulting in Injury","17",2,"Bay Of Plenty",1
+"250","Serious Assault Resulting in Injury","17",2,"Hawkes Bay/ Gisborne",5
+"251","Serious Assault Resulting in Injury","17",2,"Northland",1
+"252","Serious Assault Resulting in Injury","17",2,"Tasman/ South-West Coast",2
+"253","Serious Assault Resulting in Injury","17",2,"Waikato",4
+"254","Serious Assault Resulting in Injury","17",3,"Auckland",3
+"255","Serious Assault Resulting in Injury","17",3,"Bay Of Plenty",3
+"256","Serious Assault Resulting in Injury","17",3,"Hawkes Bay/ Gisborne",2
+"257","Serious Assault Resulting in Injury","17",3,"Northland",2
+"258","Serious Assault Resulting in Injury","17",3,"Tasman/ South-West Coast",1
+"259","Serious Assault Resulting in Injury","17",3,"Waikato",4
+"260","Serious Assault Resulting in Injury","17",3,"Wellington/ Lower-Central North",2
+"261","Serious Assault Resulting in Injury","17",3,"West Coast/ Upper-Central North",1
+"262","Serious Assault Resulting in Injury","17",4,"Auckland",7
+"263","Serious Assault Resulting in Injury","17",4,"Bay Of Plenty",1
+"264","Serious Assault Resulting in Injury","17",4,"Canterbury",1
+"265","Serious Assault Resulting in Injury","17",4,"Hawkes Bay/ Gisborne",4
+"266","Serious Assault Resulting in Injury","17",4,"Northland",1
+"267","Serious Assault Resulting in Injury","17",4,"Southland/ Otago",1
+"268","Serious Assault Resulting in Injury","17",4,"Waikato",1
+"269","Serious Assault Resulting in Injury","17",4,"Wellington/ Lower-Central North",3
+"270","Serious Assault Resulting in Injury","18",2,"Auckland",7
+"271","Serious Assault Resulting in Injury","18",2,"Bay Of Plenty",3
+"272","Serious Assault Resulting in Injury","18",2,"Canterbury",2
+"273","Serious Assault Resulting in Injury","18",2,"Hawkes Bay/ Gisborne",1
+"274","Serious Assault Resulting in Injury","18",2,"Northland",1
+"275","Serious Assault Resulting in Injury","18",2,"Southland/ Otago",1
+"276","Serious Assault Resulting in Injury","18",2,"Waikato",3
+"277","Serious Assault Resulting in Injury","18",2,"Wellington/ Lower-Central North",2
+"278","Serious Assault Resulting in Injury","18",2,"West Coast/ Upper-Central North",2
+"279","Serious Assault Resulting in Injury","18",3,"Auckland",4
+"280","Serious Assault Resulting in Injury","18",3,"Southland/ Otago",3
+"281","Serious Assault Resulting in Injury","18",3,"Waikato",5
+"282","Serious Assault Resulting in Injury","18",3,"Wellington/ Lower-Central North",2
+"283","Serious Assault Resulting in Injury","18",3,"West Coast/ Upper-Central North",2
+"284","Serious Assault Resulting in Injury","18",4,"Auckland",6
+"285","Serious Assault Resulting in Injury","18",4,"Bay Of Plenty",4
+"286","Serious Assault Resulting in Injury","18",4,"Canterbury",2
+"287","Serious Assault Resulting in Injury","18",4,"Hawkes Bay/ Gisborne",2
+"288","Serious Assault Resulting in Injury","18",4,"Southland/ Otago",1
+"289","Serious Assault Resulting in Injury","18",4,"Tasman/ South-West Coast",1
+"290","Serious Assault Resulting in Injury","18",4,"Waikato",2
+"291","Serious Assault Resulting in Injury","18",4,"Wellington/ Lower-Central North",2
+"292","Serious Assault Resulting in Injury","19",2,"Auckland",8
+"293","Serious Assault Resulting in Injury","19",2,"Bay Of Plenty",7
+"294","Serious Assault Resulting in Injury","19",2,"Hawkes Bay/ Gisborne",1
+"295","Serious Assault Resulting in Injury","19",2,"Northland",2
+"296","Serious Assault Resulting in Injury","19",2,"Southland/ Otago",3
+"297","Serious Assault Resulting in Injury","19",2,"Waikato",2
+"298","Serious Assault Resulting in Injury","19",2,"Wellington/ Lower-Central North",2
+"299","Serious Assault Resulting in Injury","19",2,"West Coast/ Upper-Central North",2
+"300","Serious Assault Resulting in Injury","19",3,"Auckland",10
+"301","Serious Assault Resulting in Injury","19",3,"Bay Of Plenty",2
+"302","Serious Assault Resulting in Injury","19",3,"Hawkes Bay/ Gisborne",2
+"303","Serious Assault Resulting in Injury","19",3,"Northland",1
+"304","Serious Assault Resulting in Injury","19",3,"Southland/ Otago",2
+"305","Serious Assault Resulting in Injury","19",3,"Waikato",2
+"306","Serious Assault Resulting in Injury","19",3,"Wellington/ Lower-Central North",5
+"307","Serious Assault Resulting in Injury","19",3,"West Coast/ Upper-Central North",1
+"308","Serious Assault Resulting in Injury","19",4,"Auckland",10
+"309","Serious Assault Resulting in Injury","19",4,"Canterbury",2
+"310","Serious Assault Resulting in Injury","19",4,"Hawkes Bay/ Gisborne",1
+"311","Serious Assault Resulting in Injury","19",4,"Southland/ Otago",2
+"312","Serious Assault Resulting in Injury","19",4,"Tasman/ South-West Coast",1
+"313","Serious Assault Resulting in Injury","19",4,"Waikato",3
+"314","Serious Assault Resulting in Injury","19",4,"Wellington/ Lower-Central North",7
+"315","Serious Assault Resulting in Injury","19",4,"West Coast/ Upper-Central North",2
+"316","Aggravated Sexual Assault","20",2,"Auckland",5
+"317","Assault not further defined","20",2,"Auckland",87
+"318","Common Assault","20",2,"Auckland",58
+"319","Non-Aggravated Sexual Assault","20",2,"Auckland",10
+"320","Assault not further defined","20",3,"Auckland",41
+"321","Common Assault","20",3,"Auckland",14
+"322","Non-Aggravated Sexual Assault","20",3,"Auckland",8
+"323","Aggravated Sexual Assault","20",4,"Auckland",4
+"324","Assault not further defined","20",4,"Auckland",86
+"325","Common Assault","20",4,"Auckland",44
+"326","Non-Aggravated Sexual Assault","20",4,"Auckland",1
+"327","Assault not further defined","20",2,"Bay Of Plenty",34
+"328","Common Assault","20",2,"Bay Of Plenty",12
+"329","Non-Aggravated Sexual Assault","20",2,"Bay Of Plenty",2
+"330","Aggravated Sexual Assault","20",3,"Bay Of Plenty",1
+"331","Assault not further defined","20",3,"Bay Of Plenty",10
+"332","Common Assault","20",3,"Bay Of Plenty",8
+"333","Non-Aggravated Sexual Assault","20",3,"Bay Of Plenty",1
+"334","Assault not further defined","20",4,"Bay Of Plenty",16
+"335","Common Assault","20",4,"Bay Of Plenty",10
+"336","Aggravated Sexual Assault","20",2,"Cantebury",2
+"337","Assault not further defined","20",2,"Cantebury",7
+"338","Common Assault","20",2,"Cantebury",53
+"339","Non-Aggravated Sexual Assault","20",2,"Cantebury",2
+"340","Aggravated Sexual Assault","20",3,"Cantebury",1
+"341","Assault not further defined","20",3,"Cantebury",9
+"342","Common Assault","20",3,"Cantebury",6
+"343","Non-Aggravated Sexual Assault","20",3,"Cantebury",2
+"344","Aggravated Sexual Assault","20",4,"Cantebury",4
+"345","Assault not further defined","20",4,"Cantebury",42
+"346","Common Assault","20",4,"Cantebury",7
+"347","Non-Aggravated Sexual Assault","20",4,"Cantebury",4
+"348","Aggravated Sexual Assault","20",2,"Hawkes Bay/ Gisborne",1
+"349","Assault not further defined","20",2,"Hawkes Bay/ Gisborne",20
+"350","Common Assault","20",2,"Hawkes Bay/ Gisborne",13
+"351","Aggravated Sexual Assault","20",3,"Hawkes Bay/ Gisborne",1
+"352","Assault not further defined","20",3,"Hawkes Bay/ Gisborne",5
+"353","Common Assault","20",3,"Hawkes Bay/ Gisborne",6
+"354","Non-Aggravated Sexual Assault","20",3,"Hawkes Bay/ Gisborne",1
+"355","Aggravated Sexual Assault","20",4,"Hawkes Bay/ Gisborne",1
+"356","Assault not further defined","20",4,"Hawkes Bay/ Gisborne",23
+"357","Common Assault","20",4,"Hawkes Bay/ Gisborne",16
+"358","Aggravated Sexual Assault","20",2,"Northland",1
+"359","Assault not further defined","20",2,"Northland",5
+"360","Common Assault","20",2,"Northland",6
+"361","Non-Aggravated Sexual Assault","20",2,"Northland",5
+"362","Assault not further defined","20",3,"Northland",3
+"363","Common Assault","20",3,"Northland",1
+"364","Aggravated Sexual Assault","20",4,"Northland",1
+"365","Assault not further defined","20",4,"Northland",13
+"366","Common Assault","20",4,"Northland",7
+"367","Non-Aggravated Sexual Assault","20",4,"Northland",1
+"368","Aggravated Sexual Assault","20",4,"Other",1
+"369","Aggravated Sexual Assault","20",2,"Southland/ Otago",3
+"370","Assault not further defined","20",2,"Southland/ Otago",14
+"371","Common Assault","20",2,"Southland/ Otago",7
+"372","Non-Aggravated Sexual Assault","20",2,"Southland/ Otago",1
+"373","Assault not further defined","20",3,"Southland/ Otago",2
+"374","Common Assault","20",3,"Southland/ Otago",2
+"375","Non-Aggravated Sexual Assault","20",3,"Southland/ Otago",1
+"376","Assault not further defined","20",4,"Southland/ Otago",15
+"377","Common Assault","20",4,"Southland/ Otago",13
+"378","Non-Aggravated Sexual Assault","20",4,"Southland/ Otago",1
+"379","Aggravated Sexual Assault","20",2,"Tasman/ South-West Coast",1
+"380","Assault not further defined","20",2,"Tasman/ South-West Coast",10
+"381","Common Assault","20",2,"Tasman/ South-West Coast",6
+"382","Assault not further defined","20",3,"Tasman/ South-West Coast",3
+"383","Common Assault","20",3,"Tasman/ South-West Coast",1
+"384","Assault not further defined","20",4,"Tasman/ South-West Coast",10
+"385","Common Assault","20",4,"Tasman/ South-West Coast",4
+"386","Assault not further defined","20",2,"Waikato",27
+"387","Common Assault","20",2,"Waikato",9
+"388","Non-Aggravated Sexual Assault","20",2,"Waikato",4
+"389","Aggravated Sexual Assault","20",3,"Waikato",1
+"390","Assault not further defined","20",3,"Waikato",10
+"391","Common Assault","20",3,"Waikato",6
+"392","Non-Aggravated Sexual Assault","20",3,"Waikato",1
+"393","Aggravated Sexual Assault","20",4,"Waikato",2
+"394","Assault not further defined","20",4,"Waikato",21
+"395","Common Assault","20",4,"Waikato",11
+"396","Aggravated Sexual Assault","20",2,"Wellington/ Lower-Central North",1
+"397","Assault not further defined","20",2,"Wellington/ Lower-Central North",9
+"398","Common Assault","20",2,"Wellington/ Lower-Central North",6
+"399","Non-Aggravated Sexual Assault","20",2,"Wellington/ Lower-Central North",3
+"400","Aggravated Sexual Assault","20",3,"Wellington/ Lower-Central North",1
+"401","Assault not further defined","20",3,"Wellington/ Lower-Central North",9
+"402","Common Assault","20",3,"Wellington/ Lower-Central North",7
+"403","Assault not further defined","20",4,"Wellington/ Lower-Central North",33
+"404","Common Assault","20",4,"Wellington/ Lower-Central North",16
+"405","Non-Aggravated Sexual Assault","20",4,"Wellington/ Lower-Central North",7
+"406","Aggravated Sexual Assault","20",2,"West Coast/ Upper-Central North",4
+"407","Assault not further defined","20",2,"West Coast/ Upper-Central North",36
+"408","Common Assault","20",2,"West Coast/ Upper-Central North",16
+"409","Non-Aggravated Sexual Assault","20",2,"West Coast/ Upper-Central North",5
+"410","Aggravated Sexual Assault","20",3,"West Coast/ Upper-Central North",1
+"411","Assault not further defined","20",3,"West Coast/ Upper-Central North",14
+"412","Common Assault","20",3,"West Coast/ Upper-Central North",3
+"413","Non-Aggravated Sexual Assault","20",3,"West Coast/ Upper-Central North",2
+"414","Aggravated Sexual Assault","20",4,"West Coast/ Upper-Central North",2
+"415","Assault not further defined","20",4,"West Coast/ Upper-Central North",27
+"416","Common Assault","20",4,"West Coast/ Upper-Central North",12
+"417","Non-Aggravated Sexual Assault","20",4,"West Coast/ Upper-Central North",1
