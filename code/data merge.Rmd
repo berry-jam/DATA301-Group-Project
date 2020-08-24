@@ -5,19 +5,18 @@ date: "21/08/2020"
 output: html_document
 ---
 
-reading the datasets into r, separating the victims dataset by day,month and year again so I can subset the new victims dataset by specific months. from this I have given the victims dataset theoretical alert levels for comparison purposes with the covid dataset.
+# reading the datasets into r, separating the victims dataset by day,month and year again so I can subset the new victims dataset by specific months. from this I have given the victims dataset theoretical alert levels for comparison purposes with the covid dataset.
 ```{r}
-
+library (plyr)
 library(tidyr)
+
 victims <- read.csv("/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Victimisations_time_and_place (cleaned).csv", header = TRUE)
 covid <- read.csv("/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Covid calls for service cleaned.csv", header = TRUE)
-
 
 victims <- separate(victims, "date", c("day", "month", "year"))           
 
 months <- c(3,4,5)
 victims <- subset(victims, month %in% months)
-
 
 victims[, "theoretical_alert_level"] <- NA
 
@@ -32,12 +31,9 @@ for(i in 1:nrow(victims)){
     victims$theoretical_alert_level[i] <- 2
   }
 }
-
-
 ```
 
-
-Here I am averaging the Locations from the covid dataset into regions that can be matched to the victims dataset for merging.
+#Here I am averaging the Locations from the covid dataset into regions that can be matched to the victims dataset for merging.
 ```{r}
 covid[, "Location"] <- NA
 
@@ -115,7 +111,7 @@ for(i in 1:nrow(victims)){
 ```
 
 
-removing unneccessary columns and preparing for merge.
+# removing unneccessary columns and preparing for merge.
 ```{r}
 victims[, c("X", "X.1", "day")] <- NULL 
 covid[,c("X", "Calls.for.Service.and.Prevention", "Crime.and.NonCrime.Demand", "Event.Category", "District")] <- NULL
@@ -140,26 +136,19 @@ victims[, c("Meshblock", "number_of_victimizations")] <- NULL
 
 ```
 
-creating matching sums for total events in both datasets for the merge.
+#creating matching sums for total events in both datasets for the merge.
 ```{r}
-
 VictimsSum <- dplyr::count(victims, Event, year, Alert.Level, Location) %>% ungroup()
 
 CovidSum <- aggregate(. ~  Event + year + Alert.Level + Location, covid, sum)
 
-
 VictimsSum <- rename(VictimsSum, c("n" = "Number of Victimizations"))
 CovidSum <- rename(CovidSum, c("No" = "Number of Victimizations"))
-
-
-
 ```
 
 merge.
 ```{r}
-
 total <- rbind(VictimsSum, CovidSum)
-
 
 write.csv(total,"/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/merged data (Final).csv")
 ```

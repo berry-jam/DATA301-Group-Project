@@ -13,25 +13,73 @@ Kieryn
 Josh 
 
 ---
-# Investigating the impacts of COVID-19 on domestic violence in New Zealand
+# Investigating the impacts of COVID-19 on Assault in New Zealand
 ---
 
-## 1 Background and Data 
+## 1 Background and Data
 
 As the pandemic has unfolded around the world many studies have emerged looking at how the changes in social systems have effected crime. ** Insert relevant stats ** We are interested to look at whether the same patterns are present in New Zealand.
 
-#### 1.2 Datasets
+Our initial question evolved around looking into domestic violence rates specifically as many countries saw a rise in this crime in particular. However the system used for reporting types of crime (ANSOC - Australian and New Zealand Standard Offence Classification) has domestic violence as a subcategory of Assault, this meant there was not enough data specifically on domestic violence for us to souley focus on it. For this reason we adapted our question to be focused on how the pandemic has effected Assault in New Zealand.
 
-Spatial data
-Crime data
+We have been collecting data from several sites mainly from the Ministry of Police, Stats NZ. data.govt.nz and NZ.Stat. This was not limited to researching for related data about crimes and covid-19 in NZ such journals, articles newspaper and news broadcast. The links to these sites is provided below. We have used two datasets for our analysis:
+
+1.	Victimisation time and place (https://www.police.govt.nz/about-us/publications-statistics/data-and-statistics/policedatanz/victimisation-time-and-place)
+2.	Covid_calls for services (https://www.police.govt.nz/about-us/statistics-and-publications/data-and-statistics/covid-19-response)
+
+The Victimisation time and place dataset was downloaded from the information recorded in the Police dynamic operational database. (www.police.govt.nz) This dataset represents detailed information about where and at what times of the day and week crime victimization occur in NZ. It excludes victimization where meshblock level data and Area Unit is unknown. It includes time and place where the offence occurs, number and type of offence. This data frame contains 699705 number of observations and 17 variables. The dataset is dated from 2017 until March 2020.
+
+The Covid_calls for services dataset was also downloaded from the police website and it contains information about crimes during the different level of lockdown during covid-19. These include districts, level of lockdown, type of crime and the number of times a specific crime has been committed. It also shows information about the demand in call for service and prevention during lockdown. The information has been recorded starting from the lockdown period in March 2020 until July. 
 
 #### 1.2.1 Inside the data
 
-Data types
+Data types in the original Victimisations data set.
 
-Data structure
+| Attribute     | Original data type    | Transformation       | About                        |
+|---------------|-----------------------|----------------------|------------------------------|
+|ANSOC.Division | Character             | Factor              | Consistent with Stats NZ and police.nz records     |
+|Year.Month     | Character             | Date                | yyyy/mm/dd format |
+|Month.Year     | Character             | Date                | yyyy/mm/dd format |
+|ANSOC.Group    | Character             | Factor              | Official groupings based on police.nz |
+|ANSOC.Subdivision| Character           | Factor              | Subgroupings of the ANSOC.Group |
+|Area.Unit      | Character             | Factor              | Stats NZ area unit names |
+|Location.Type  | Character             | Factor              |                                 |
+|Locn.Type.Division| Character          | Factor              |                       |
+| Meshblock     | int                   | -                   | Meshblock number consistent with Stats NZ|
+| Occurrence.Day.Of.Week| Chr           | Factor              | 7 levels corresponding to day of the week|
+| Occurrence.Hour.Of.Day| int           | -                   | 24 hour time representing approximate hour|
+| Table.1 | Character                   | Factor              |                       |
+| Territorial.Authority | Character     | Factor              | TA consistent with Stats NZ outputs  |
+| Weapon       | Character              | Factor              | Weapon used in crime where applicable |
+| Number.of.Records | Int               | -                   | Number of records             |
+| Victimisations  | Int                 | Int                 | Number of victimisations for this crim in this area|
 
-Missing values 
+
+Data types in the original COVID calls for service data.
+
+| Attribute     | Original data type    | Transformation       | About                        |
+|---------------|-----------------------|----------------------|------------------------------|
+| District      | Character             | Factor               | District name as defined by stats NZ|
+| Alert.Level   | Int                   | -                    | Covid 19 Alert level for New Zealand|
+| Calls.for.Service.and.Prevention | Character| Factor | Demand or .... |
+| crime.and.NonCrime.Demand| Character   | Factor               | Crime or .... |
+| Event.category| Character             | Factor               | Administrative or .... |
+| Event.type    | Character             | Factor               | Crime type |
+| No            | Int                   | -                    | Number of instances of each Event.type|
+
+
+There is some excess information that was groomed out. From the Victimisations we kept the Original index in case we need to reference back, the date converted to a Date object, the ANSOC groups that related only to Assault, the Area unit and Meshblock number and the Territorial Authority the instance occured in.
+From the Covid data we have kept the District, Alert level, calls for service and prevention, crime and non-crime demand, event category, event type filtered to be only those related to assault and the No of instances of each type.
+
+#### 1.2.2 Merging the data
+
+Merging the data was a longer process that anticipated as the structure of each data source was different. The Victimisations data was in a time series format where there was one row for each instance whereas the Covid dataset accounts for multiple occurances in each row. This meant to merge and compare pre-covid crime and covid we needed to alter the format quite siginificantly. 
+
+These alterations included matching the time periods, since Covid is still unfolding it is a short window of time to look at. This has been matched in the previous years and approximate "levels" to the Victimisations data to allow for a more acurate comparison.
+
+There was also a difference in the location measures. ***** Kieryn do you want to fill this in ***** 
+
+After prepping the data unnecasery and duplicate columns the merge was completed using rbind.
 
 ---
 

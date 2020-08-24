@@ -369,16 +369,232 @@ summary {
 </div>
 
 
-<div id="police-data-group-project" class="section level4">
-<h4>Police data group project</h4>
-</div>
-<div id="investigating-the-impacts-of-covid-19-on-domestic-violence-in-new-zealand" class="section level3">
-<h3>Investigating the impacts of COVID-19 on domestic violence in New Zealand</h3>
-</div>
+<div id="police-data-group-project" class="section level2">
+<h2>Police data group project</h2>
 <div id="team-members" class="section level3">
 <h3>Team members</h3>
 <p>Abbey Bremner - 300436003 Shaun Kieryn Josh</p>
+</div>
+</div>
+<div id="background-and-data" class="section level2">
+<h2>1 Background and Data</h2>
+<p>As the pandemic has unfolded around the world many studies have emerged looking at how the changes in social systems have effected crime. ** Insert relevant stats ** We are interested to look at whether the same patterns are present in New Zealand.</p>
+<p>We have been collecting data from several sites mainly from the Ministry of Police, Stats NZ. data.govt.nz and NZ.Stat. This was not limited to researching for related data about crimes and covid-19 in NZ such journals, articles newspaper and news broadcast. The links to these sites is provided below. We have used two datasets for our analysis:</p>
+<ol style="list-style-type: decimal">
+<li>Victimisation time and place (<a href="https://www.police.govt.nz/about-us/publications-statistics/data-and-statistics/policedatanz/victimisation-time-and-place" class="uri">https://www.police.govt.nz/about-us/publications-statistics/data-and-statistics/policedatanz/victimisation-time-and-place</a>)</li>
+<li>Covid_calls for services (<a href="https://www.police.govt.nz/about-us/statistics-and-publications/data-and-statistics/covid-19-response" class="uri">https://www.police.govt.nz/about-us/statistics-and-publications/data-and-statistics/covid-19-response</a>)</li>
+</ol>
+<p>The Victimisation time and place dataset was downloaded from the information recorded in the Police dynamic operational database. (www.police.govt.nz) This dataset represents detailed information about where and at what times of the day and week crime victimization occur in NZ. It excludes victimization where meshblock level data and Area Unit is unknown. It includes time and place where the offence occurs, number and type of offence. This data frame contains 699705 number of observations and 17 variables. The dataset is dated from 2017 until March 2020.</p>
+<p>The Covid_calls for services dataset was also downloaded from the police website and it contains information about crimes during the different level of lockdown during covid-19. These include districts, level of lockdown, type of crime and the number of times a specific crime has been committed. It also shows information about the demand in call for service and prevention during lockdown. The information has been recorded starting from the lockdown period in March 2020 until July.</p>
+<div id="inside-the-data" class="section level4">
+<h4>1.2.1 Inside the data</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Original data type</th>
+<th>Transformation</th>
+<th>About</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ANSOC.Division</td>
+<td>Character</td>
+<td>Factor</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Year.Month</td>
+<td>Character</td>
+<td>Date</td>
+<td>yyyy/mm/dd format</td>
+</tr>
+<tr class="odd">
+<td>Month.Year</td>
+<td>Character</td>
+<td>Date</td>
+<td>yyyy/mm/dd format</td>
+</tr>
+<tr class="even">
+<td>ANSOC.Group</td>
+<td>Character</td>
+<td>Factor</td>
+<td>Official groupings based on police.nz</td>
+</tr>
+<tr class="odd">
+<td>ANSOC.Subdivision</td>
+<td>Character</td>
+<td>Factor</td>
+<td>Subgroupings of the ANSOC.Group</td>
+</tr>
+<tr class="even">
+<td>Area.Unit</td>
+<td>Character</td>
+<td>Factor</td>
+<td>Stats NZ area unit names</td>
+</tr>
+<tr class="odd">
+<td>Location.Type</td>
+<td>Character</td>
+<td>Factor</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Locn.Type.Division</td>
+<td>Character</td>
+<td>Factor</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Meshblock</td>
+<td>int</td>
+<td>-</td>
+<td>Meshblock number consistent with Stats NZ</td>
+</tr>
+<tr class="even">
+<td>Occurrence.Day.Of.Week</td>
+<td>Chr</td>
+<td>Factor</td>
+<td>7 levels corresponding to day of the week</td>
+</tr>
+<tr class="odd">
+<td>Occurrence.Hour.Of.Day</td>
+<td>int</td>
+<td>-</td>
+<td>24 hour time representing approximate hour</td>
+</tr>
+<tr class="even">
+<td>Table.1</td>
+<td>Character</td>
+<td>Factor</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Territorial.Authority</td>
+<td>Character</td>
+<td>Factor</td>
+<td>TA consistent with Stats NZ outputs</td>
+</tr>
+<tr class="even">
+<td>Weapon</td>
+<td>Character</td>
+<td>Factor</td>
+<td>Weapon used in crime where applicable</td>
+</tr>
+<tr class="odd">
+<td>Number.of.Records</td>
+<td>Int</td>
+<td>-</td>
+<td>Number of records</td>
+</tr>
+<tr class="even">
+<td>Victimisations</td>
+<td>Int</td>
+<td>Int</td>
+<td>Number of victimisations for this crim in this area</td>
+</tr>
+</tbody>
+</table>
+<p>Data types in the COVID calls for service data.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Original data type</th>
+<th>Transformation</th>
+<th>About</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>District</td>
+<td>Character</td>
+<td>Factor</td>
+<td>District name as defined by stats NZ</td>
+</tr>
+<tr class="even">
+<td>Alert.Level</td>
+<td>Int</td>
+<td>-</td>
+<td>Covid 19 Alert level for New Zealand</td>
+</tr>
+<tr class="odd">
+<td>Calls.for.Service.and.Prevention</td>
+<td>Character</td>
+<td>Factor</td>
+<td>Demand or ….</td>
+</tr>
+<tr class="even">
+<td>crime.and.NonCrime.Demand</td>
+<td>Character</td>
+<td>Factor</td>
+<td>Crime or ….</td>
+</tr>
+<tr class="odd">
+<td>Event.category</td>
+<td>Character</td>
+<td>Factor</td>
+<td>Administrative or ….</td>
+</tr>
+<tr class="even">
+<td>Event.type</td>
+<td>Character</td>
+<td>Factor</td>
+<td>Crime type</td>
+</tr>
+<tr class="odd">
+<td>No</td>
+<td>Int</td>
+<td>-</td>
+<td>Number of instances of each Event.type</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="merging-the-data" class="section level4">
+<h4>1.2.2 Merging the data</h4>
 <hr />
+</div>
+</div>
+<div id="ethics-privacy-and-security" class="section level2">
+<h2>2 Ethics, Privacy and Security</h2>
+<div id="ethical-considerations" class="section level4">
+<h4>2.1 Ethical considerations</h4>
+<p>Domestic violence is a sensitive topic and care must be taken when drawing conclusions and reasoning around this.</p>
+</div>
+<div id="privacy-concerns" class="section level4">
+<h4>2.2 Privacy concerns</h4>
+<p>Data is already anonymised when it is published onto the police nz website so there isnt alot of concern around privacy.</p>
+<p>Identifying areas may cause privacy concerns if the areas are too specific.</p>
+</div>
+<div id="secure-project-management" class="section level4">
+<h4>2.3 Secure project management</h4>
+<p>Private github repository to store data ensuring that only those with an access invitation may access the files.</p>
+<hr />
+</div>
+</div>
+<div id="exploratory-data-analysis" class="section level2">
+<h2>3 Exploratory data analysis</h2>
+<hr />
+</div>
+<div id="individual-contributions" class="section level2">
+<h2>4 Individual contributions</h2>
+<div id="abbey" class="section level4">
+<h4>Abbey</h4>
+<p>Repository manager</p>
+</div>
+<div id="shaun" class="section level4">
+<h4>Shaun</h4>
+<p>Data manager</p>
+</div>
+<div id="kieryn" class="section level4">
+<h4>Kieryn</h4>
+<p>Biblio manager</p>
+</div>
+<div id="josh" class="section level4">
+<h4>Josh</h4>
+</div>
 </div>
 
 
