@@ -1,0 +1,14 @@
+I just visualised plot year with Assault.
+
+I was thinking to plot line graph something time period with number of Assualt(multiple line)
+but as we only has few month data,
+I just decided to plot each year as bar plot.
+some shows the plots are in same pannel to make easy to compare.
+
+
+Step1 : load data
+Step2 : Divided victimisation dataset into 3 different year
+Step3 : using ggplot visualised each year how many assault.
+
+
+We can interpret the graph like, which year what kind of assault reported the most

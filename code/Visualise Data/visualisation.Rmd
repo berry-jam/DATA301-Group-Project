@@ -1,0 +1,135 @@
+---
+title: "Exploratory data"
+author: "Wonsang Yu 300463616"
+date : "25/08/2020"
+output: pdf_document
+---
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+#Load the csv file
+covid <- read.csv("Covid calls for service cleaned.csv", 
+                         header = TRUE, 
+                         stringsAsFactors = FALSE)
+victim <- read.csv("Victimisations_time_and_place (cleaned).csv", 
+                         header = TRUE, 
+                         stringsAsFactors = FALSE)
+
+head(covid,5)
+head(victim,5)
+```
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+unique(covid$Event.Type)
+unique(victim$ANZSOC.Group)
+```
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+#Also, I will extract three assault divided into three diffrent year
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(tidyverse)
+
+#I just divided to extract three different year
+victim_year <- separate(victim, "date", c("day", "month", "year")) 
+head(victim_year)
+
+#check datastructure
+str(victim_year)
+
+#Extract three year
+victim_2017 <- victim_year[victim_year$year == "17",]
+victim_2018 <- victim_year[victim_year$year == "18",]
+victim_2019 <- victim_year[victim_year$year == "19",]
+
+head(victim_2017)
+head(victim_2018)
+head(victim_2019)
+
+ANZSOC.count <- victim_2017 %>% count(ANZSOC.Group)
+ANZSOC.count
+```
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+library(ggplot2)
+library(ggpubr)
+ANZSOC.count <- victim_2017 %>% count(ANZSOC.Group)
+ANZSOC.count
+
+#ggplot(data = victim_2017) +
+#  geom_bar(mapping = aes(x = ANZSOC.Group,fill =ANZSOC.Group ))
+
+
+bar_2017 <- ggplot(data = victim_2017) + 
+  geom_bar(
+    mapping = aes(x = ANZSOC.Group, fill = ANZSOC.Group), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1,title = element_text(size=10),axis.title = element_text(size=10),
+        axis.text.y = element_text(size=8),axis.text.x = element_text(angle=90, hjust=1,size=8)) +
+  labs(title="Number of Assualt \nreport in 2017",x = "Five different Assault group", y = "Numer_of_Assault_reported")
+
+ANZSOC.count_2018 <- victim_2018 %>% count(ANZSOC.Group)
+ANZSOC.count_2018
+
+#ggplot(data = victim_2017) +
+#  geom_bar(mapping = aes(x = ANZSOC.Group,fill =ANZSOC.Group ))
+
+
+bar_2018 <- ggplot(data = victim_2018) + 
+  geom_bar(
+    mapping = aes(x = ANZSOC.Group, fill = ANZSOC.Group), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1,title = element_text(size=10),axis.text.y = element_text(size=8),
+        axis.text.x = element_text(angle=90, hjust=1,size=8)) +
+  labs(title="Number of Assualt \nreport in 2018",x = "Five different Assault group", y = "Numer_of_Assault_reported")
+
+bar_2019 <- ggplot(data = victim_2019) + 
+  geom_bar(
+    mapping = aes(x = ANZSOC.Group, fill = ANZSOC.Group), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1,title = element_text(size=10),axis.text.y = element_text(size=8),
+        axis.text.x = element_text(angle=90, hjust=1,size=8)) +
+  labs(title="Number of Assualt \nreport in 2019",x = "Five different Assault group", y = "Numer_of_Assault_reported")
+
+
+covid_2020 <- ggplot(data = covid) + 
+  geom_bar(
+    mapping = aes(x = Event.Type, fill = Event.Type), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1,title = element_text(size=10),axis.text.y = element_text(size=8),axis.text.x = element_text(angle=90, hjust=1,size=8)) +
+  labs(title="Number of Assualt \nreport in 2020",x = "Four different Assault group", y = "Numer_of_Assault_reported")
+
+#Visualise victim dataset year (2017,2018,2019) Together
+figure <- ggarrange(bar_2017,bar_2018,bar_2019,
+                    ncol=3,nrow=1)
+
+#If We want see all four plots together run this
+#figure <- ggarrange(bar_2017,bar_2018,bar_2019,covid_2020,
+#                    ncol=4,nrow=1)
+
+figure
+```
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+#Plot the only Covid one as it has only four Assault
+covid_2020 <- ggplot(data = covid) + 
+  geom_bar(
+    mapping = aes(x = Event.Type, fill = Event.Type), 
+    show.legend = TRUE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1,title = element_text(size=10),axis.text.y = element_text(size=8),axis.text.x = element_text(size=8)) +
+  labs(title="Number of Assualt \nreport in 2020",x = "Four different Assault group", y = "Numer_of_Assault_reported")
+
+covid_2020 + coord_flip()
+#bar + coord_polar()
+```
+
