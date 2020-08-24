@@ -7,7 +7,7 @@ output: html_document
 
 
 ```{r}
-#covid <- read.csv("/Users/abbey/OneDrive/UniWork_2020/DATA301/New folder/DATA301-Group-Project/Data/Covid_calls for service.csv")
+covid <- read.csv("/Users/abbey/OneDrive/UniWork_2020/DATA301/New folder/DATA301-Group-Project/Data/Covid_calls for service.csv", header = TRUE, stringsAsFactors = TRUE)
 
 covid <- read.csv("Covid_calls for service.csv", header = TRUE)
 head(covid)
