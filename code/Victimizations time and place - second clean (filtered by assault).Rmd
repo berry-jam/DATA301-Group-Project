@@ -11,7 +11,7 @@ output: html_document
 ```{r}
 victims <- read.csv("/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/Victimizations_time_and_place (partly filtered).csv", header = TRUE)
 
-victims <- read.csv("/Users/abbey/OneDrive/UniWork_2020/DATA301/New folder/DATA301-Group-Project/Data/Victimizations_time_and_place (partly filtered).csv", header = TRUE)
+victims <- read.csv("/Users/abbey/OneDrive/UniWork_2020/DATA301/New folder/DATA301-Group-Project/Data/Victimizations_time_and_place (partly filtered).csv", header = TRUE, stringsAsFactors = TRUE)
 ```
 
 
@@ -23,7 +23,7 @@ victims <- victims %>%
   unite(date,c("day","month","year"),sep="/") %>%
   rename('Original.Index' = X.1)
   
-victims$date <- as.Date(victims$date) # Convert to date object
+victims$date <- as.Date(victims$date, format = "%d/%m/%y") # Convert to date object
 
 assault <- victims %>% filter(ANZSOC.Group == c("Serious Assault Not Resulting in Injury", "Non-Aggravated Sexual Assault", "Serious Assault Resulting in Injury", "Common Assault", "Aggravated Sexual Assault"))
 
