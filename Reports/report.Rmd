@@ -88,16 +88,26 @@ After prepping the data unnecasery and duplicate columns the merge was completed
 #### 2.1 Ethical considerations
 
 Domestic violence is a sensitive topic and care must be taken when drawing conclusions and reasoning around this.
+Preventing crimes from happening, rehabilitations of victims, awareness of the public on violent areas, police to enforce law. 
+Trend of crimes per region to promote safer environment for visitor, law reform, safety precautions. Community awareness, people understanding of law to avoid crimes, crime documentation, strategy and predictions
 
 #### 2.2 Privacy concerns 
 
 Data is already anonymised when it is published onto the police nz website so there isnt alot of concern around privacy. 
+Informed concent of victims in disclosure of information, considering the victims residence/personal details to be confidential, 
+To protect privacy of individuals, sensitive details that cannot be released at a detailed “time and place” level have been removed. 
+Such details include victim demographics, homicides and other than burglary victimizations that occurred in dwellings.
+Ethical issues ranging from questions regarding fabrication of data, plagiarism and confidentiality to subject rights and deceptions.
 
 Identifying areas may cause privacy concerns if the areas are too specific.
 
 #### 2.3 Secure project management
 
 Private github repository to store data ensuring that only those with an access invitation may access the files.
+Considering pravcy terms and condition of online storage platform such as GitHub, Trello and Microsoft Teams.
+Keeping track and documentation of editing and changes in all documents and data.
+Considering changing login credentatials on a regular time bases.
+Removing/Backing up data repository, configurattions and resutls (say every two weeks or so) and store it locally
 
 ---
 
