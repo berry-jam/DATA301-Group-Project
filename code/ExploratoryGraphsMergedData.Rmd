@@ -1,0 +1,94 @@
+---
+title: "Data Analysis"
+author: "Abbey Bremner - 300436003"
+date: "26/08/2020"
+output: html_document
+---
+```{R}
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+```
+
+```{R}
+data <- read.csv("/Users/abbey/OneDrive/UniWork_2020/DATA301/New folder/DATA301-Group-Project/Data/merged data (final).csv")
+head(data)
+```
+
+```{R}
+data17 <- filter(data, year == 17)
+nrow(data17)
+data18 <- filter(data, year == 18)
+nrow(data18)
+data19 <- filter(data, year == 19)
+nrow(data19)
+data20 <- filter(data, year == 20)
+nrow(data20)
+```
+````{R}
+ggplot(data, aes(x=Location, y = Number.of.Victimizations, fill = Event))+
+  geom_bar(stat = 'identity')+
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 8))+
+  ggtitle('2017,18,19,20 data')
+```
+
+````{R}
+a <- ggplot(data17, aes(x=Location, y = Number.of.Victimizations, fill = Event))+
+       geom_bar(stat = 'identity')+
+       theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 8))+
+       ggtitle('2017 data')
+
+b <- ggplot(data18, aes(x=Location, y = Number.of.Victimizations, fill = Event))+
+       geom_bar(stat = 'identity')+
+       theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 8))+
+       ggtitle('2018 data')
+
+c <- ggplot(data19, aes(x=Location, y = Number.of.Victimizations, fill = Event))+
+       geom_bar(stat = 'identity')+
+       theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 8))+
+       ggtitle('2019 data')
+
+d <- ggplot(data20, aes(x=Location, y = Number.of.Victimizations, fill = Event))+
+       geom_bar(stat = 'identity')+
+       theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 8))+
+       ggtitle('2020 data')
+
+plot(a)
+plot(b)
+plot(c)
+plot(d)
+```
+
+# Looking at distributions of the crimes for the levels 
+```{R}
+data2 <- data
+data2$yearLevel <- paste(data$year,'-',  data$Alert.Level)
+
+ggplot(data2, aes(x = yearLevel, y = Number.of.Victimizations, fill = Event))+
+  geom_bar(stat = 'identity')+
+       theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 8))+
+       ggtitle('Distribution of Crime types across years and alert level')
+# NOTE that the catrgories change in 2020.
+```
+
+# Slimming data down so only matching groups are present
+```{R}
+dataTrimmed <- data2%>%
+  filter(Event == "Aggravated Sexual Assault" | Event == "Common Assault" | Event == "Non-Aggravated Sexual Assault")
+
+ggplot(dataTrimmed, aes(x = yearLevel, y = Number.of.Victimizations, fill = Event))+
+  geom_bar(stat = 'identity')+
+       theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 8))+
+       ggtitle('Distribution of filtered crime types across years and alert level')
+```
+
+# line graphs (unfinished)
+```{R}
+ggplot(dataTrimmed, aes(x = yearLevel, y = Number.of.Victimizations))+
+  geom_point(aes(colour = Event))+
+       theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 8))+
+       ggtitle('Distribution of filtered crime types across years and alert level')
+```
+
+
+
