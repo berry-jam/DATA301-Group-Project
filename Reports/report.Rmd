@@ -155,7 +155,6 @@ During 2017, 2018 and 2019 all the assault shows not really different from each 
 
 This result could suggest that Covid-19 period changed the crime rate or has some correlation with crime. I found ariticle "https://link.springer.com/article/10.1007/s12103-020-09551-3" which proved that during covid-19 period some type of the crime actually increased in USA, which can support this line graph result.
 
-
 ```{r, eval = TRUE, include = FALSE }
 #Load Merged dataset
 library(dplyr)
@@ -203,6 +202,22 @@ ggplot(data=by_yearLevel, aes(x=yearLevel, y=Total_Number_Of_Victim, group = Eve
 labs(title='Total Number Of Victimisation during 2017 ~ 2020 \nfilter by Assault',x ="Year with Alert_level period from 2017-2020")
 
 ```
+
+
+#### 3.2 Investigating predictability through regression 
+
+An important part of research is application to the real world, often this arises in the form of prediction. Investigating crime around covid having the ability to make good predictions around problem areas could prove to be very useful as the pandemic unfolds. Predicting crime rates is nothing new, the following research project found that population number, bars, churches and schools were the most important 4 predictors in a research project comparing linear regression, logistic regression and gradient boosting. (https://www.sciencedirect.com/science/article/pii/S1877050918315667)
+
+I focused on 3 models of varying complexity to investigate the relationships within data and its predictors with a goal to predict the numer of victimisations. The three models were a linear regression: 
+\[NoOfVictimisations \sim Event + Year + AlertLevel + Location\] \\
+A linear regression with log transformation applied to numeric predictors: 
+\[log(NoOfVictimisations) \sim Event +log(Year) + log(AlertLevel) + Location\]\\
+And a generalised additive model (GAM): 
+\[NoOfVictimisations \sim Event + s(Year) + s(AlertLevel) + Location\]\\
+
+
+
+
 
 ---
 
