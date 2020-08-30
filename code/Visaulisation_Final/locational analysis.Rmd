@@ -9,36 +9,11 @@ output:
 
 
 ```{r}
-library(sf)
-library(raster)
 library(dplyr)
-library(spData)
+library(tmap)
 
-library(spDataLarge)
-
-library(tmap)    # for static and interactive maps
-library(leaflet) # for interactive maps
-
-library(mapview) # for interactive maps
-library(ggplot2) # tidyverse vis package
-
-library(shiny)   # for web applications
-```
-
-
-```{r}
-```
-
-```{r}
-map_nz = tm_shape(nz) + tm_polygons()
-names(nz)
-nz1 <- data.frame(nz)
-nz1$geom
-str(nz)
-str(nz1)
 
 ```
-
 
 ```{r}
 total <- read.csv("/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/merged data (Final).csv")
@@ -138,16 +113,11 @@ names(twentylvl2)[names(twentylvl2) == "Number.of.Victimizations"] <- "2020 leve
 names(twentylvl3)[names(twentylvl3) == "Number.of.Victimizations"] <- "2020 level 3"
 names(twentylvl4)[names(twentylvl4) == "Number.of.Victimizations"] <- "2020 level 4"
 
-
-
-
-
 ```
 
 
 
 ```{r}
-
 nz <- dplyr::left_join(nz, seventeen2, by = c("Name" = "Location"))
 nz <- dplyr::left_join(nz, seventeen3, by = c("Name" = "Location"))
 nz <- dplyr::left_join(nz, seventeen4, by = c("Name" = "Location"))
@@ -160,9 +130,6 @@ nz <- dplyr::left_join(nz, nineteen4, by = c("Name" = "Location"))
 nz <- dplyr::left_join(nz, twentylvl2, by = c("Name" = "Location"))
 nz <- dplyr::left_join(nz, twentylvl3, by = c("Name" = "Location"))
 nz <- dplyr::left_join(nz, twentylvl4, by = c("Name" = "Location"))
-
-
-nz
 
 
 breaks <- c(0, 10, 20, 30, 40, 50, 100, 150, 200)
@@ -195,7 +162,7 @@ In order to do this I used packages including (tmap) and (dplyr), (tmap) is a po
 
 the dataset from tmap was a dataframe that contained geometric and other spatial information that made it possible for me to have an accurate map of New Zealand, in order to have the maps projecting the information from our datasets I had to do a bit of manipulation to both our data and the map information in order for the two to have similar categories and specified data to merge together. once this was completed I was able to create 12 individual maps which showed the changes in reported cases of assault over the 3 'Alert Levels' during the 4 different years under investigation.
 
-Once the maps were created it was instantly clear that there were some major differences between the rate of assult during Covid-19 in comparison to the same time periods in previous years. Firstly in level 4 of 2020 which is the real level 4 Covid lockdown we can see that alot of the country is showing much darker shades of brown than the relative time periods in all of the previous years, indicating a spike in the level of assault in New Zealand during this time period. this observation is supported by a recent study in dallas which observed an initial spike in the reported cases of domestic assault in the initial weeks after going into lockdown (https://link.springer.com/article/10.1007/s12103-020-09531-7). The study also notes a decrease in the rate of reports after a few weeks of being in lockdown, this trend can also be seen on the maps above where the rate of victimization in New Zealand once going to level 3 has decreased dramatically although the lockdown rules from level 4 to 3 don't change much.
+Once the maps were created it was instantly clear that there were some major differences between the rate of assault during Covid-19 in comparison to the same time periods in previous years. Firstly in level 4 of 2020 we can see that alot of the country is showing much darker shades of brown than the relative time periods in all of the previous years, indicating a spike in the level of assault in New Zealand. this observation is supported by a recent study in Dallas which observed an initial spike in the reported cases of domestic assault in the initial weeks after going into lockdown (https://link.springer.com/article/10.1007/s12103-020-09531-7). The study also notes a decrease in the rate of reports after a few weeks of being in lockdown, this trend can also be seen on the maps below where the rate of victimization in New Zealand once going to level 3 has decreased dramatically although the lockdown rules from level 4 to 3 don't change much, this could also be due to the fact that level 3 was a slightly shorter period of time in comparison to the other levels.
 
 another interesting thing to note is that the rate of assault appears to increase again once moving from level 3 down to level 2 where it appears that there seems to be a similar rate of assault to that of level 4 in 2020. Once again, when comparing this map of level 2 in 2020 to similar time periods in previous years we can see a massive difference in the rate of assault which again indicates the ongoing impact that the covid 19 lockdowns have had on assault in New Zealand.
 
