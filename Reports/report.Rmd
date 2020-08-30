@@ -4,9 +4,9 @@ author: "Abbey Bremner"
 date: "18/08/2020"
 output: html_document
 ---
-## Police data group project 
+## Police data group project
 
-### Team members 
+### Team members
 Abbey Bremner - 300436003  
 Shaun  
 Kieryn  
@@ -29,7 +29,7 @@ We have been collecting data from several sites mainly from the Ministry of Poli
 
 The Victimisation time and place dataset was downloaded from the information recorded in the Police dynamic operational database. (www.police.govt.nz) This dataset represents detailed information about where and at what times of the day and week crime victimization occur in NZ. It excludes victimization where meshblock level data and Area Unit is unknown. It includes time and place where the offence occurs, number and type of offence. This data frame contains 699705 number of observations and 17 variables. The dataset is dated from 2017 until March 2020.
 
-The Covid_calls for services dataset was also downloaded from the police website and it contains information about crimes during the different level of lockdown during covid-19. These include districts, level of lockdown, type of crime and the number of times a specific crime has been committed. It also shows information about the demand in call for service and prevention during lockdown. The information has been recorded starting from the lockdown period in March 2020 until July. 
+The Covid_calls for services dataset was also downloaded from the police website and it contains information about crimes during the different level of lockdown during covid-19. These include districts, level of lockdown, type of crime and the number of times a specific crime has been committed. It also shows information about the demand in call for service and prevention during lockdown. The information has been recorded starting from the lockdown period in March 2020 until July.
 
 #### 1.2.1 Inside the data
 
@@ -73,11 +73,11 @@ From the Covid data we have kept the District, Alert level, calls for service an
 
 #### 1.2.2 Merging the data
 
-Merging the data was a longer process that anticipated as the structure of each data source was different. The Victimisations data was in a time series format where there was one row for each instance whereas the Covid dataset accounts for multiple occurances in each row. This meant to merge and compare pre-covid crime and covid we needed to alter the format quite siginificantly. 
+Merging the data was a longer process that anticipated as the structure of each data source was different. The Victimisations data was in a time series format where there was one row for each instance whereas the Covid dataset accounts for multiple occurances in each row. This meant to merge and compare pre-covid crime and covid we needed to alter the format quite siginificantly.
 
 These alterations included matching the time periods, since Covid is still unfolding it is a short window of time to look at. This has been matched in the previous years and approximate "levels" to the Victimisations data to allow for a more acurate comparison.
 
-There was also a difference in the location measures. ***** Kieryn do you want to fill this in ***** 
+There was also a difference in the location measures. ***** Kieryn do you want to fill this in *****
 
 After prepping the data unnecasery and duplicate columns the merge was completed using rbind.
 
@@ -85,30 +85,39 @@ After prepping the data unnecasery and duplicate columns the merge was completed
 
 ## 2 Ethics, Privacy and Security
 
+There are many ethical and privacy issues to consider when dealing with any police data, for this reason published data on the police.nz website is already cleaned and anonymised. This was useful for our process in that we could be confident with the level of ethical preparation that went into our raw data. We didn't have to do any anonymisation prior to merging our data, however there were still some possible issues we discussed.
+
 #### 2.1 Ethical considerations
 
-Domestic violence is a sensitive topic and care must be taken when drawing conclusions and reasoning around this.
-Preventing crimes from happening, rehabilitations of victims, awareness of the public on violent areas, police to enforce law. 
-Trend of crimes per region to promote safer environment for visitor, law reform, safety precautions. Community awareness, people understanding of law to avoid crimes, crime documentation, strategy and predictions
+An ethical responsibility when publishing results is to ensure that they are accurate and fairly representative. Due to this being an unfolding pandemic where data and research is still emerging we decided to focus on a broader location rather than fine grained spatial analysis. This helps us ensure that we are accounting for possible variability in the data that may arise from limited and evolving data.
 
-#### 2.2 Privacy concerns 
+A huge ethical concern when looking at Covid data currently is identifying those who have contracted the disease and protecting the identity of those individuals and communities from ridicule and judgement. Although this is not a direct concern of ours since the Covid data we have used doesnt specifically identify cases it only focuses on the time period based on area, it is important to be aware of the current social climate around publications involving covid.
 
-Data is already anonymised when it is published onto the police nz website so there isnt alot of concern around privacy. 
-Informed concent of victims in disclosure of information, considering the victims residence/personal details to be confidential, 
-To protect privacy of individuals, sensitive details that cannot be released at a detailed “time and place” level have been removed. 
-Such details include victim demographics, homicides and other than burglary victimizations that occurred in dwellings.
-Ethical issues ranging from questions regarding fabrication of data, plagiarism and confidentiality to subject rights and deceptions.
+Assault is a sensitive topic to many people especially victims, with this being said it was a critical concern of ours that any disclosure of patterns particularly involving location was accurate and unbiased. We also wanted the data and information around location to be accurate enough that our conclusions about geographical locations were true and not misleading or defamatory to those areas. Misleading facts about crime rate can lead to decreased house price as well as a fear for the safety of residents and visitors in that area. (https://www.tandfonline.com/doi/full/10.1080/2578983X.2019.1662595) It can also cause unnecessary panic for not only individuals but also businesses, primarily those in hospitality such as businesses that operate late at night.
 
-Identifying areas may cause privacy concerns if the areas are too specific.
+There was recently an article published about the increased rates of assault in Courtney place, Wellington. This increase was linked to alcohol use and large gatherings of public. http://wellington.scoop.co.nz/?p=130187 Articles like this, although true may discourage new businesses or customers from this area and may create a negative perception of not only the area but also the businesses operating. We wanted to avoid running the risk of something like this being a result of our research.
+
+A concern of ours is that inaccurate or misleading information can cause unnecessary stress and distrust between communities and their local law enforcement, this is a serious concern as public opinion often influences authorities to investigate or make changes. If these changes are based off of inaccurate facts, not only does this waste time and money but it also runs the risk of creating a biased system of justice.
+
+#### 2.2 Privacy concerns
+
+The biggest privacy concern when working with victimisations data is ensuring that victims cannot be identified and their personal information is protected.
+
+Since the data is already anonymised when it is published onto the police NZ website there isn't a lot of concern for us around privacy.
+
+The main privacy concern for our data was looking at such specific locations that information could be matched with other data and possibly identified, we have addressed this concern by looking at spaces no smaller than regions. This keeps the data anonymous and protects people in those areas from unnecessary fear as discussed in the above section.
+
+The police website states that "To protect privacy of individuals, sensitive details that cannot be released at a detailed “time and place” level have been removed. Such details include victim demographics, homicides and other than burglary victimizations that occurred in dwellings." https://www.police.govt.nz/about-us/publications-statistics/data-and-statistics/policedatanz/victimisation-time-and-place
+
+Because the data is collected from a reputable source we are confident in the quality of the privacy measures that have been taken.
 
 #### 2.3 Secure project management
 
-Private github repository to store data ensuring that only those with an access invitation may access the files.
-Considering pravcy terms and condition of online storage platform such as GitHub, Trello and Microsoft Teams.
-Keeping track and documentation of editing and changes in all documents and data.
-Considering changing login credentatials on a regular time bases.
-Removing/Backing up data repository, configurattions and resutls (say every two weeks or so) and store it locally
+We used a private github repository to manage our project and store data, this ensured that only those with an access invitation may access the files. This provided security not only for the data but also any exploratory data analysis that we produced. Its important to have good security measures at all stages as not all information may be published, its crucial that work stay private until it has gone through a review process to ensure accuracy before it is finalised for publication.
 
+By using github we had clear documentation of who edited what files, ensuring that accountability for changes was taken and any errors were easily traceable. The repositories were also stored locally and updated from the shared space regularly, meaning there was always multiple back ups of the project information protecting us against accidental loss or internet problems.
+
+We used licensed and well known programs such as github, Microsoft teams and trello for communication and management, by not using unknown third party applications it helps keep everything secure.
 ---
 
 ## 3 Exploratory data analysis
@@ -119,7 +128,7 @@ Removing/Backing up data repository, configurattions and resutls (say every two 
 
 As a team we all contributed to the research portion of the project, completing mindmaps around discussions as a group. We also worked collaboratively on findind suitable data and discussing possible ideas and issues around potnetial data sets. We also wrote the Ethics and Privacy section as a group alongside a discussion around the topics.
 
-#### Abbey 
+#### Abbey
 
 Repository manager
 
@@ -132,6 +141,3 @@ Data manager
 Biblio manager
 
 #### Josh
-
-
-
