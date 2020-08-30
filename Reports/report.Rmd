@@ -2,7 +2,9 @@
 title: "DATA301 - Group Project Report"
 author: "Abbey Bremner"
 date: "18/08/2020"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 ## Police data group project
 
@@ -121,6 +123,13 @@ We used licensed and well known programs such as github, Microsoft teams and tre
 ---
 
 ## 3 Exploratory data analysis
+
+# Example of code in report
+```{R, echo = FALSE}
+allAssaults <- data %>% 
+  group_by(year, Alert.Level, yearLevel)%>%
+  summarise(Total = sum(Number.of.Victimizations))
+```
 
 ---
 
