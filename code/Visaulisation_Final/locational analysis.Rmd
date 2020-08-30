@@ -1,0 +1,212 @@
+---
+title: "map"
+author: "Keiryn Hart, 300428418"
+date: "30/08/2020"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+
+```{r}
+library(sf)
+library(raster)
+library(dplyr)
+library(spData)
+
+library(spDataLarge)
+
+library(tmap)    # for static and interactive maps
+library(leaflet) # for interactive maps
+
+library(mapview) # for interactive maps
+library(ggplot2) # tidyverse vis package
+
+library(shiny)   # for web applications
+```
+
+
+```{r}
+```
+
+```{r}
+map_nz = tm_shape(nz) + tm_polygons()
+names(nz)
+nz1 <- data.frame(nz)
+nz1$geom
+str(nz)
+str(nz1)
+
+```
+
+
+```{r}
+total <- read.csv("/Users/keirynhart/Documents/Uni/Data 301/DATA301-Group-Project/Data/merged data (Final).csv")
+```
+
+
+```{r}
+total[,"Event"] <- NULL
+agg <- aggregate(. ~ year + Alert.Level + Location, total, sum)
+a <- 17
+b <- 18
+c <- 19
+d <- 20
+
+#name changes
+agg$Location[agg$Location == "Wellington/ Lower-Central North"] <- "Wellington"
+agg$Location[agg$Location == "Bay Of Plenty"] <- "Bay of Plenty"
+agg$Location[agg$Location == "Cantebury"] <- "Canterbury"
+
+
+nz$Name[nz$Name == "Manawatu-Wanganui"] <- "West Coast/ Upper-Central North"
+nz$Name[nz$Name == "Hawke's Bay"] <- "Hawkes Bay/ Gisborne"
+nz$Name[nz$Name == "Gisborne"] <- "Hawkes Bay/ Gisborne"
+nz$Name[nz$Name == "Taranaki"] <- "West Coast/ Upper-Central North"
+nz$Name[nz$Name == "Otago"] <- "Southland/ Otago"
+nz$Name[nz$Name == "Southland"] <- "Southland/ Otago"
+nz$Name[nz$Name == "Marlborough"] <- "Tasman/ South-West Coast"
+nz$Name[nz$Name == "Tasman"] <- "Tasman/ South-West Coast"
+nz$Name[nz$Name == "Nelson"] <- "Tasman/ South-West Coast"
+nz$Name[nz$Name == "West Coast"] <- "Tasman/ South-West Coast"
+
+
+seventeen <- subset(agg, year %in% a)
+eighteen <- subset(agg, year %in% b)
+nineteen <- subset(agg, year %in% c)
+twenty <- subset(agg, year %in% d)
+
+#seventeen
+seventeen2 <- subset(seventeen, Alert.Level %in% 2)
+seventeen3 <- subset(seventeen, Alert.Level %in% 3)
+seventeen4 <- subset(seventeen, Alert.Level %in% 4)
+
+#eighteen
+eighteen2 <- subset(eighteen, Alert.Level %in% 2)
+eighteen3 <- subset(eighteen, Alert.Level %in% 3)
+eighteen4 <- subset(eighteen, Alert.Level %in% 4)
+
+#nineteen
+nineteen2 <- subset(nineteen, Alert.Level %in% 2)
+nineteen3 <- subset(nineteen, Alert.Level %in% 3)
+nineteen4 <- subset(nineteen, Alert.Level %in% 4)
+
+#twenty
+twentylvl2 <- subset(twenty, Alert.Level %in% 2)
+twentylvl3 <- subset(twenty, Alert.Level %in% 3)
+twentylvl4 <- subset(twenty, Alert.Level %in% 4)
+
+
+twentylvl4<- twentylvl4[-6,] 
+
+#seventeen
+seventeen2 <- seventeen2[, c("Number.of.Victimizations", "Location")]
+seventeen3 <- seventeen3[, c("Number.of.Victimizations", "Location")]
+seventeen4 <- seventeen4[, c("Number.of.Victimizations", "Location")]
+#eighteen
+eighteen2 <- eighteen2[, c("Number.of.Victimizations", "Location")]
+eighteen3 <- eighteen3[, c("Number.of.Victimizations", "Location")]
+eighteen4 <- eighteen4[, c("Number.of.Victimizations", "Location")]
+#nineteen
+nineteen2 <- nineteen2[, c("Number.of.Victimizations", "Location")]
+nineteen3 <- nineteen3[, c("Number.of.Victimizations", "Location")]
+nineteen4 <- nineteen4[, c("Number.of.Victimizations", "Location")]
+#twenty
+twentylvl2 <- twentylvl2[, c("Number.of.Victimizations", "Location")]
+twentylvl3 <- twentylvl3[, c("Number.of.Victimizations", "Location")]
+twentylvl4 <- twentylvl4[, c("Number.of.Victimizations", "Location")]
+
+#column name changes
+
+#seventeen
+names(seventeen2)[names(seventeen2) == "Number.of.Victimizations"] <- "2017 level 2"
+names(seventeen3)[names(seventeen3) == "Number.of.Victimizations"] <- "2017 level 3"
+names(seventeen4)[names(seventeen4) == "Number.of.Victimizations"] <- "2017 level 4"
+
+#eighteen
+names(eighteen2)[names(eighteen2) == "Number.of.Victimizations"] <- "2018 level 2"
+names(eighteen3)[names(eighteen3) == "Number.of.Victimizations"] <- "2018 level 3"
+names(eighteen4)[names(eighteen4) == "Number.of.Victimizations"] <- "2018 level 4"
+
+#nineteen
+names(nineteen2)[names(nineteen2) == "Number.of.Victimizations"] <- "2019 level 2"
+names(nineteen3)[names(nineteen3) == "Number.of.Victimizations"] <- "2019 level 3"
+names(nineteen4)[names(nineteen4) == "Number.of.Victimizations"] <- "2019 level 4"
+
+#twenty
+names(twentylvl2)[names(twentylvl2) == "Number.of.Victimizations"] <- "2020 level 2"
+names(twentylvl3)[names(twentylvl3) == "Number.of.Victimizations"] <- "2020 level 3"
+names(twentylvl4)[names(twentylvl4) == "Number.of.Victimizations"] <- "2020 level 4"
+
+
+
+
+
+```
+
+
+
+```{r}
+
+nz <- dplyr::left_join(nz, seventeen2, by = c("Name" = "Location"))
+nz <- dplyr::left_join(nz, seventeen3, by = c("Name" = "Location"))
+nz <- dplyr::left_join(nz, seventeen4, by = c("Name" = "Location"))
+nz <- dplyr::left_join(nz, eighteen2, by = c("Name" = "Location"))
+nz <- dplyr::left_join(nz, eighteen3, by = c("Name" = "Location"))
+nz <- dplyr::left_join(nz, eighteen4, by = c("Name" = "Location"))
+nz <- dplyr::left_join(nz, nineteen2, by = c("Name" = "Location"))
+nz <- dplyr::left_join(nz, nineteen3, by = c("Name" = "Location"))
+nz <- dplyr::left_join(nz, nineteen4, by = c("Name" = "Location"))
+nz <- dplyr::left_join(nz, twentylvl2, by = c("Name" = "Location"))
+nz <- dplyr::left_join(nz, twentylvl3, by = c("Name" = "Location"))
+nz <- dplyr::left_join(nz, twentylvl4, by = c("Name" = "Location"))
+
+
+nz
+
+
+breaks <- c(0, 10, 20, 30, 40, 50, 100, 150, 200)
+
+
+m1 <- tm_shape(nz) + tm_polygons(col = "2017 level 2", breaks = breaks) 
+m2 <- tm_shape(nz) + tm_polygons(col = "2017 level 3", breaks = breaks)
+m3 <- tm_shape(nz) + tm_polygons(col = "2017 level 4", breaks = breaks)
+m4 <- tm_shape(nz) + tm_polygons(col = "2018 level 2", breaks = breaks)
+m5 <- tm_shape(nz) + tm_polygons(col = "2018 level 3", breaks = breaks)
+m6 <- tm_shape(nz) + tm_polygons(col = "2018 level 4", breaks = breaks)
+m7 <- tm_shape(nz) + tm_polygons(col = "2019 level 2", breaks = breaks)
+m8 <- tm_shape(nz) + tm_polygons(col = "2019 level 3", breaks = breaks)
+m9 <- tm_shape(nz) + tm_polygons(col = "2019 level 4", breaks = breaks)
+m10 <- tm_shape(nz) + tm_polygons(col = "2020 level 2", breaks = breaks)
+m11 <- tm_shape(nz) + tm_polygons(col = "2020 level 3", breaks = breaks)
+m12 <- tm_shape(nz) + tm_polygons(col = "2020 level 4", breaks = breaks)
+
+
+tmap_arrange(m1, m4, m2, m5, m3, m6,nrow = 3, ncol = 2)
+tmap_arrange(m7, m10, m8, m11, m9, m12, nrow = 3, ncol = 2)
+
+```
+
+####Locational Analysis:
+
+Another interesting thing we looked to investigate was the relationship between the different time periods, the amount of reported accounts of assault and the various regions around New Zealand. 
+
+In order to do this I used packages including (tmap) and (dplyr), (tmap) is a powerful map making package that allowed me to map the differences between location, time and rate of assault with relative ease and some minor changes creating easy to understand static maps that show the changes in reported events over the past 4 years and relative 'Alert levels'.
+
+the dataset from tmap was a dataframe that contained geometric and other spatial information that made it possible for me to have an accurate map of New Zealand, in order to have the maps projecting the information from our datasets I had to do a bit of manipulation to both our data and the map information in order for the two to have similar categories and specified data to merge together. once this was completed I was able to create 12 individual maps which showed the changes in reported cases of assault over the 3 'Alert Levels' during the 4 different years under investigation.
+
+Once the maps were created it was instantly clear that there were some major differences between the rate of assult during Covid-19 in comparison to the same time periods in previous years. Firstly in level 4 of 2020 which is the real level 4 Covid lockdown we can see that alot of the country is showing much darker shades of brown than the relative time periods in all of the previous years, indicating a spike in the level of assault in New Zealand during this time period. this observation is supported by a recent study in dallas which observed an initial spike in the reported cases of domestic assault in the initial weeks after going into lockdown (https://link.springer.com/article/10.1007/s12103-020-09531-7). The study also notes a decrease in the rate of reports after a few weeks of being in lockdown, this trend can also be seen on the maps above where the rate of victimization in New Zealand once going to level 3 has decreased dramatically although the lockdown rules from level 4 to 3 don't change much.
+
+another interesting thing to note is that the rate of assault appears to increase again once moving from level 3 down to level 2 where it appears that there seems to be a similar rate of assault to that of level 4 in 2020. Once again, when comparing this map of level 2 in 2020 to similar time periods in previous years we can see a massive difference in the rate of assault which again indicates the ongoing impact that the covid 19 lockdowns have had on assault in New Zealand.
+
+These observation helps to support our initial question of whether the lockdown has impacted the rate of assault in New Zealand as there is clearly an elevated rate of assault over a large portion of the country during the lockdown periods in comparison to previous years and this is especially apparent during levels 4 and 2.
+
+
+```{r}
+
+```
+
+
+```{r}
+
+```
