@@ -78,9 +78,11 @@ From the Covid data we have kept the District, Alert level, calls for service an
 
 Merging the data was a longer process that anticipated as the structure of each data source was different. The Victimisations data was in a time series format where there was one row for each instance whereas the Covid dataset accounts for multiple occurances in each row. This meant to merge and compare pre-covid crime and covid we needed to alter the format quite siginificantly.
 
-These alterations included matching the time periods, since Covid is still unfolding it is a short window of time to look at. This has been matched in the previous years and approximate "levels" to the Victimisations data to allow for a more acurate comparison.
+These alterations included matching the time periods, since Covid is still unfolding it is a short window of time to look at. This has been matched in the previous years and approximate "levels" to the Victimisations data to allow for a more accurate comparison.
 
-There was also a difference in the location measures. ***** Kieryn do you want to fill this in *****
+There was also a difference in the location measures, the Covid dataset for a start was alot more generalised than the victimisations dataset and had already been classified into 12 regions which made it relatively easy to create an initial set of location categories that could be used for both datasets. When it came to the victimisation's dataset the location variable was far more specific containing 65 different districts and cities, because of this it took a while to sort through all the locations in order to create a matching location column for each dataset where the location analysis could be based on the same areas for all the data.
+
+As touched on above, the victimisations dataset was in a time series format and the Covid dataset accounted for multiple events in one row with a count. Obviously when doing a merge we could not have half the data in time series format and half not, to counter this we decided to create a 'sum' of all the individual instances based on the Location, Event, year and Alert level for each of the datasets so that they both had a column with a relatable scale to compare.
 
 After prepping the data unnecasery and duplicate columns the merge was completed using rbind.
 
@@ -133,7 +135,7 @@ We used licensed and well known programs such as github, Microsoft teams and tre
 #  summarise(Total = sum(Number.of.Victimizations))
 ```
 
-#### 3.1 TIme period analysis  
+#### 3.1 Time period analysis  
 
 For us, we are interesting whether some type of crimes rate are higher during Alter_level in 2020 compared with 2017,2018,2019.
 Therfore, I thought if we explore "ANZSOC.Group"(victimisation) "Event"(Covid) columns which is category of Assault with "Year" together,it would be interesting to have a look rather than exploring other columns. 
