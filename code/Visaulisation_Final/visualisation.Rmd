@@ -1,0 +1,207 @@
+---
+title: "Exploratory data"
+author: "Wonsang Yu 300463616"
+date : "25/08/2020"
+output: pdf_document
+---
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+#Load the csv file
+covid <- read.csv("Covid calls for service cleaned.csv", 
+                         header = TRUE, 
+                         stringsAsFactors = FALSE)
+victim <- read.csv("Victimisations_time_and_place (cleaned).csv", 
+                         header = TRUE, 
+                         stringsAsFactors = FALSE)
+
+head(covid,5)
+head(victim,5)
+```
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+unique(covid$Event.Type)
+unique(victim$ANZSOC.Group)
+```
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+#Also, I will extract three assault divided into three diffrent year
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(tidyverse)
+
+#I just divided to extract three different year
+victim_year <- separate(victim, "date", c("day", "month", "year")) 
+head(victim_year)
+
+#check datastructure
+str(victim_year)
+
+#Extract three year
+victim_2017 <- victim_year[victim_year$year == "17",]
+victim_2018 <- victim_year[victim_year$year == "18",]
+victim_2019 <- victim_year[victim_year$year == "19",]
+
+head(victim_2017)
+head(victim_2018)
+head(victim_2019)
+
+ANZSOC.count <- victim_2017 %>% count(ANZSOC.Group)
+ANZSOC.count
+```
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+library(ggplot2)
+library(ggpubr)
+ANZSOC.count <- victim_2017 %>% count(ANZSOC.Group)
+ANZSOC.count
+
+#ggplot(data = victim_2017) +
+#  geom_bar(mapping = aes(x = ANZSOC.Group,fill =ANZSOC.Group ))
+
+
+bar_2017 <- ggplot(data = victim_2017) + 
+  geom_bar(
+    mapping = aes(x = ANZSOC.Group, fill = ANZSOC.Group), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1,title = element_text(size=10),axis.title = element_text(size=10),
+        axis.text.y = element_text(size=8),axis.text.x = element_text(angle=90, hjust=1,size=8)) +
+  labs(title="Number of Assualt \nreport in 2017",x = "Five different Assault group", y = "Numer_of_Assault_reported")
+
+ANZSOC.count_2018 <- victim_2018 %>% count(ANZSOC.Group)
+ANZSOC.count_2018
+
+#ggplot(data = victim_2017) +
+#  geom_bar(mapping = aes(x = ANZSOC.Group,fill =ANZSOC.Group ))
+
+
+bar_2018 <- ggplot(data = victim_2018) + 
+  geom_bar(
+    mapping = aes(x = ANZSOC.Group, fill = ANZSOC.Group), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1,title = element_text(size=10),axis.text.y = element_text(size=8),
+        axis.text.x = element_text(angle=90, hjust=1,size=8)) +
+  labs(title="Number of Assualt \nreport in 2018",x = "Five different Assault group", y = "Numer_of_Assault_reported")
+
+bar_2019 <- ggplot(data = victim_2019) + 
+  geom_bar(
+    mapping = aes(x = ANZSOC.Group, fill = ANZSOC.Group), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1,title = element_text(size=10),axis.text.y = element_text(size=8),
+        axis.text.x = element_text(angle=90, hjust=1,size=8)) +
+  labs(title="Number of Assualt \nreport in 2019",x = "Five different Assault group", y = "Numer_of_Assault_reported")
+
+
+covid_2020 <- ggplot(data = covid) + 
+  geom_bar(
+    mapping = aes(x = Event.Type, fill = Event.Type), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1,title = element_text(size=10),axis.text.y = element_text(size=8),axis.text.x = element_text(angle=90, hjust=1,size=8)) +
+  labs(title="Number of Assualt \nreport in 2020",x = "Four different Assault group", y = "Numer_of_Assault_reported")
+
+#Visualise victim dataset year (2017,2018,2019) Together
+figure <- ggarrange(bar_2017,bar_2018,bar_2019,
+                    ncol=3,nrow=1)
+
+#If We want see all four plots together run this
+#figure <- ggarrange(bar_2017,bar_2018,bar_2019,covid_2020,
+#                    ncol=4,nrow=1)
+
+figure
+```
+
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+#Assault Count in Covid dataset 
+covid.count_2020 <- covid %>% count(Event.Type)
+covid.count_2020
+#Plot the only Covid one as it has only four Assault
+covid_2020 <- ggplot(data = covid) + 
+  geom_bar(
+    mapping = aes(x = Event.Type, fill = Event.Type), 
+    show.legend = TRUE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1,title = element_text(size=10),axis.text.y = element_text(size=8),axis.text.x = element_text(size=8)) +
+  labs(title="Number of Assualt \nreport in 2020",x = "Four different Assault group", y = "Numer_of_Assault_reported")
+
+covid_2020 + coord_flip()
+#bar + coord_polar()
+```
+#I used code chunk this in Report
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+data_merged <- read.csv("merged data (Final).csv", 
+                         header = TRUE, 
+                         stringsAsFactors = FALSE)
+
+data_merged <- data_merged[,-1]
+head(data_merged)
+str(data_merged)
+```
+#I used code chunk this in Report
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+#Filtered by only three Common Assualts
+
+data_merged_assault <- data_merged %>%
+  filter(Event == "Aggravated Sexual Assault" | Event == "Common Assault" | Event == "Non-Aggravated Sexual Assault")
+
+
+head(data_merged_assault)
+unique(data_merged_assault$Event)
+
+#Try to add Month depends on the Alter level 
+data_merged_assault$month <-      ifelse(data_merged_assault$Alert.Level =="4", 4,
+      ifelse(data_merged_assault$Alert.Level =="3", 5, 6))
+
+unique(data_merged_assault$month)
+tail(data_merged_assault)
+```
+#I used code chunk this in Report
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+#Filtered by only three Common Assualts
+data_merged_assault <- data_merged %>%
+  filter(Event == "Aggravated Sexual Assault" | Event == "Common Assault" | Event == "Non-Aggravated Sexual Assault")
+
+
+head(data_merged_assault)
+unique(data_merged_assault$Event)
+
+#Try to add Month depends on the Alter level 
+data_merged_assault$month <-      ifelse(data_merged_assault$Alert.Level =="4", 4,
+      ifelse(data_merged_assault$Alert.Level =="3", 5, 6))
+
+#Just used Year with Level instead of Month 
+#This is because Month is bit ambiguous.
+data_merged_assault$yearLevel <- paste(data_merged_assault$year,'-',data_merged_assault$Alert.Level)
+
+unique(data_merged_assault$month)
+tail(data_merged_assault,10)
+```
+#I used code chunk this in Report
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+#Data group by Assault and year_level. 
+by_event_year <-data_merged_assault %>% group_by(Event,yearLevel)
+#Summarize the number of victimisation 
+#To make tidy graph otherwise even same period the number of victimisation are different as different region
+by_yearLevel <- summarise(by_event_year, Total_Number_Of_Victim = sum(Number.of.Victimizations))
+by_yearLevel
+```
+
+#I used code chunk this in Report
+```{r, eval = TRUE, echo = TRUE, results = TRUE }
+#Filtered by only three Common Assualts
+
+by_yearLevel$Type_Of_Assault <- as.factor(by_yearLevel$Event)
+
+ggplot(data=by_yearLevel, aes(x=yearLevel, y=Total_Number_Of_Victim, group = Event, colour = Type_Of_Assault)) + geom_line()+     geom_point()+theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 8)) +
+labs(title='Total Number Of Victimisation during 2017 ~ 2020 \nfilter by Assault',x ="Year with Alert_level period from 2017-2020")
+
+```
+
