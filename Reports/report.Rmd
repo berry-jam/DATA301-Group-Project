@@ -21,9 +21,11 @@ Josh
 
 ## 1 Background and Data
 
-As the pandemic has unfolded around the world many studies have emerged looking at how the changes in social systems have effected crime. ** Insert relevant stats ** We are interested to look at whether the same patterns are present in New Zealand.
+As the pandemic has unfolded around the world many studies have emerged looking at how the changes in social systems have effected crime and violence. "In the United Kingdom, calls, emails and website visits to Respect, the national domestic violence charity, have increased 97%, 185% and 581% respectively." (https://www.euro.who.int/en/health-topics/disease-prevention/violence-and-injuries/news/news/2020/6/the-rise-and-rise-of-interpersonal-violence-an-unintended-impact-of-the-covid-19-response-on-families) "The UN has described the worldwide increase in domestic abuse as a "shadow pandemic" alongside Covid-19.
+It’s thought cases have increased by 20% during the lockdown, as many people are trapped at home with their abuser." (https://www.bbc.com/news/av/world-53014211)
+Articles such as the above sparked interest amongst our group and made us want to investigate if the same patterns are present in New Zealand.
 
-Our initial question evolved around looking into domestic violence rates specifically as many countries saw a rise in this crime in particular. However the system used for reporting types of crime (ANSOC - Australian and New Zealand Standard Offence Classification) has domestic violence as a subcategory of Assault, this meant there was not enough data specifically on domestic violence for us to souley focus on it. For this reason we adapted our question to be focused on how the pandemic has effected Assault in New Zealand.
+Our initial question evolved around looking into domestic violence rates specifically as many countries saw a rise in this crime in particular. However the system used for reporting types of crime (ANSOC - Australian and New Zealand Standard Offence Classification) has domestic violence as a subcategory of Assault, this meant there was not enough data specifically on domestic violence for us to souley focus on it. For this reason we adapted our question to be focused on how the pandemic has affected Assault in New Zealand.
 
 We have been collecting data from several sites mainly from the Ministry of Police, Stats NZ. data.govt.nz and NZ.Stat. This was not limited to researching for related data about crimes and covid-19 in NZ such journals, articles newspaper and news broadcast. The links to these sites is provided below. We have used two datasets for our analysis:
 
@@ -36,29 +38,21 @@ The Covid_calls for services dataset was also downloaded from the police website
 
 #### 1.2.1 Inside the data
 
-Data types in the original Victimisations data set.
+Example of data types in the original Victimisations data set and the basic transformations that were neccasery
 
 | Attribute     | Original data type    | Transformation       | About                        |
 |---------------|-----------------------|----------------------|------------------------------|
 |ANSOC.Division | Character             | Factor              | Consistent with Stats NZ and police.nz records     |
-|Year.Month     | Character             | Date                | yyyy/mm/dd format |
-|Month.Year     | Character             | Date                | yyyy/mm/dd format |
 |ANSOC.Group    | Character             | Factor              | Official groupings based on police.nz |
 |ANSOC.Subdivision| Character           | Factor              | Subgroupings of the ANSOC.Group |
-|Area.Unit      | Character             | Factor              | Stats NZ area unit names |
 |Location.Type  | Character             | Factor              |                                 |
 |Locn.Type.Division| Character          | Factor              |                       |
 | Meshblock     | int                   | -                   | Meshblock number consistent with Stats NZ|
-| Occurrence.Day.Of.Week| Chr           | Factor              | 7 levels corresponding to day of the week|
-| Occurrence.Hour.Of.Day| int           | -                   | 24 hour time representing approximate hour|
-| Table.1 | Character                   | Factor              |                       |
-| Territorial.Authority | Character     | Factor              | TA consistent with Stats NZ outputs  |
 | Weapon       | Character              | Factor              | Weapon used in crime where applicable |
 | Number.of.Records | Int               | -                   | Number of records             |
-| Victimisations  | Int                 | Int                 | Number of victimisations for this crim in this area|
 
 
-Data types in the original COVID calls for service data.
+Example ofData types in the original COVID calls for service data.
 
 | Attribute     | Original data type    | Transformation       | About                        |
 |---------------|-----------------------|----------------------|------------------------------|
@@ -66,9 +60,6 @@ Data types in the original COVID calls for service data.
 | Alert.Level   | Int                   | -                    | Covid 19 Alert level for New Zealand|
 | Calls.for.Service.and.Prevention | Character| Factor | Demand or .... |
 | crime.and.NonCrime.Demand| Character   | Factor               | Crime or .... |
-| Event.category| Character             | Factor               | Administrative or .... |
-| Event.type    | Character             | Factor               | Crime type |
-| No            | Int                   | -                    | Number of instances of each Event.type|
 
 
 There is some excess information that was groomed out. From the Victimisations we kept the Original index in case we need to reference back, the date converted to a Date object, the ANSOC groups that related only to Assault, the Area unit and Meshblock number and the Territorial Authority the instance occured in.
@@ -78,11 +69,12 @@ From the Covid data we have kept the District, Alert level, calls for service an
 
 Merging the data was a longer process that anticipated as the structure of each data source was different. The Victimisations data was in a time series format where there was one row for each instance whereas the Covid dataset accounts for multiple occurances in each row. This meant to merge and compare pre-covid crime and covid we needed to alter the format quite siginificantly.
 
-These alterations included matching the time periods, since Covid is still unfolding it is a short window of time to look at. This has been matched in the previous years and approximate "levels" to the Victimisations data to allow for a more accurate comparison.
+These alterations included matching the time periods, since Covid is still unfolding it is a short window of time to look at. This has been matched in the previous years and approximate "levels" to the Victimisations data to allow for a more acurate comparison.
 
 There was also a difference in the location measures, the Covid dataset for a start was alot more generalised than the victimisations dataset and had already been classified into 12 regions which made it relatively easy to create an initial set of location categories that could be used for both datasets. When it came to the victimisation's dataset the location variable was far more specific containing 65 different districts and cities, because of this it took a while to sort through all the locations in order to create a matching location column for each dataset where the location analysis could be based on the same areas for all the data.
 
 As touched on above, the victimisations dataset was in a time series format and the Covid dataset accounted for multiple events in one row with a count. Obviously when doing a merge we could not have half the data in time series format and half not, to counter this we decided to create a 'sum' of all the individual instances based on the Location, Event, year and Alert level for each of the datasets so that they both had a column with a relatable scale to compare.
+
 
 After prepping the data unnecasery and duplicate columns the merge was completed using rbind.
 
@@ -214,13 +206,14 @@ labs(title='Total Number Of Victimisation during 2017 ~ 2020 \nfilter by Assault
 
 ---
 
-## 4 Individual contributions  
+
+## 4 Individual and group contributions  
 
 As a team we all contributed to the research portion of the project, completing mindmaps around discussions as a group. We also worked collaboratively on findind suitable data and discussing possible ideas and issues around potnetial data sets. We also wrote the Ethics and Privacy section as a group alongside a discussion around the topics.
 
 #### Abbey  
 
-Repository manager
+As the repository manager i was responsible for setting up and maintaining the git repository, i also created the report framework and documented the grooming and merging process with input from Shaun and Kieryn. I completed section X.X exploring relationships between our variables and took responsibility for ensuring the final markdown file knitted properly and everything pushed to the git was included in the final report.
 
 #### Shaun  
 
@@ -232,4 +225,4 @@ Biblio manager
 
 #### Wonsang Yu (Josh)  
 
-I have contributed on this project mostly explore the data such as visualise plot to find interesting feature or some cleaning stuff for dataset.Also when our scientific question develop, I was trying to find relative article or scientific journal to support our project or find connection. 
+I have contributed on this project mostly explore the data such as visualise plot to find interesting feature or some cleaning stuff for dataset, this is documented in section 3.1 .Also when developing our scientific question, I was trying to find relative article or scientific journal to support our project or find connection. 
