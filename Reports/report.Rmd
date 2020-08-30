@@ -4,6 +4,7 @@ author: "Abbey Bremner"
 date: "18/08/2020"
 output:
   pdf_document: default
+  word_document: default
   html_document: default
 ---
 ## Police data group project
@@ -120,33 +121,113 @@ We used a private github repository to manage our project and store data, this e
 By using github we had clear documentation of who edited what files, ensuring that accountability for changes was taken and any errors were easily traceable. The repositories were also stored locally and updated from the shared space regularly, meaning there was always multiple back ups of the project information protecting us against accidental loss or internet problems.
 
 We used licensed and well known programs such as github, Microsoft teams and trello for communication and management, by not using unknown third party applications it helps keep everything secure.
+
 ---
 
 ## 3 Exploratory data analysis
 
-# Example of code in report
+# Example of code in report  
 ```{R, echo = FALSE}
-allAssaults <- data %>% 
-  group_by(year, Alert.Level, yearLevel)%>%
-  summarise(Total = sum(Number.of.Victimizations))
+#allAssaults <- data %>% 
+#  group_by(year, Alert.Level, yearLevel)%>%
+#  summarise(Total = sum(Number.of.Victimizations))
+```
+
+#### 3.1 TIme period analysis  
+
+For us, we are interesting whether some type of crimes rate are higher during Alter_level in 2020 compared with 2017,2018,2019.
+Therfore, I thought if we explore "ANZSOC.Group"(victimisation) "Event"(Covid) columns which is category of Assault with "Year" together,it would be interesting to have a look rather than exploring other columns. 
+I tried to explore three different way, one way is explore the victimisation dataset(each year) and the other way is explore covid dataset(2020) and lastly, explore together by using merged dataset which are row bind (victimisation with covid). 
+
+Before explore the dataset I used the several library such as library(dplyr) ,library(tidyr),library(knitr),
+library(tidyverse),library(ggplot2)and library(ggpubr) to extract particular data and to visualise plot.
+
+Firstly I explore the "Victimisations" dataset by taking several step , I seperate the day-month-year column to extract three different year.
+and before visualise plot, I generated the number of Assault(Five different categories)in each year by using count() function.
+As expected, result shows "Common Assault" categories has the dominant all three different years. However, I could found Assault
+"Serious Assaults resulting in Injury" is hugely increasing by every year compared with other Assault categories.
+
+I visualised three year with number of Assault reported as using bar chart in same grid, so we can see more clearly what I explained above.
+It shows "Serious Assaults resulting in Injury" Assault how tdiffer from 2017 to 2019 more clearly.
+
+Secondly, I explored the "Covid calls for service cleaned" dataset same as "Victimisation dataset" but it shows four categories and only three of them are commom category with victimisation. I did not handle it as we want to explore just "Covid" dataset. 
+The plot shows "Non-Aggravated Sexual Assault" and "Aggravated Sexual Assault" categories are around 30~40 times happen.
+
+Lastly, I explored the dataset which is merged above two dataset.
+I extract the common Assault which both original dataset has, and I added new column "year-level" to compared time pariod. The reason why I have taken this step is covid dataset does have "date " column like month or year, but we can still assume the month by considering alter level such as level4 = March, level3 = April and level 2 = May. Later part when I visualise time-series plot I used year_level column as my time period.
+
+I visualised time-period plot by using line graph and I generated three line which are representing different type of Assault categories. From the line graph result, we can find interesting features that all type of Assault are increased during Covid-19 period,especially if we look at 20-2 axis(which is alter_level2 in 2020),all three type of crime pick highest number of victimisation compared with 2017,2018,2019. 
+During 2017, 2018 and 2019 all the assault shows not really different from each other but when they compared with 2020 we can clearly see the difference. 
+
+This result could suggest that Covid-19 period changed the crime rate or has some correlation with crime. I found ariticle "https://link.springer.com/article/10.1007/s12103-020-09551-3" which proved that during covid-19 period some type of the crime actually increased in USA, which can support this line graph result.
+
+
+```{r, eval = TRUE, include = FALSE }
+#Load Merged dataset
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(tidyverse)
+library(ggplot2)
+data_merged <- read.csv("merged data (Final).csv", 
+                         header = TRUE)
+#delete index column.
+data_merged <- data_merged[,-1]
+head(data_merged)
+```
+
+```{r, eval = TRUE, include = FALSE }
+#Filtered by only three Common Assualts
+data_merged_assault <- data_merged %>%
+  filter(Event == "Aggravated Sexual Assault" | Event == "Common Assault" 
+         | Event == "Non-Aggravated Sexual Assault")
+
+#head(data_merged_assault)
+#unique(data_merged_assault$Event)
+
+#Just used Year with Level instead of Month 
+#This is because Month is bit ambiguous.
+data_merged_assault$yearLevel <- paste(data_merged_assault$year,'-',data_merged_assault$Alert.Level)
+#unique(data_merged_assault$month)
+#tail(data_merged_assault,10)
+
+#Data group by Assault and year_level. 
+by_event_year <- group_by(data_merged_assault, Event,yearLevel)
+
+#Summarize the number of victimisation 
+#To make tidy graph otherwise even same period the number of victimisation are different as different region
+
+by_yearLevel <- summarise(by_event_year, Total_Number_Of_Victim = sum(Number.of.Victimizations))
+by_yearLevel
+```
+```{r, echo=FALSE, fig.width=8,fig.height=4 }
+#Filtered by only three Common Assualts
+
+by_yearLevel$Type_Of_Assault <- as.factor(by_yearLevel$Event)
+
+ggplot(data=by_yearLevel, aes(x=yearLevel, y=Total_Number_Of_Victim, group = Event, colour = Type_Of_Assault)) + geom_line()+     geom_point()+theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 8)) +
+labs(title='Total Number Of Victimisation during 2017 ~ 2020 \nfilter by Assault',x ="Year with Alert_level period from 2017-2020")
+
 ```
 
 ---
 
-## 4 Individual contributions
+## 4 Individual contributions  
 
 As a team we all contributed to the research portion of the project, completing mindmaps around discussions as a group. We also worked collaboratively on findind suitable data and discussing possible ideas and issues around potnetial data sets. We also wrote the Ethics and Privacy section as a group alongside a discussion around the topics.
 
-#### Abbey
+#### Abbey  
 
 Repository manager
 
-#### Shaun
+#### Shaun  
 
 Data manager
 
-#### Kieryn
+#### Kieryn  
 
 Biblio manager
 
-#### Josh
+#### Wonsang Yu (Josh)  
+
+I have contributed on this project mostly explore the data such as visualise plot to find interesting feature or some cleaning stuff for dataset.Also when our scientific question develop, I was trying to find relative article or scientific journal to support our project or find connection. 
