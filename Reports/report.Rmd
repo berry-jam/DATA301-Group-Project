@@ -1,7 +1,7 @@
 ---
 title: "DATA301 - Group Project Report"
-author: "Abbey Bremner"
-date: "18/08/2020"
+author: 
+date: "31/08/2020"
 output:
   pdf_document: default
   word_document: default
@@ -10,10 +10,10 @@ output:
 ## Police data group project
 
 ### Team members
-Abbey Bremner - 300436003  
-Shaun  
-Keiryn Hart - 300428418
-Josh  
+Abbey Bremner - 300436003   
+Shaun Godinet   
+Keiryn Hart - 300428418   
+Josh Yu
 
 ---
 # Investigating the impacts of COVID-19 on Assault in New Zealand
