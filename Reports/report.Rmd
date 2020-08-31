@@ -65,6 +65,7 @@ Example ofData types in the original COVID calls for service data.
 There is some excess information that was groomed out. From the Victimisations we kept the Original index in case we need to reference back, the date converted to a Date object, the ANSOC groups that related only to Assault, the Area unit and Meshblock number and the Territorial Authority the instance occured in.
 From the Covid data we have kept the District, Alert level, calls for service and prevention, crime and non-crime demand, event category, event type filtered to be only those related to assault and the No of instances of each type.
 
+
 #### 1.2.2 Merging the data
 
 Merging the data was a longer process that anticipated as the structure of each data source was different. The Victimisations data was in a time series format where there was one row for each instance whereas the Covid dataset accounts for multiple occurances in each row. This meant to merge and compare pre-covid crime and covid we needed to alter the format quite siginificantly.
@@ -79,6 +80,7 @@ As touched on above, the victimisations dataset was in a time series format and 
 After prepping the data unnecasery and duplicate columns the merge was completed using rbind.
 
 ---
+
 
 ## 2 Ethics, Privacy and Security
 
@@ -120,13 +122,6 @@ We used licensed and well known programs such as github, Microsoft teams and tre
 
 ## 3 Exploratory data analysis
 
-# Example of code in report  
-```{R, echo = FALSE}
-#allAssaults <- data %>% 
-#  group_by(year, Alert.Level, yearLevel)%>%
-#  summarise(Total = sum(Number.of.Victimizations))
-```
-
 #### 3.1 Time period analysis  
 
 For us, we are interesting whether some type of crimes rate are higher during Alter_level in 2020 compared with 2017,2018,2019.
@@ -155,7 +150,7 @@ During 2017, 2018 and 2019 all the assault shows not really different from each 
 
 This result could suggest that Covid-19 period changed the crime rate or has some correlation with crime. I found ariticle "https://link.springer.com/article/10.1007/s12103-020-09551-3" which proved that during covid-19 period some type of the crime actually increased in USA, which can support this line graph result.
 
-```{r, eval = TRUE, include = FALSE }
+```{r, eval = TRUE, include = FALSE,  message=FALSE }
 #Load Merged dataset
 library(dplyr)
 library(tidyr)
@@ -204,21 +199,48 @@ labs(title='Total Number Of Victimisation during 2017 ~ 2020 \nfilter by Assault
 ```
 
 
+
+
 #### 3.2 Investigating predictability through regression 
 
 An important part of research is application to the real world, often this arises in the form of prediction. Investigating crime around covid having the ability to make good predictions around problem areas could prove to be very useful as the pandemic unfolds. Predicting crime rates is nothing new, the following research project found that population number, bars, churches and schools were the most important 4 predictors in a research project comparing linear regression, logistic regression and gradient boosting. (https://www.sciencedirect.com/science/article/pii/S1877050918315667)
 
 I focused on 3 models of varying complexity to investigate the relationships within data and its predictors with a goal to predict the numer of victimisations. The three models were a linear regression: 
-\[NoOfVictimisations \sim Event + Year + AlertLevel + Location\] \\
+\[NoOfVictimisations \sim Event + Year + AlertLevel + Location\]
 A linear regression with log transformation applied to numeric predictors: 
-\[log(NoOfVictimisations) \sim Event +log(Year) + log(AlertLevel) + Location\]\\
+\[log(NoOfVictimisations) \sim Event +log(Year) + log(AlertLevel) + Location\]
 And a generalised additive model (GAM): 
-\[NoOfVictimisations \sim Event + s(Year) + s(AlertLevel) + Location\]\\
+\[NoOfVictimisations \sim Event + s(Year) + s(AlertLevel) + Location\]
 
+The below output is the fitted model and diagnostic plots for the linear regression. 
+```{R, include = FALSE}
+library(ggplot2)
+library(gridExtra)
+library(ggfortify)
+```
+```{R, echo=FALSE}
+data <- read.csv("merged data (Final).csv", header = TRUE)
+data$yearLevel <-(paste(data$year,  data$Alert.Level))
 
+mod2 <- lm(Number.of.Victimizations ~ Event + year + Alert.Level + Location , data = data)
 
-#### Locational Analysis with Maps:
+ a <- ggplot(data, aes(as.numeric(as.factor(yearLevel)), Number.of.Victimizations)) +
+  geom_point() +
+  stat_smooth(method = lm, formula = y~x) + 
+  scale_x_discrete(name = 'Year and Alert Level', limits = data$yearLevel)
 
+qqp <- (autoplot(mod2, which = 2)) # qqplot
+rvf <- (autoplot(mod2, which = 1)) # res vs fitted plot
+cd <- (autoplot(mod2, which=4)) # cooks distance
+
+grid.arrange(a, qqp@plots[[1]], rvf@plots[[1]], cd@plots[[1]], nrow = 2)
+```
+
+From this output you can see that the assumption of normality is obviously violated as there is a significant difference between 2020 and the previous years, this is reflected in the normal QQ plot. The variance is also non-constant as depicted by the funneling in the residuals vs fitted. There arent any significant outliers with a cooks distance greater than 1. From this Imoved onto a log transformed model which helped alot with the assumptions of normality and constant variance.
+
+Before looking at the metrics of model performance i explored some feature selection using forward and backward feature selection on the log transformed model and the gam, due to the violations of the assumptions of normality and constant variance of the plain linear model i have excluded it.
+
+#### 3.3 Locational Analysis with Maps
 
 Another interesting thing we looked to investigate was the relationship between the different time periods, the amount of reported accounts of assault and the various regions around New Zealand. 
 
@@ -235,15 +257,7 @@ These observation helps to support our initial question of whether the lockdown 
 ```{r, eval = TRUE, include = FALSE }
 library(dplyr)
 library(tmap) 
-library(sf)
-library(raster)
-library(dplyr)
 library(spData)
-library(spDataLarge)
-library(leaflet)
-library(mapview)
-library(ggplot2) 
-library(shiny) 
 ```
 
 ```{r, eval = TRUE, include = FALSE }
@@ -382,7 +396,6 @@ tmap_arrange(m1, m4, m2, m5, m3, m6,nrow = 3, ncol = 2)
 tmap_arrange(m7, m10, m8, m11, m9, m12, nrow = 3, ncol = 2)
 
 ```
-
 
 ---
 
