@@ -12,7 +12,7 @@ output:
 ### Team members
 Abbey Bremner - 300436003  
 Shaun  
-Kieryn  
+Keiryn Hart - 300428418
 Josh  
 
 ---
@@ -414,7 +414,7 @@ Data manager
 
 #### Kieryn  
 
-Biblio manager
+As the biblio Manager I was in charge of ensuring that all our sources we used to inform our report and questions were correctly referenced and cited in the report. I also handled the process of merging our datasets together and produced the maps seen in the exploratory analysis.
 
 #### Wonsang Yu (Josh)  
 
