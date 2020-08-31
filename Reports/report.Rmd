@@ -7,11 +7,12 @@ output:
   word_document: default
   html_document: default
 ---
-## Police data group project
+## DATA301 Assignment 3 - group 6
 
-### Team members
+### Team members  
+
 Abbey Bremner - 300436003   
-Shaun Godinet   
+Shaun Godinet - 300426053  
 Keiryn Hart - 300428418   
 Wonsang Yu (Josh) - 300463616  
 
@@ -36,9 +37,11 @@ The Victimisation time and place dataset was downloaded from the information rec
 
 The Covid_calls for services dataset was also downloaded from the police website and it contains information about crimes during the different level of Covid-19 Lockdown. These include districts, level of lockdown, type of crime and the number of times a specific crime has been committed. It also shows information about the demand in call for service and prevention during lockdown. The information has been recorded starting from the lockdown period in March 2020 until July.
 
-#### 1.2.1 Inside the data
+### 1.2.1 Inside the data  
 
-Example of data types in the original Victimisations data set and the basic transformations that were neccasery
+The data was a mix of character types and integers, with some attributes being subcategories of others. The two below tables are some examples of the data types in the original data, the transformation we did and a short description where applicable. The data was of high quality and had many useful attributes that allowed them to be linked with tier 1 statistics such as the Stats Nz meshblock system.
+
+Victimisations data:
 
 | Attribute     | Original data type    | Transformation       | About                        |
 |---------------|-----------------------|----------------------|------------------------------|
@@ -52,7 +55,7 @@ Example of data types in the original Victimisations data set and the basic tran
 | Number.of.Records | Int               | -                   | Number of records             |
 
 
-Example of Data types in the original COVID calls for service data.
+COVID calls for service data:
 
 | Attribute     | Original data type    | Transformation       | About                        |
 |---------------|-----------------------|----------------------|------------------------------|
@@ -66,7 +69,7 @@ There is some excess information that was groomed out. From the Victimisations w
 From the Covid data we have kept the District, Alert level, calls for service and prevention, crime and non-crime demand, event category, event type filtered to be only those related to assault and the No of instances of each type.
 
 
-#### 1.2.2 Merging the data
+### 1.2.2 Merging the data  
 
 Merging the data was a longer process that anticipated as the structure of each data source was different. The Victimisations data was in a time series format where there was one row for each instance whereas the Covid dataset accounts for multiple occurances in each row. This meant to merge and compare pre-covid crime and covid we needed to alter the format quite siginificantly.
 
@@ -81,12 +84,11 @@ After prepping the data unnecasery and duplicate columns the merge was completed
 
 ---
 
-
-## 2 Ethics, Privacy and Security
+## 2 Ethics, Privacy and Security  
 
 There are many ethical and privacy issues to consider when dealing with any police data, for this reason published data on the police.nz website is already cleaned and anonymised. This was useful for our process in that we could be confident with the level of ethical preparation that went into our raw data. We didn't have to do any anonymisation prior to merging our data, however there were still some possible issues we discussed.
 
-#### 2.1 Ethical considerations
+### 2.1 Ethical considerations  
 
 An ethical responsibility when publishing results is to ensure that they are accurate and fairly representative. Due to this being an unfolding pandemic where data and research is still emerging we decided to focus on a broader location rather than fine grained spatial analysis. This helps us ensure that we are accounting for possible variability in the data that may arise from limited and evolving data.
 
@@ -98,7 +100,7 @@ There was recently an article published about the increased rates of assault in 
 
 A concern of ours is that inaccurate or misleading information can cause unnecessary stress and distrust between communities and their local law enforcement, this is a serious concern as public opinion often influences authorities to investigate or make changes. If these changes are based off of inaccurate facts, not only does this waste time and money but it also runs the risk of creating a biased system of justice.
 
-#### 2.2 Privacy concerns
+### 2.2 Privacy concerns  
 
 The biggest privacy concern when working with victimisations data is ensuring that victims cannot be identified and their personal information is protected.
 
@@ -110,7 +112,7 @@ The police website states that "To protect privacy of individuals, sensitive det
 
 Because the data is collected from a reputable source we are confident in the quality of the privacy measures that have been taken.
 
-#### 2.3 Secure project management
+### 2.3 Secure project management  
 
 We used a private github repository to manage our project and store data, this ensured that only those with an access invitation may access the files. This provided security not only for the data but also any exploratory data analysis that we produced. Its important to have good security measures at all stages as not all information may be published, its crucial that work stay private until it has gone through a review process to ensure accuracy before it is finalised for publication.
 
@@ -122,7 +124,7 @@ We used licensed and well known programs such as github, Microsoft teams and tre
 
 ## 3 Exploratory data analysis
 
-#### 3.1 Time period analysis  
+### 3.1 Time period analysis    
 
 For us, we are interesting whether some type of crimes rate are higher during Alter_level in 2020 compared with 2017,2018,2019.
 Therfore, I thought if we explore "ANZSOC.Group"(victimisation) "Event"(Covid) columns which is category of Assault with "Year" together,it would be interesting to have a look rather than exploring other columns. 
@@ -150,7 +152,7 @@ During 2017, 2018 and 2019 all the assault shows not really different from each 
 
 This result could suggest that Covid-19 period changed the crime rate or has some correlation with crime. I found ariticle (Boman IV & Gallupe, 2020) which proved that during covid-19 period some type of the crime actually increased in USA, which can support this line graph result.
 
-```{r, eval = TRUE, include = FALSE,  message=FALSE }
+```{r, eval = TRUE, include = FALSE,  message=FALSE}
 #Load Merged dataset
 library(dplyr)
 library(tidyr)
@@ -164,7 +166,7 @@ data_merged <- data_merged[,-1]
 head(data_merged)
 ```
 
-```{r, eval = TRUE, include = FALSE }
+```{r, eval = TRUE, include = FALSE, message = FALSE }
 #Filtered by only three Common Assualts
 data_merged_assault <- data_merged %>%
   filter(Event == "Aggravated Sexual Assault" | Event == "Common Assault" 
@@ -199,9 +201,7 @@ labs(title='Total Number Of Victimisation during 2017 ~ 2020 \nfilter by Assault
 ```
 
 
-
-
-#### 3.2 Investigating predictability through regression 
+### 3.2 Investigating predictability through regression 
 
 An important part of research is application to the real world, often this arises in the form of prediction. Investigating crime around covid having the ability to make good predictions around problem areas could prove to be very useful as the pandemic unfolds. Predicting crime rates is nothing new, the following research project found that population number, bars, churches and schools were the most important 4 predictors in a research project comparing linear regression, logistic regression and gradient boosting. (Ingilevicha & Ivanov, 2018)
 
@@ -214,10 +214,14 @@ And a generalised additive model (GAM):
 
 The below output is the fitted model and diagnostic plots for the linear regression. 
 ```{R, include = FALSE, message = FALSE}
+defaultW <- getOption("warn") 
+options(warn = -1) 
+
 library(ggplot2)
 library(gridExtra)
 library(ggfortify)
 ```
+
 ```{R, echo=FALSE, message=FALSE}
 data <- read.csv("merged data (Final).csv", header = TRUE)
 data$yearLevel <-(paste(data$year,  data$Alert.Level))
@@ -244,7 +248,6 @@ From this output you can see that the assumption of normality is obviously viola
 
 Before looking at the metrics of model performance I explored some feature selection using forward and backward feature selection on the log transformed model and the gam, due to the violations of the assumptions of normality and constant variance of the plain linear model I have excluded it.
 
-
 There is severe multicolinearity for the gam model between all predictors, values around 181 were found, in the context of a generalised linear model this means there will be concurvity present which describes nonlinear dependencies among the predictor variables. For this reason i am drawing the conclusion that the linear model with the log transformation is the best from the selection i have explored.
 
 The below output is the summary output from the reduced linear model with the log transformation.
@@ -253,13 +256,15 @@ The below output is the summary output from the reduced linear model with the lo
 library(gtsummary)
 mod3Ref <- lm(log(Number.of.Victimizations) ~ log(year) + Event + Location, data = data)
 tbl_regression(mod3Ref)
+
+options(warn = defaultW)
 ```
 
 For the linear model with a log transformation the RSE of 0.5827 tells us the average amoun that the response will deviate from the line of regression. The r squared value tells us that approximately 58.27% of variability found in the no of victimisations (response) is explained by the predictors. This tells us that the model is doing okay but not great. There is likely an important predictor that is missing that would help in better explaining the model. In the referenced article (Ingilevicha & Ivanov, 2018) they found that population was an important predictor, it is possible that adding in population to this model may improve the R squared value and improve the model. The predictor F stats and p-values mostly all suggest that they are significant predictors, a low p-value indicates that when testing the null hypothesis that the given beta = 0 will be rejected.
 
-This was only a brief exploration but from this we can see that the year, event and location are important predictors for the number of victimisations. Further predictors should be explored such as population to develope a better model should prediction be pursued in further study.
+This was only a brief exploration but from this we can see that the year, event and location are important predictors for the number of victimisations. Further predictors should be explored such as population to develope a better model should prediction be pursued in further study. I also think there would be alot of benefit in investigating some other models, as more data becomes avalible the potential of comparisons that can be made will greatly improve. After 
 
-#### 3.3 Locational Analysis with Maps
+### 3.3 Locational Analysis with Maps
 
 Another interesting thing we looked to investigate was the relationship between the different time periods, the amount of reported accounts of assault and the various regions around New Zealand. 
 
@@ -423,11 +428,11 @@ tmap_arrange(m7, m10, m8, m11, m9, m12, nrow = 3, ncol = 2)
 
 As a team we all contributed to the research portion of the project, completing mindmaps around discussions as a group. We also worked collaboratively on findind suitable data and discussing possible ideas and issues around potnetial data sets. We also wrote the Ethics and Privacy section as a group alongside a discussion around the topics.
 
-#### Abbey Bremner 
+### Abbey Bremner 
 
-As the repository manager i was responsible for setting up and maintaining the git repository, i also created the report framework and documented the grooming and merging process with input from Shaun and Kieryn. I completed section X.X exploring relationships between our variables and took responsibility for ensuring the final markdown file knitted properly and everything pushed to the git was included in the final report.
+As the repository manager i was responsible for setting up and maintaining the git repository including resolving any conflicts and providing support to the team. I also created the report framework and documented the grooming and merging process with input from Shaun and Kieryn. I completed section 3.2: exploring relationships between our variables and took responsibility for ensuring the final markdown file knitted properly and everything pushed to the git was included in the final report.
 
-#### Shaun  
+### Alshaun Godinet  
 
 Data manager
 I have been assisting the team in researching for the relevant data in crimes per region in NZ and data about covid-19
@@ -435,15 +440,17 @@ Have done some preprocessing, cleaning and merging data and choose which dataset
 answer our question about the effects of covid-19 on the crime rates compare to previous years. 
 More tasks was to engage in group disscusiona and planing our report
 
-#### Kieryn  
+### Kieryn  Hart
 
 As the biblio Manager I was in charge of ensuring that all our sources we used to inform our report and questions were correctly referenced and cited in the report. I also handled the process of merging our datasets together and produced the maps seen in the exploratory analysis.
 
-#### Wonsang Yu (Josh)  
+### Wonsang Yu
 
 I have contributed on this project mostly explore the data such as visualise plot to find interesting feature or some cleaning stuff for dataset, this is documented in section 3.1 .Also when developing our scientific question, I was trying to find relative article or scientific journal to support our project or find connection. 
 
-#### Bibliography:
+---
+
+## Bibliography
 
 Boman IV, J., & Gallupe, O. (2020, July 8). Has COVID-19 Changed Crime? Crime Rates in the United States during the Pandemic. Retrieved from Springer Link: https://link.springer.com/article/10.1007/s12103-020-09551-3
 
@@ -463,4 +470,4 @@ WHO. (2020, June 6). The rise and rise of interpersonal violence – an unintend
 
 Zealand, R. N. (2020, August 11). Increase in late-night violence on Courtenay Place. Retrieved from Wellington Scoop: http://wellington.scoop.co.nz/?p=130187
 
-
+---
