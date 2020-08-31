@@ -13,7 +13,7 @@ output:
 Abbey Bremner - 300436003   
 Shaun Godinet   
 Keiryn Hart - 300428418   
-Josh Yu
+Wonsang Yu (Josh) - 300463616  
 
 ---
 # Investigating the impacts of COVID-19 on Assault in New Zealand
@@ -423,7 +423,7 @@ tmap_arrange(m7, m10, m8, m11, m9, m12, nrow = 3, ncol = 2)
 
 As a team we all contributed to the research portion of the project, completing mindmaps around discussions as a group. We also worked collaboratively on findind suitable data and discussing possible ideas and issues around potnetial data sets. We also wrote the Ethics and Privacy section as a group alongside a discussion around the topics.
 
-#### Abbey  
+#### Abbey Bremner 
 
 As the repository manager i was responsible for setting up and maintaining the git repository, i also created the report framework and documented the grooming and merging process with input from Shaun and Kieryn. I completed section X.X exploring relationships between our variables and took responsibility for ensuring the final markdown file knitted properly and everything pushed to the git was included in the final report.
 
