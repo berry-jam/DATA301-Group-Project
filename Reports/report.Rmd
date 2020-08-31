@@ -238,7 +238,7 @@ grid.arrange(a, qqp@plots[[1]], rvf@plots[[1]], cd@plots[[1]], nrow = 2)
 
 From this output you can see that the assumption of normality is obviously violated as there is a significant difference between 2020 and the previous years, this is reflected in the normal QQ plot. The variance is also non-constant as depicted by the funneling in the residuals vs fitted. There arent any significant outliers with a cooks distance greater than 1. From this Imoved onto a log transformed model which helped alot with the assumptions of normality and constant variance.
 
-Before looking at the metrics of model performance i explored some feature selection using forward and backward feature selection on the log transformed model and the gam, due to the violations of the assumptions of normality and constant variance of the plain linear model i have excluded it.
+Before looking at the metrics of model performance I explored some feature selection using forward and backward feature selection on the log transformed model and the gam, due to the violations of the assumptions of normality and constant variance of the plain linear model I have excluded it.
 
 #### 3.3 Locational Analysis with Maps
 
