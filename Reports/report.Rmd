@@ -442,3 +442,25 @@ As the biblio Manager I was in charge of ensuring that all our sources we used t
 #### Wonsang Yu (Josh)  
 
 I have contributed on this project mostly explore the data such as visualise plot to find interesting feature or some cleaning stuff for dataset, this is documented in section 3.1 .Also when developing our scientific question, I was trying to find relative article or scientific journal to support our project or find connection. 
+
+#### Bibliography:
+
+Boman IV, J., & Gallupe, O. (2020, July 8). Has COVID-19 Changed Crime? Crime Rates in the United States during the Pandemic. Retrieved from Springer Link: https://link.springer.com/article/10.1007/s12103-020-09551-3
+
+Ceccato, V., & Wilhelmsson, M. (2019, September). Do crime hot spots affect housing prices? Retrieved from Taylor & Francis: https://www.tandfonline.com/doi/full/10.1080/2578983X.2019.1662595
+
+Covid-19 Response. (2020, June 12). Retrieved from New Zealand Police: https://www.police.govt.nz/about-us/statistics-and-publications/data-and-statistics/covid-19-response 
+
+Ingilevicha, V., & Ivanov, S. (2018, July). Crime rate prediction in the urban environment using social factors. Retrieved from Science Direct: https://www.sciencedirect.com/science/article/pii/S1877050918315667
+
+Mohan, M. (2020, june 11). Coronavirus: Domestic violence 'increases globally during lockdown'. Retrieved from BBC News: https://www.bbc.com/news/av/world-53014211
+
+Piquero, A., Riddell, J., Bishopp, S., & Narvey, C. (2020, June 14). Staying Home, Staying Safe? A Short-Term Analysis of COVID-19 on Dallas Domestic Violence. Retrieved from Springer Link: https://link.springer.com/article/10.1007/s12103-020-09531-7
+
+Victimisation Time and Place. (2018, January). Retrieved from New Zealand Police: https://www.police.govt.nz/about-us/publications-statistics/data-and-statistics/policedatanz/victimisation-time-and-place
+
+WHO. (2020, June 6). The rise and rise of interpersonal violence – an unintended impact of the COVID-19 response on families. Retrieved from World Health Organisation: https://www.euro.who.int/en/health-topics/disease-prevention/violence-and-injuries/news/news/2020/6/the-rise-and-rise-of-interpersonal-violence-an-unintended-impact-of-the-covid-19-response-on-families
+
+Zealand, R. N. (2020, August 11). Increase in late-night violence on Courtenay Place. Retrieved from Wellington Scoop: http://wellington.scoop.co.nz/?p=130187
+
+
