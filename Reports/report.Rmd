@@ -411,6 +411,10 @@ As the repository manager i was responsible for setting up and maintaining the g
 #### Shaun  
 
 Data manager
+I have been assisting the team in researching for the relevant data in crimes per region in NZ and data about covid-19
+Have done some preprocessing, cleaning and merging data and choose which dataset is relevant to 
+answer our question about the effects of covid-19 on the crime rates compare to previous years. 
+More tasks was to engage in group disscusiona and planing our report
 
 #### Kieryn  
 
