@@ -21,20 +21,20 @@ Josh
 
 ## 1 Background and Data
 
-As the pandemic has unfolded around the world many studies have emerged looking at how the changes in social systems have effected crime and violence. "In the United Kingdom, calls, emails and website visits to Respect, the national domestic violence charity, have increased 97%, 185% and 581% respectively." (WHO, 2020) "The UN has described the worldwide increase in domestic abuse as a "shadow pandemic" alongside Covid-19.
-It’s thought cases have increased by 20% during the lockdown, as many people are trapped at home with their abuser." (Mohan, 2020)
-Articles such as the above sparked interest amongst our group and made us want to investigate if the same patterns are present in New Zealand.
+As the pandemic has unfolded around the world many studies have emerged looking at how the changes in social systems have effected crime and violence. "In the United Kingdom, calls, emails and website visits to "Respect", the national domestic violence charity, have increased 97%, 185% and 581% respectively"(WHO, 2020). "The UN has described the worldwide increase in domestic abuse as a "shadow pandemic" alongside Covid-19.
+It’s thought cases have increased by 20% during the lockdown, as many people are trapped at home with their abuser"(Mohan, 2020). 
+Articles such as the above sparked interest among our group and made us want to investigate if the same patterns are present in New Zealand.
 
-Our initial question evolved around looking into domestic violence rates specifically as many countries saw a rise in this crime in particular. However the system used for reporting types of crime (ANSOC - Australian and New Zealand Standard Offence Classification) has domestic violence as a subcategory of Assault, this meant there was not enough data specifically on domestic violence for us to souley focus on it. For this reason we adapted our question to be focused on how the pandemic has affected Assault in New Zealand.
+Our initial question evolved around looking into domestic violence rates specifically as many countries saw a rise in this crime in particular. However the system used for reporting types of crime (ANSOC - Australian and New Zealand Standard Offence Classification) has domestic violence as a subcategory of Assault, this meant there was not enough data specifically on domestic violence for us to solely focus on it. For this reason we adapted our question to be focused on how the pandemic has affected Assault in New Zealand.
 
 We have been collecting data from several sites mainly from the Ministry of Police, Stats NZ. data.govt.nz and NZ.Stat. This was not limited to researching for related data about crimes and covid-19 in NZ such journals, articles newspaper and news broadcast. The links to these sites is provided below. We have used two datasets for our analysis:
 
 1.	Victimisation time and place (Victimisation Time and Place, 2018)
 2.	Covid_calls for services (Covid-19 Response, 2020)
 
-The Victimisation time and place dataset was downloaded from the information recorded in the Police dynamic operational database. (www.police.govt.nz) This dataset represents detailed information about where and at what times of the day and week crime victimization occur in NZ. It excludes victimization where meshblock level data and Area Unit is unknown. It includes time and place where the offence occurs, number and type of offence. This data frame contains 699705 number of observations and 17 variables. The dataset is dated from 2017 until March 2020.
+The Victimisation time and place dataset was downloaded from the information recorded in the Police dynamic operational database. This dataset represents detailed information about where and at what times of the day and week crime victimization occur in NZ. It excludes victimization where meshblock level data and Area Unit is unknown. It includes time and place where the offence occurs, number and type of offence. This data frame contains 699705 number of observations and 17 variables and it is dated from 2017 until March 2020.
 
-The Covid_calls for services dataset was also downloaded from the police website and it contains information about crimes during the different level of lockdown during covid-19. These include districts, level of lockdown, type of crime and the number of times a specific crime has been committed. It also shows information about the demand in call for service and prevention during lockdown. The information has been recorded starting from the lockdown period in March 2020 until July.
+The Covid_calls for services dataset was also downloaded from the police website and it contains information about crimes during the different level of Covid-19 Lockdown. These include districts, level of lockdown, type of crime and the number of times a specific crime has been committed. It also shows information about the demand in call for service and prevention during lockdown. The information has been recorded starting from the lockdown period in March 2020 until July.
 
 #### 1.2.1 Inside the data
 
@@ -52,7 +52,7 @@ Example of data types in the original Victimisations data set and the basic tran
 | Number.of.Records | Int               | -                   | Number of records             |
 
 
-Example ofData types in the original COVID calls for service data.
+Example of Data types in the original COVID calls for service data.
 
 | Attribute     | Original data type    | Transformation       | About                        |
 |---------------|-----------------------|----------------------|------------------------------|
