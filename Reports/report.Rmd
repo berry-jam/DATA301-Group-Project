@@ -213,21 +213,25 @@ And a generalised additive model (GAM):
 \[NoOfVictimisations \sim Event + s(Year) + s(AlertLevel) + Location\]
 
 The below output is the fitted model and diagnostic plots for the linear regression. 
-```{R, include = FALSE}
+```{R, include = FALSE, message = FALSE}
 library(ggplot2)
 library(gridExtra)
 library(ggfortify)
 ```
-```{R, echo=FALSE}
+```{R, echo=FALSE, message=FALSE}
 data <- read.csv("merged data (Final).csv", header = TRUE)
 data$yearLevel <-(paste(data$year,  data$Alert.Level))
 
 mod2 <- lm(Number.of.Victimizations ~ Event + year + Alert.Level + Location , data = data)
 
+allAssaults <- data %>% 
+  group_by(year, Alert.Level, yearLevel)%>%
+  summarise(Total = sum(Number.of.Victimizations))
+
  a <- ggplot(data, aes(as.numeric(as.factor(yearLevel)), Number.of.Victimizations)) +
   geom_point() +
   stat_smooth(method = lm, formula = y~x) + 
-  scale_x_discrete(name = 'Year and Alert Level', limits = data$yearLevel)
+  scale_x_discrete(name = 'Year and Alert Level', limits = allAssaults$yearLevel)
 
 qqp <- (autoplot(mod2, which = 2)) # qqplot
 rvf <- (autoplot(mod2, which = 1)) # res vs fitted plot
@@ -239,6 +243,21 @@ grid.arrange(a, qqp@plots[[1]], rvf@plots[[1]], cd@plots[[1]], nrow = 2)
 From this output you can see that the assumption of normality is obviously violated as there is a significant difference between 2020 and the previous years, this is reflected in the normal QQ plot. The variance is also non-constant as depicted by the funneling in the residuals vs fitted. There arent any significant outliers with a cooks distance greater than 1. From this Imoved onto a log transformed model which helped alot with the assumptions of normality and constant variance.
 
 Before looking at the metrics of model performance I explored some feature selection using forward and backward feature selection on the log transformed model and the gam, due to the violations of the assumptions of normality and constant variance of the plain linear model I have excluded it.
+
+
+There is severe multicolinearity for the gam model between all predictors, values around 181 were found, in the context of a generalised linear model this means there will be concurvity present which describes nonlinear dependencies among the predictor variables. For this reason i am drawing the conclusion that the linear model with the log transformation is the best from the selection i have explored.
+
+The below output is the summary output from the reduced linear model with the log transformation.
+
+```{R, echo = FALSE, message =FALSE}
+library(gtsummary)
+mod3Ref <- lm(log(Number.of.Victimizations) ~ log(year) + Event + Location, data = data)
+tbl_regression(mod3Ref)
+```
+
+For the linear model with a log transformation the RSE of 0.5827 tells us the average amoun that the response will deviate from the line of regression. The r squared value tells us that approximately 58.27% of variability found in the no of victimisations (response) is explained by the predictors. This tells us that the model is doing okay but not great. There is likely an important predictor that is missing that would help in better explaining the model. In the referenced article (Ingilevicha & Ivanov, 2018) they found that population was an important predictor, it is possible that adding in population to this model may improve the R squared value and improve the model. The predictor F stats and p-values mostly all suggest that they are significant predictors, a low p-value indicates that when testing the null hypothesis that the given beta = 0 will be rejected.
+
+This was only a brief exploration but from this we can see that the year, event and location are important predictors for the number of victimisations. Further predictors should be explored such as population to develope a better model should prediction be pursued in further study.
 
 #### 3.3 Locational Analysis with Maps
 
